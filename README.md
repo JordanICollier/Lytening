@@ -8,7 +8,8 @@
   •Profile-picture
   •about
     -location
-    -work/school
+    -work
+    -school
     -birthday
     -sex
     -interest
@@ -23,4 +24,3 @@
   •hyperlink
   •user_id
   •created at
-  
