@@ -28,6 +28,9 @@ gem 'sdoc', '~> 0.4.0', group: :doc
 gem 'devise'
 gem 'haml'
 
+gem "paperclip", "~> 4.2"
+gem 'simple_form', '~> 3.1.0'
+
 # Use Unicorn as the app server
 # gem 'unicorn'
 
@@ -36,8 +39,11 @@ gem 'haml'
 
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
+  gem 'quiet_assets'
   gem 'byebug'
-
+  gem 'pry-byebug'
+  gem 'pry-rails'
+  gem 'better_errors'
   # Access an IRB console on exception pages or by using <%= console %> in views
   gem 'web-console', '~> 2.0'
 
