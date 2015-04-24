@@ -26,6 +26,7 @@ ActiveRecord::Schema.define(version: 20150424202605) do
     t.integer  "spark_count"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.integer  "user_id"
   end
 
   create_table "users", force: :cascade do |t|
