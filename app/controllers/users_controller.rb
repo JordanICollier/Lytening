@@ -13,16 +13,23 @@ class UsersController < ApplicationController
   end
 
   def update
-    @user.update(user_params)
-    respond_with @user
+    # @user.avatar = params[:file]
+    if @user.update(user_params)
+      if params[:user][:avatar].present?
+        render :crop
+      else
+        redirect_to @user
+      end
+    else
+      render :new
+    end
+    # respond_with @user
   end
 
 private
 
   def user_params
-      params.require(:user).permit(
-      :avatar
-      )
+      params.require(:user).permit(:avatar, :crop_x, :crop_y, :crop_w, :crop_h)
   end
 
   def set_user
