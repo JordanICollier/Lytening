@@ -5,7 +5,7 @@
 <h4>Preview</h4>
 <div style="width:100px; height:100px; overflow:hidden">
   <%= image_tag @user.avatar.url(:large), :id => "preview" %>
-</div>x
+</div>
 
 <%= form_for @user do |f| %>
   <% %w[x y w h].each do |attribute| %>
