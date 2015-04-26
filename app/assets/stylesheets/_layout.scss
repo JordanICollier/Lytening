@@ -1,0 +1,80 @@
+// .grid {
+//   margin: 0 auto;
+//
+//
+//   &:after {
+//     /* Or @extend clearfix */
+//     content: "";
+//     display: table;
+//     clear: both;
+//   }
+// }
+
+.status-container{
+  width: 100%;
+  // margin: 75px 0 0 0;
+}
+
+[class*='col-'] {
+  float: left;
+  .grid &:last-of-type {
+  }
+}
+
+.col-1-12 {
+  width: 8.3%;
+}
+
+.col-2-12 {
+  width: 16.6%;
+}
+
+.col-3-12 {
+  width: 25%;
+}
+
+.col-4-12 {
+  width: 33.3%;
+}
+
+.col-5-12 {
+  width: 41.6%;
+}
+
+.col-6-12 {
+  width: 50%;
+}
+
+.col-7-12 {
+  width: 58.3%;
+}
+
+.col-8-12 {
+  width: 66.6%;
+}
+
+.col-12-12 {
+  width: 100%;
+}
+
+.clear {
+  float:none;
+}
+
+.f-right {
+  float:right;
+}
+
+.top {
+  height: 1000px;
+  background-color: $red;
+}
+
+.top-post {
+  
+}
+
+.new{
+  height: 1000px;
+  background-color: $grey;
+}

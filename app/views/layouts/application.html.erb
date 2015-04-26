@@ -3,14 +3,17 @@
 <head>
   <title>Lytening</title>
   <%= favicon_link_tag 'lytening_favicon.png' %>
-  <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
+  <%= stylesheet_link_tag    'application', media: 'all' %>
   <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
   <%= csrf_meta_tags %>
 </head>
 <body>
 
   <nav>
-    <div class="container">
+    <div class="header">
+
+    </div>
+    <!-- <div class="container">
       <div class="navbar">
         <a href="/">Lytening</a>
       </div>
@@ -33,7 +36,7 @@
           </ul>
         </div>
 
-      </div>
+      </div> -->
     </nav>
 
     <% if notice %>
