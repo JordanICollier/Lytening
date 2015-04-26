@@ -15,7 +15,7 @@ nav {
 
 .header {
   width:100%;
-  padding: 18px 2% 0 2%;
+  padding: 6px 2% 0 2%;
 }
 
 .header ul li {
@@ -24,7 +24,7 @@ nav {
 
 .menu {
   float:right;
-  padding: 2px 0 0 0;
+  padding: 16px 0 0 0;
 }
 
 .mobile {
@@ -56,14 +56,14 @@ nav {
   -webkit-box-shadow: inset 10px 0px 18px -7px rgba(0,0,0,0.5);
   -moz-box-shadow: inset 10px 0px 18px -7px rgba(0,0,0,0.5);
   box-shadow: inset 10px 0px 18px -7px rgba(0,0,0,0.5);
-
 }
 
 .sidenav li {
   list-style-type: none;
   border-bottom: 1px solid $white;
-  padding: 8% 0 0 0;
+  padding: 25px 0 0 0;
   height: 75px;
+  color: $white;
 }
 
 .sidenav a {
