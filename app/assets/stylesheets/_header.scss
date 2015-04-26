@@ -13,9 +13,16 @@ nav {
   @include box-shadow(0 0 .4em 0 rgba(0, 0, 0, 0.5));
 }
 
-// .header {
-//   width:100%;
-//   height:10px;
-//   background-color: $lime;
-//
-// }
+.header {
+  width:100%;
+  padding: 18px 2% 0 2%;
+}
+
+.header ul li {
+  display: inline;
+}
+
+.menu {
+  float:right;
+  padding: 2px 0 0 0;
+}
