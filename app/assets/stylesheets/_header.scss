@@ -38,30 +38,50 @@ nav {
 }
 .mobile section {
   position: relative;
-  transition: all 0.25s;
+  transition: all 0.25s ease-in-out;
 }
+
 .mobile section label {
   cursor: pointer;
 }
 
 .sidenav {
-  background: rgb(50, 60, 60); width: 150px;
-  position: absolute; right: 0; top: 0; bottom: 0; padding-top: 100px;
+  background: $red;
+  width: 25%;
+  position: absolute;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  text-align: center;
+  -webkit-box-shadow: inset 10px 0px 18px -7px rgba(0,0,0,0.5);
+  -moz-box-shadow: inset 10px 0px 18px -7px rgba(0,0,0,0.5);
+  box-shadow: inset 10px 0px 18px -7px rgba(0,0,0,0.5);
+
 }
+
 .sidenav li {
   list-style-type: none;
-  }
+  border-bottom: 1px solid $white;
+  padding: 8% 0 0 0;
+  height: 75px;
+}
 
 .sidenav a {
-  color: white;
+  color: $white;
   text-decoration: none;
-  transform: translateX(150px);
-  transition: all 0.25s;
-  }
+  transform: translateX(15%);
+  transition: all 0.25s ease-in-out;
+}
+
+.sidenav-logo {
+  position:relative;
+  padding: 25px 0 20px 0;
+
+}
 
 #toggle-menu:checked ~ section {
-  transform: translateX(-150px);
-  }
+  transform: translateX(-25%);
+}
 #toggle-menu:checked ~ .sidenav a {
   transform: translateX(0);
-  }
+}
