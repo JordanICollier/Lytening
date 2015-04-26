@@ -26,3 +26,42 @@ nav {
   float:right;
   padding: 2px 0 0 0;
 }
+
+.mobile {
+  float: left;
+  position: relative;
+  overflow: hidden;
+}
+
+#toggle-menu {
+  display: none;
+}
+.mobile section {
+  position: relative;
+  transition: all 0.25s;
+}
+.mobile section label {
+  cursor: pointer;
+}
+
+.sidenav {
+  background: rgb(50, 60, 60); width: 150px;
+  position: absolute; right: 0; top: 0; bottom: 0; padding-top: 100px;
+}
+.sidenav li {
+  list-style-type: none;
+  }
+
+.sidenav a {
+  color: white;
+  text-decoration: none;
+  transform: translateX(150px);
+  transition: all 0.25s;
+  }
+
+#toggle-menu:checked ~ section {
+  transform: translateX(-150px);
+  }
+#toggle-menu:checked ~ .sidenav a {
+  transform: translateX(0);
+  }
