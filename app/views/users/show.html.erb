@@ -10,7 +10,7 @@
   <% end %>
 <% end %>
 
-<%= @user.strykes.last.body %>
+<%= @user.strykes.order(created_at: :desc).first.body %>
 
 <%= link_to "Edit?", edit_user_path(current_user) %>
 <%= image_tag @user.avatar_url(:thumb) %>
