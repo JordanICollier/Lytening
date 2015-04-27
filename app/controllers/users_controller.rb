@@ -6,7 +6,7 @@ class UsersController < ApplicationController
 
 
   def show
-
+    @stryke = Stryke.new
   end
 
   def edit
