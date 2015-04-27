@@ -34,6 +34,7 @@ ActiveRecord::Schema.define(version: 20150424223447) do
   end
 
   create_table "users", force: :cascade do |t|
+    t.string   "avatar"
     t.string   "location"
     t.string   "work"
     t.string   "school"
@@ -54,10 +55,6 @@ ActiveRecord::Schema.define(version: 20150424223447) do
     t.inet     "last_sign_in_ip"
     t.string   "first_name"
     t.string   "last_name"
-    t.string   "avatar_file_name"
-    t.string   "avatar_content_type"
-    t.integer  "avatar_file_size"
-    t.datetime "avatar_updated_at"
   end
 
   add_index "users", ["email"], name: "index_users_on_email", unique: true, using: :btree
