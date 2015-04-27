@@ -1,0 +1,140 @@
+// .grid {
+//   margin: 0 auto;
+//
+//
+//   &:after {
+//     /* Or @extend clearfix */
+//     content: "";
+//     display: table;
+//     clear: both;
+//   }
+// }
+
+.status-container{
+  width: 100%;
+  // margin: 75px 0 0 0;
+}
+
+[class*='col-'] {
+  float: left;
+  .grid &:last-of-type {
+  }
+}
+
+.col-1-12 {
+  width: 8.3%;
+}
+
+.col-2-12 {
+  width: 16.6%;
+}
+
+.col-3-12 {
+  width: 25%;
+}
+
+.col-4-12 {
+  width: 33.3%;
+}
+
+.col-5-12 {
+  width: 41.6%;
+}
+
+.col-6-12 {
+  width: 50%;
+}
+
+.col-7-12 {
+  width: 58.3%;
+}
+
+.col-8-12 {
+  width: 66.6%;
+}
+
+.col-12-12 {
+  width: 100%;
+}
+
+.clear {
+  float:none;
+}
+
+.f-right {
+  float:right;
+}
+
+.top {
+  height: 1000px;
+  background-color: $white;
+}
+
+.top-status {
+  padding: 10% 15% 18% 15%;
+}
+
+.top-status:nth-child(1)  {
+  background-color: $red;
+  color: $white;
+}
+
+.top-status:nth-child(2)  {
+  background-color: $beige;
+  color: $black;
+}
+
+.top-status:nth-child(3)  {
+  background-color: $peach;
+  color: $black;
+}
+.new{
+  height: 1000px;
+  background-color: $grey;
+}
+
+.new-status {
+  padding: 10% 15% 18% 15%;
+
+}
+
+.new-status:nth-child(1)  {
+  background-color: $grey;
+  color: $black;
+}
+
+.new-status:nth-child(2)  {
+  background-color: $lime;
+  color: $black;
+}
+
+.new-status:nth-child(3)  {
+  background-color: $white;
+  color: $black;
+}
+
+.new-status:nth-child(4)  {
+  background-color: $black;
+  color: $white;
+}
+
+.spark-icon {
+  height: 20px;
+  width: 12px;
+  margin: 1px 4px 0 0;
+}
+
+.sparks {
+  float: left;
+  width:50%;
+  margin-bottom: 1.5em;
+}
+
+.sparks ul li {
+  display: inline;
+}
+
+.comments {
+  float:right;
+  margin: .3em 0 1.5em 0;
+}
