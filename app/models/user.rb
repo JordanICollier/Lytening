@@ -15,6 +15,6 @@ class User < ActiveRecord::Base
     avatar.recreate_versions! if crop_x.present?
   end
 
-
+  accepts_nested_attributes_for :strykes
 
 end
