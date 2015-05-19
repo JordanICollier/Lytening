@@ -17,4 +17,8 @@ class User < ActiveRecord::Base
 
   accepts_nested_attributes_for :strykes
 
+  def full_name
+    first_name + " " + last_name
+  end
+
 end

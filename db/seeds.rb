@@ -48,7 +48,7 @@ User.create(location: "Denver",
             password: "password",
             first_name: "Runkle",
             last_name: "Bargefarge",
-            avatar: "bargefarge.jpg"
+            avatar: "bargefarge.png"
             )
 
 Stryke.create(body: "Is anybody even reading this?",
