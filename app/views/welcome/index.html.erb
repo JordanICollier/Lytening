@@ -2,17 +2,17 @@
 
   <div class="col-6-12">
     <div class="top">
-
+      <% @strykes_hot.each do |stryke| %>
       <div class="top-status">
-        <h2>JUNIPER</h2>
+        <h2><%= image_tag "#{stryke.user.avatar}", class: 'thumb' %> <%= link_to "#{stryke.user.full_name.upcase}", user_path(stryke.user), style: 'text-decoration: none' %></h2>
         <p>
-          Mixtape Williamsburg artisan, tilde freegan cred DIY aesthetic. Truffaut flexitarian narwhal quinoa. Gastropub PBR dreamcatcher XOXO, tote bag American Apparel YOLO mlkshk next level locavore 3 wolf moon. Beard literally church-key food truck blog, drinking vinegar keffiyeh post-ironic Vice typewriter meggings sriracha trust fund bitters artisan. Master cleanse whatever bicycle rights blog XOXO, vegan letterpress quinoa distillery selfies keytar meditation narwhal.
+          <%= "#{stryke.body}" %>
         </p>
         <div class="sparks">
 
           <ul>
             <li><%= image_tag "spark-icon-white.png", class:"spark-icon" %></li>
-            <li><strong>247</strong></li>
+            <li><strong><%= "#{stryke.spark_count}" %></strong></li>
             <li>sparks</li>
           </ul>
 
@@ -26,7 +26,7 @@
 
       </div>
 
-      <div class="top-status">
+      <!-- <div class="top-status">
         <h2>JUNIPER</h2>
         <p>
           https://www.behance.net/funandstuff
@@ -34,7 +34,7 @@
         <div class="sparks">
 
           <ul>
-            <li><%= image_tag "spark_icon.png", class:"spark-icon" %></li>
+            <li><%# image_tag "spark_icon.png", class:"spark-icon" %></li>
             <li><strong>247</strong></li>
             <li>sparks</li>
           </ul>
@@ -58,7 +58,7 @@
         <div class="sparks">
 
           <ul>
-            <li><%= image_tag "spark_icon.png", class:"spark-icon" %></li>
+            <li><%# image_tag "spark_icon.png", class:"spark-icon" %></li>
             <li><strong>247</strong></li>
             <li>sparks</li>
           </ul>
@@ -71,10 +71,11 @@
           </p>
         </div>
 
-      </div>
-
+      </div> -->
+      <% end %>
     </div>
   </div>
+
   <div class="col-6-12">
     <div class="new">
 
