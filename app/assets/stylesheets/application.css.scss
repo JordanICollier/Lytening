@@ -1,13 +1,18 @@
 *, *:before, *:after {
   box-sizing: border-box;
 }
+@import "jquery.Jcrop";
 @import "color";
 @import "reset";
 @import "header";
 @import "type";
 @import "layout";
 
-
+.user-container {
+  background-color: $white;
+  width: 1200px;
+  height: 1200px;
+}
 
 /*.avatar {
   height: 161px;

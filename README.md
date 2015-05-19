@@ -6,6 +6,7 @@
   •create a status
     -hyjack
   •Profile-picture
+  •titles?
   •about
     -location
     -work
@@ -17,6 +18,8 @@
   •buddy
     -following
     -mutual
+  •feed
+    -users can see what this person has recently       sparked
 
 -Statuses
   •media-file
@@ -24,3 +27,4 @@
   •hyperlink
   •user_id
   •created at
+-
