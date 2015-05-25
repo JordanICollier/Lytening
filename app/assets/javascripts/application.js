@@ -11,7 +11,15 @@
 // about supported directives.
 //
 //= require jquery
+//= require jquery-ui
 //= require jquery_ujs
 //= require jquery.Jcrop
 
 //= require_tree .
+$(function() {
+    $( ".comments" ).accordion({
+      active: false,
+      collapsible: true,
+      heightStyle: "content"
+    });
+  });
