@@ -4,7 +4,7 @@
     <div class="top">
       <% @strykes_hot.each do |stryke| %>
       <div class="top-status">
-        <h2><%= image_tag "#{stryke.user.avatar}", class: 'thumb' %> <%= link_to "#{stryke.user.full_name.upcase}", user_path(stryke.user), style: 'text-decoration: none' %></h2>
+        <h2><%= image_tag "#{stryke.user.avatar}", class: 'thumb' %> <%= link_to "#{stryke.user.full_name.upcase}", user_path(stryke.user), class:"spark-header" %></h2>
         <p>
           <%= "#{stryke.body}" %>
         </p>

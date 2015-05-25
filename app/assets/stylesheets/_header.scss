@@ -29,8 +29,10 @@ nav {
 
 .mobile {
   float: left;
-  position: relative;
   overflow: hidden;
+  height: auto;
+  background-color: $white;
+
 }
 
 #toggle-menu {
@@ -48,14 +50,15 @@ nav {
 .sidenav {
   background: $red;
   width: 25%;
+  // height: 10000px;
   position: absolute;
   right: 0;
   top: 0;
   bottom: 0;
   text-align: center;
-  -webkit-box-shadow: inset 10px 0px 18px -7px rgba(0,0,0,0.5);
-  -moz-box-shadow: inset 10px 0px 18px -7px rgba(0,0,0,0.5);
-  box-shadow: inset 10px 0px 18px -7px rgba(0,0,0,0.5);
+  // -webkit-box-shadow: inset 10px 0px 18px -7px rgba(0,0,0,0.5);
+  // -moz-box-shadow: inset 10px 0px 18px -7px rgba(0,0,0,0.5);
+  // box-shadow: inset 10px 0px 18px -7px rgba(0,0,0,0.5);
 }
 
 .sidenav li {
