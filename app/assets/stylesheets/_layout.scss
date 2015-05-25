@@ -152,6 +152,7 @@ $num: 1;
 .sparks {
   float: left;
   width:50%;
+  z-index:1;
   margin-bottom: 1.5em;
 }
 
@@ -161,5 +162,16 @@ $num: 1;
 
 .comments {
   float:right;
+  text-align:right;
+  width: 50%;
+  // background-color:blue;
+  position: relative;
   margin: .3em 0 1.5em 0;
+}
+
+.comments:focus{
+  outline: 0;
+}
+.comment-indi{
+  width:100%;
 }
