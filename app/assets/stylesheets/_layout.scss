@@ -74,20 +74,29 @@
   padding: 10% 15% 18% 15%;
 }
 
-.top-status:nth-child(1)  {
-  background-color: $red;
-  color: $white;
+$topNum: 1;
+$endNum: 20;
+@for $item from 1 through $endNum {
+  .top-status:nth-child(#{$topNum})  {
+    background-color: $red;
+    color: $white;
+    $topNum: $topNum + 1;
+  }
+
+  .top-status:nth-child(#{$topNum})  {
+    background-color: $beige;
+    color: $black;
+    $topNum: $topNum + 1;
+  }
+
+  .top-status:nth-child(#{$topNum})  {
+    background-color: $peach;
+    color: $black;
+    $topNum: $topNum + 1;
+    $endNum: $endNum * 2;
+  }
 }
 
-.top-status:nth-child(2)  {
-  background-color: $beige;
-  color: $black;
-}
-
-.top-status:nth-child(3)  {
-  background-color: $peach;
-  color: $black;
-}
 .new{
   height: 1000px;
   background-color: $grey;
@@ -95,27 +104,36 @@
 
 .new-status {
   padding: 10% 15% 18% 15%;
-
 }
 
-.new-status:nth-child(1)  {
-  background-color: $grey;
-  color: $black;
-}
+$num: 1;
+@for $item from 1 through $endNum{
+  .new-status:nth-child(#{$num})  {
+    background-color: $grey;
+    color: $black;
+    $num: $num + 1;
+  }
 
-.new-status:nth-child(2)  {
-  background-color: $lime;
-  color: $black;
-}
+  .new-status:nth-child(#{$num})  {
+    background-color: $lime;
+    color: $black;
+    $num: $num + 1;
 
-.new-status:nth-child(3)  {
-  background-color: $white;
-  color: $black;
-}
+  }
 
-.new-status:nth-child(4)  {
-  background-color: $black;
-  color: $white;
+  .new-status:nth-child(#{$num})  {
+    background-color: $white;
+    color: $black;
+    $num: $num + 1;
+
+  }
+
+  .new-status:nth-child(#{$num})  {
+    background-color: $black;
+    color: $white;
+    $num: $num + 1;
+
+  }
 }
 
 .spark-icon {
