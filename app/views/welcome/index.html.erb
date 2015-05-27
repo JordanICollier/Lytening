@@ -19,9 +19,13 @@
         </div>
 
         <div class="comments">
-          <h4>10 comments</h4>
+          <h4><%= "#{stryke.comments.count}" %> comments</h4>
           <div class='comment-indi'>
-            10 comments
+            <% stryke.comments.each do |comment| %>
+              <%= comment.user %>
+              <%= comment.body %>
+              <%= comment.spark_count %>
+            <% end %>
           </div>
         </div>
 
@@ -52,9 +56,13 @@
         </div>
 
         <div class="comments">
-          <h4>10 comments</h4>
+          <h4><%= "#{stryke.comments.count}" %> comments</h4>
           <div class='comment-indi'>
-            10 comments
+            <% stryke.comments.each do |comment| %>
+              <%= comment.user %>
+              <%= comment.body %>
+              <%= comment.spark_count %>
+            <% end %>
           </div>
         </div>
 
