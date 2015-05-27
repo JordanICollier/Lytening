@@ -1,5 +1,9 @@
 # Lytening
 
+To do
+  • Affix navbar
+  • 
+
 -create database with users table that has self-relationship
 
 -User
