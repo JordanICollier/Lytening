@@ -78,3 +78,15 @@ Stryke.create(body: "Within 24 hours",
               updated_at: '2015-05-28 11:10:00',
               user_id: 3
               )
+
+Comment.create(body: "So 24 hours ago!",
+               stryke_id: 4,
+               spark_count: 3,
+               user_id: 1
+               )
+
+Comment.create(body: "Comments?",
+              stryke_id: 4,
+              spark_count: 2,
+              user_id: 2
+              )
