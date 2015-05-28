@@ -5,6 +5,7 @@
       <% @strykes_hot_recent.each do |stryke| %>
       <div class="top-status">
         <h2><%= image_tag "#{stryke.user.avatar}", class: 'thumb' %> <%= link_to "#{stryke.user.full_name.upcase}", user_path(stryke.user), class:"spark-header" %></h2>
+        <div class="countdown" data-timer="86400"></div>
         <p>
           <%= "#{stryke.body}" %>
         </p>
