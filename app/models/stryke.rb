@@ -3,6 +3,8 @@ class Stryke < ActiveRecord::Base
   belongs_to :user
   has_many :comments
 
+  accepts_nested_attributes_for :comments
+
   # Old hotness algorithm
   # def hotness(stryke)
   #   s = stryke.created_at
