@@ -2,7 +2,7 @@
 <!-- Hot Strykes -->
   <div class="col-6-12">
     <div class="top">
-      <% @strykes_hot.each do |stryke| %>
+      <% @strykes_hot_recent.each do |stryke| %>
       <div class="top-status">
         <h2><%= image_tag "#{stryke.user.avatar}", class: 'thumb' %> <%= link_to "#{stryke.user.full_name.upcase}", user_path(stryke.user), class:"spark-header" %></h2>
         <p>
@@ -38,7 +38,7 @@
 <!-- New Strykes -->
   <div class="col-6-12">
     <div class="new">
-      <% @strykes_new.each do |stryke| %>
+      <% @strykes_new_recent.each do |stryke| %>
       <div class="new-status">
 
         <h2><%= image_tag "#{stryke.user.avatar}", class: 'thumb' %> <%= link_to "#{stryke.user.full_name.upcase}", user_path(stryke.user), class:"spark-header" %></h2>
