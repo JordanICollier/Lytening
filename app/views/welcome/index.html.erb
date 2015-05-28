@@ -26,6 +26,11 @@
             <p><%= comment.body %></p>
             <p><%= comment.spark_count %> sparks</p>
             <% end %>
+            <!-- Comment form -->
+            <%= simple_form_for([stryke, @comment]) do |f| %>
+              <%= f.text_field :body %>
+              <%= f.button :submit %>
+            <% end %>
           </div>
         </div>
 
@@ -62,6 +67,11 @@
               <h6><%= image_tag "#{comment.user.avatar}", class: 'thumb' %> <%= link_to "#{comment.user.full_name}", user_path(comment.user), class:"spark-header" %></h6>
               <p><%= comment.body %></p>
               <p><%= comment.spark_count %> sparks</p>
+            <% end %>
+            <!-- Comment form -->
+            <%= simple_form_for([stryke, @comment]) do |f| %>
+              <%= f.text_field :body %>
+              <%= f.button :submit %>
             <% end %>
           </div>
         </div>
