@@ -16,6 +16,8 @@ class WelcomeController < ApplicationController
         @strykes_new_recent << stryke
       end
     end
+    
+    @comment = Comment.new
   end
 
 end
