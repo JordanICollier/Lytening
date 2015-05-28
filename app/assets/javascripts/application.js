@@ -14,7 +14,7 @@
 //= require jquery-ui
 //= require jquery_ujs
 //= require jquery.Jcrop
-
+//= TimeCircles
 //= require_tree .
 $(function() {
     $( ".comments" ).accordion({
@@ -22,4 +22,32 @@ $(function() {
       collapsible: true,
       heightStyle: "content"
     });
-  });
+
+    $(".countdown").TimeCircles({
+      "start": true,
+      "direction": "Counter-clockwise",
+      "animation": "smooth",
+      "time": {
+          "Days": {
+              "text": "Days",
+              "color": "#FFCC66",
+              "show": false
+          },
+          "Hours": {
+              "text": "Hours",
+              "color": "#99CCFF",
+              "show": true
+          },
+          "Minutes": {
+              "text": "Minutes",
+              "color": "#BBFFBB",
+              "show": true
+          },
+          "Seconds": {
+              "text": "Seconds",
+              "color": "#FF9999",
+              "show": true
+          }
+      }
+    });
+});
