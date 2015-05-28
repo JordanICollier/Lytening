@@ -74,7 +74,7 @@ Stryke.create(body: "Life is like a box of horseshoe mayonnaise; WHIPPLE!",
 
 Stryke.create(body: "Within 24 hours",
               spark_count: 13,
-              created_at: '2015-05-28 02:49:00',
-              updated_at: '2015-05-28 02:49:00',
+              created_at: '2015-05-28 11:10:00',
+              updated_at: '2015-05-28 11:10:00',
               user_id: 3
               )
