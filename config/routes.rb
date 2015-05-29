@@ -7,6 +7,9 @@ Rails.application.routes.draw do
   resources :strykes do
     resources :comments
   end
+
+  resources :followings
+  
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 
