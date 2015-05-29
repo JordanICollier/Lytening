@@ -23,3 +23,25 @@ $(function() {
       heightStyle: "content"
     });
   });
+
+// ajax call on comment
+  $(function() {
+    $("#hot-comment").on('click', function(e) {
+      e.preventDefault();
+      var strykeId = e.target.form[2].defaultValue;
+      var comment = e.target.form[3].value;
+      $.ajax({
+        url: "/strykes/" + strykeId + "/comments",
+        method: "POST",
+        contentType: "application/json",
+        data: JSON.stringify({
+          comment: {
+            body: comment
+          }
+        })
+      }).done(function(data){
+        console.log(data);
+      });
+    });
+
+  });
