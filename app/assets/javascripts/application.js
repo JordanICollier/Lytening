@@ -36,17 +36,17 @@ $(function() {
           "Hours": {
               "text": "Hours",
               "color": "#99CCFF",
-              "show": true
+              "show": false
           },
           "Minutes": {
               "text": "Minutes",
               "color": "#BBFFBB",
-              "show": true
+              "show": false
           },
           "Seconds": {
               "text": "Seconds",
               "color": "#FF9999",
-              "show": true
+              "show": false
           }
       }
     });
