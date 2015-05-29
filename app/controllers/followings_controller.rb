@@ -12,7 +12,7 @@ class FollowingsController < ApplicationController
   def destroy
     @following = current_user.followings.find(params[:id])
     @following.destroy
-    redirect_to root_path
+    redirect_to :back
   end
 
 end
