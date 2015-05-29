@@ -33,7 +33,7 @@
   <% unless current_user.followers.include? @user %>
     <p><%= link_to "Follow", followings_path(:follower_id => @user.id), :method => :post %></p>
   <% else %>
-    <p><%= link_to "Unfollow", following_path(@user.id), :method => :delete %></p>
+    <p><%= link_to "Unfollow", following_path(current_user.followings.find_by(follower_id: @user.id)), :method => :delete %></p>
   <% end %>
 <% end %>
 </div>
