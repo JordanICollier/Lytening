@@ -5,6 +5,11 @@
       <% @strykes_hot_recent.each do |stryke| %>
       <div class="top-status">
         <h2><%= image_tag "#{stryke.user.avatar}", class: 'thumb' %> <%= link_to "#{stryke.user.full_name.upcase}", user_path(stryke.user), class:"spark-header" %></h2>
+        <%# unless stryke.user.id %>
+          <p><%= link_to "Follow", followings_path(:follower_id => stryke.user.id), :method => :post %></p>
+        <%# else %>
+          <p><%= link_to "Unfollow", following_path(:follower_id), :method => :delete %></p>
+        <%# end %>
         <div class="countdown" data-timer="86400"></div>
         <p>
           <%= "#{stryke.body}" %>
