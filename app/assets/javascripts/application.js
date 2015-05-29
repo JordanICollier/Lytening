@@ -14,7 +14,7 @@
 //= require jquery-ui
 //= require jquery_ujs
 //= require jquery.Jcrop
-
+//= TimeCircles
 //= require_tree .
 $(function() {
     $( ".comments" ).accordion({
@@ -22,10 +22,11 @@ $(function() {
       collapsible: true,
       heightStyle: "content"
     });
-  });
+
+
 
 // ajax call on comment
-  $(function() {
+
     $("#hot-comment").on('click', function(e) {
       e.preventDefault();
       var strykeId = e.target.form[2].defaultValue;
@@ -44,4 +45,33 @@ $(function() {
       });
     });
 
-  });
+
+
+    $(".countdown").TimeCircles({
+      "start": true,
+      "direction": "Counter-clockwise",
+      "animation": "smooth",
+      "time": {
+          "Days": {
+              "text": "Days",
+              "color": "#FFCC66",
+              "show": false
+          },
+          "Hours": {
+              "text": "Hours",
+              "color": "#99CCFF",
+              "show": false
+          },
+          "Minutes": {
+              "text": "Minutes",
+              "color": "#BBFFBB",
+              "show": false
+          },
+          "Seconds": {
+              "text": "Seconds",
+              "color": "#FF9999",
+              "show": false
+          }
+      }
+    });
+    });

@@ -4,7 +4,7 @@ class WelcomeController < ApplicationController
     @strykes_hot_recent = []
     @strykes_hot = Stryke.order(created_at: :asc).order(spark_count: :asc).distinct
     @strykes_hot.each do |stryke|
-      if Time.now.utc.to_i - stryke.created_at.to_i < 100000
+      if DateTime.now.utc - 24.hours <= stryke.created_at
         @strykes_hot_recent << stryke
       end
     end
@@ -12,11 +12,11 @@ class WelcomeController < ApplicationController
     @strykes_new_recent = []
     @strykes_new = Stryke.order(created_at: :desc).distinct.all
     @strykes_new.each do |stryke|
-      if Time.now.utc.to_i - stryke.created_at.to_i < 100000
+      if DateTime.now.utc - 24.hours <= stryke.created_at
         @strykes_new_recent << stryke
       end
     end
-    
+
     @comment = Comment.new
   end
 
