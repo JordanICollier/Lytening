@@ -1,8 +1,8 @@
 # Lytening
 
 To do
-  • Affix navbar
-  • 
+  • [√] Affix navbar
+  • [x] Validate and check for empty comment  
 
 -create database with users table that has self-relationship
 

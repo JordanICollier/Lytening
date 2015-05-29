@@ -34,8 +34,9 @@
             <% end %>
             <!-- Comment form -->
             <%= simple_form_for([stryke, @comment]) do |f| %>
+              <%= f.hidden_field :title, :value => stryke.id %>
               <%= f.text_field :body %>
-              <%= f.button :submit %>
+              <%= f.button :submit, id: "hot-comment" %>
             <% end %>
           </div>
         </div>
@@ -77,7 +78,7 @@
             <!-- Comment form -->
             <%= simple_form_for([stryke, @comment]) do |f| %>
               <%= f.text_field :body %>
-              <%= f.button :submit %>
+              <%= f.button :submit, id: "fresh-comment" %>
             <% end %>
           </div>
         </div>
