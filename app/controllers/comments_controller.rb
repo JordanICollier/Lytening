@@ -11,7 +11,7 @@ class CommentsController < ApplicationController
     @comment.user_id = current_user.id
     @comment.spark_count = 0
     if @comment.save
-      render :json => @comment
+      render partial: 'welcome/comment', locals: {comment: @comment}
     else
       render :new
     end
