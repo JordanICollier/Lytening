@@ -25,7 +25,7 @@
             <% stryke.comments.each do |comment| %>
             <h6><%= image_tag "#{comment.user.avatar}", class: 'thumb' %> <%= link_to "#{comment.user.full_name}", user_path(comment.user), class:"spark-header" %></h6>
             <p><%= comment.body %></p>
-            <p><%= comment.spark_count %> sparks</p>
+            <p><%= image_tag "spark-icon-white.png", class:"spark-icon" %> <%= comment.spark_count %> sparks</p>
             <% end %>
             <!-- Comment form -->
             <%= simple_form_for([stryke, @comment]) do |f| %>
@@ -68,7 +68,7 @@
             <% stryke.comments.each do |comment| %>
               <h6><%= image_tag "#{comment.user.avatar}", class: 'thumb' %> <%= link_to "#{comment.user.full_name}", user_path(comment.user), class:"spark-header" %></h6>
               <p><%= comment.body %></p>
-              <p><%= comment.spark_count %> sparks</p>
+              <p><%= image_tag "spark_icon.png", class:"spark-icon" %> <%= comment.spark_count %> sparks</p>
             <% end %>
             <!-- Comment form -->
             <%= simple_form_for([stryke, @comment]) do |f| %>
