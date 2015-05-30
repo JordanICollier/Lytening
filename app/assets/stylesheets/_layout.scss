@@ -85,6 +85,11 @@ $topNum: 1;
 $endNum: 20;
 @for $item from 1 through $endNum {
 
+  .comment-indi:nth-child(#{$topNum}){
+    background-color: $red;
+    color: $white;
+  }
+
   .top-status:nth-child(#{$topNum})  {
     background-color: $red;
     color: $white;
@@ -117,6 +122,10 @@ $endNum: 20;
 
 $num: 1;
 @for $item from 1 through $endNum{
+  .comment-indi:nth-child(#{$num}){
+    background-color: $red;
+    color: $black;
+  }
   .new-status:nth-child(#{$num})  {
     background-color: $grey;
     color: $black;
@@ -156,20 +165,23 @@ $num: 1;
 }
 
 .sparks {
+  position: absolute;
   float: left;
-  width:50%;
   z-index:1;
   margin-bottom: 1.5em;
 }
 
 .sparks ul li {
-  display: inline;
+  width:20px;
+  // margin: 0 0 0 11px;
+  float:left;
 }
 
 .comments {
   float:right;
   text-align:right;
-  width: 50%;
+  width: 100%;
+  cursor: pointer;
   // background-color:blue;
   position: relative;
   margin: .3em 0 1.5em 0;
@@ -180,4 +192,5 @@ $num: 1;
 }
 .comment-indi{
   width:100%;
+  background-color: blue;
 }
