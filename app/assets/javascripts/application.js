@@ -41,7 +41,11 @@ $(function() {
           }
         })
       }).done(function(data){
-        console.log(data);
+        $('.comment-indi')
+          .first()
+          .children('.comment')
+          .last()
+          .after(data);
       });
     });
 
