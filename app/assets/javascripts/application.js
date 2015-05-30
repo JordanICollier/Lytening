@@ -14,16 +14,16 @@
 //= require jquery-ui
 //= require jquery_ujs
 //= require jquery.Jcrop
-//= TimeCircles
+//= require sparks
+//= require TimeCircles
 //= require_tree .
+
 $(function() {
     $( ".comments" ).accordion({
       active: false,
       collapsible: true,
       heightStyle: "content"
     });
-
-
 
 // ajax call on comment
 
@@ -45,8 +45,7 @@ $(function() {
       });
     });
 
-
-
+// TimeCircles
     $(".countdown").TimeCircles({
       "start": true,
       "direction": "Counter-clockwise",
@@ -74,4 +73,4 @@ $(function() {
           }
       }
     });
-    });
+});
