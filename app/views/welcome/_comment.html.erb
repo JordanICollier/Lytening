@@ -1,0 +1,11 @@
+<div class="comment">
+  <h6><%= image_tag "#{comment.user.avatar}", class: 'thumb' %> <%= link_to "#{comment.user.full_name}", user_path(comment.user), class:"spark-header" %></h6>
+  <p><%= comment.body %></p>
+  <div class="sparks">
+    <ul>
+      <li><%= image_tag "spark-icon-white.png", class:"spark-icon" %></li>
+      <li><strong><%= comment.spark_count %></strong></li>
+      <li>sparks</li>
+    </ul>
+  </div>
+</div>
