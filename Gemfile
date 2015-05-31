@@ -33,6 +33,8 @@ gem 'carrierwave'
 gem 'rmagick'
 gem 'simple_form', '~> 3.1.0'
 
+gem 'auto_html'
+
 # Use Unicorn as the app server
 # gem 'unicorn'
 
