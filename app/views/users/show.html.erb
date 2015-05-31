@@ -1,41 +1,52 @@
 <div class="user-container">
+  <div class="col-6-12 user-stats">
+    <div class="user-avatar">
 
-<% if current_user == @user %>
-  <%= form_for @user, {:url => user_strykes_path(@user), method: :post } do |f| %>
+    </div>
+    <% if current_user == @user %>
+      <%= form_for @user, {:url => user_strykes_path(@user), method: :post } do |f| %>
 
-    <%= fields_for @stryke do |fs| %>
-      <%= fs.text_field :body %>
+        <%= fields_for @stryke do |fs| %>
+          <%= fs.text_field :body %>
+        <% end %>
+
+        <%= f.submit "Stryke!" %>
+
+      <% end %>
+    <% end %>
+    <%= image_tag @user.avatar_url(:thumb) %>
+
+    <strong>WORK</strong><br>
+    <%= @user.work %><br>
+
+
+    <% if current_user %>
+    <%= link_to "Edit?", edit_user_path(current_user) %>
+    <% end %>
+    <%= image_tag @user.avatar_url(:thumb) %>
+
+    <!-- These are the Follow / Unfollow links -->
+    <% unless current_user == @user %>
+      <% unless current_user.followers.include? @user %>
+        <p><%= link_to "Follow", followings_path(:follower_id => @user.id), :method => :post %></p>
+      <% else %>
+        <p><%= link_to "Unfollow", following_path(current_user.followings.find_by(follower_id: @user.id)), :method => :delete %></p>
+      <% end %>
     <% end %>
 
-    <%= f.submit "Stryke!" %>
+  </div>
 
-  <% end %>
-<% end %>
+  <div class="col-6-12 user-comments">
 
-<%# @user.strykes.order(created_at: :desc).first.body %>
-
-<!-- •HEY ANDREW- THIS BELOW ALLOWS A USER TO SEE ALL OF HIS/HER POSTS ONLY IF
-      THEY ARE THE CURRENT USER CAN THEY SEE THE HISTORY OF THEIR OWN POSTS -->
-<% if current_user %>
-  <% @user.strykes.order(created_at: :desc).each do |stryke| %>
-    <%= stryke.body %><br>
-  <% end %>
-<% end %>
-<strong>WORK</strong><br>
-<%= @user.work %><br>
-
-<% if current_user %>
-<%= link_to "Edit?", edit_user_path(current_user) %>
-<% end %>
-<%= image_tag @user.avatar_url(:thumb) %>
-
-<!-- These are the Follow / Unfollow links -->
-<% unless current_user == @user %>
-  <% unless current_user.followers.include? @user %>
-    <p><%= link_to "Follow", followings_path(:follower_id => @user.id), :method => :post %></p>
-  <% else %>
-    <p><%= link_to "Unfollow", following_path(current_user.followings.find_by(follower_id: @user.id)), :method => :delete %></p>
-  <% end %>
-<% end %>
+    <!-- •HEY ANDREW- THIS BELOW ALLOWS A USER TO SEE ALL OF HIS/HER POSTS ONLY IF
+          THEY ARE THE CURRENT USER CAN THEY SEE THE HISTORY OF THEIR OWN POSTS -->
+    <h1>Stryke's</h1>
+    <% if current_user %>
+      <% @user.strykes.order(created_at: :desc).each do |stryke| %>
+        <%= stryke.body %><br>
+      <% end %>
+    <% end %>
+    <%# @user.strykes.order(created_at: :desc).first.body %>
+  </div>
 
 </div>

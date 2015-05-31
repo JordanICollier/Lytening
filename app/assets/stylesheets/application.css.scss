@@ -9,14 +9,7 @@
 @import "type";
 @import "layout";
 @import "comments";
-
-.user-container {
-  background-color: $white;
-  width: 1200px;
-  height: 1200px;
-  // position: fixed;
-  padding-top: 75px;
-}
+@import "user";
 
 /*.avatar {
   height: 161px;
