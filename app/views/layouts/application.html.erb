@@ -18,7 +18,7 @@
     <input type="checkbox" id="toggle-menu" />
     <ul class="sidenav">
       <%= link_to(image_tag("lytening-logo-white.png", class:"sidenav-logo"), "#") %><hr>
-      <li><%= link_to 'Search', "#" %></li>
+      <li class="search-space"><input type="text" id="search-bar" placeholder="Search"><input type="submit" value="Search" class="search-btn"></input></li>
       <li><%# link_to 'Profile', user_path(current_user) %></li>
       <li>
       <% if user_signed_in? %>
