@@ -17,7 +17,7 @@
         <div class="sparks">
 
           <ul>
-            <li><%= image_tag "spark-icon-white.png", class:"spark-icon" %></li>
+            <li><%= image_tag "spark-icon-white.png", class:"spark-icon", id:"#{stryke.id} #{stryke.user.id}" %></li>
             <li><strong><%= "#{stryke.spark_count}" %></strong></li>
             <li>sparks</li>
           </ul>
@@ -68,7 +68,7 @@
         <div class="sparks">
 
           <ul>
-            <li><%= image_tag "spark_icon.png", class:"spark-icon" %></li>
+            <li><%= image_tag "spark_icon.png", class:"spark-icon", id:"#{stryke.id}" %></li>
             <li><strong><%= "#{stryke.spark_count}" %></strong></li>
             <li>sparks</li>
           </ul>
@@ -80,16 +80,7 @@
           <div class='content'>
             <ul>
             <% stryke.comments.each do |comment| %>
-              <h6><%= image_tag "#{comment.user.avatar}", class: 'thumb' %> <%= link_to "#{comment.user.full_name}", user_path(comment.user), class:"spark-header" %></h6>
-              <p><%= comment.body %></p>
-              <div class="sparks">
-                <ul>
-                  <li><%= image_tag "spark-icon-white.png", class:"spark-icon" %></li>
-                  <li><strong><%= comment.spark_count %></strong></li>
-                  <li>sparks</li>
-                </ul>
-              </div>
-            </ul>
+            <%= render partial: "comment", locals: {comment: comment} %>
             <% end %>
             <!-- Comment form -->
             <div class="form">
