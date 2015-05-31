@@ -92,23 +92,43 @@ $endNum: 20;
 
 
   .top-status:nth-child(#{$topNum})  {
-    background-color: $red;
+    background-color: $blue1;
     color: $white;
     $topNum: $topNum + 1;
   }
 
   .top-status:nth-child(#{$topNum})  {
-    background-color: $beige;
-    color: $black;
+    background-color: $blue2;
+    color: $white;
     $topNum: $topNum + 1;
   }
 
   .top-status:nth-child(#{$topNum})  {
-    background-color: $peach;
-    color: $black;
+    background-color: $purple1;
+    color: $white;
+    $topNum: $topNum + 1;
+  }
+
+  .top-status:nth-child(#{$topNum})  {
+    background-color: $purple2;
+    color: $white;
+    $topNum: $topNum + 1;
+  }
+
+  .top-status:nth-child(#{$topNum})  {
+    background-color: $purple1;
+    color: $white;
+    $topNum: $topNum + 1;
+  }
+
+  .top-status:nth-child(#{$topNum})  {
+    background-color: $blue2;
+    color: $white;
     $topNum: $topNum + 1;
     $endNum: $endNum + 2;
+
   }
+
 }
 
 .new{
