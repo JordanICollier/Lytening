@@ -72,23 +72,21 @@ html, body {
 }
 
 .top {
-  height: 1000px;
+  position:relative;
+  // height: 1000px;
   background-color: $white;
   margin-top: 75px;
 }
 
 .top-status {
   padding: 10% 15% 18% 15%;
+  position:inherit;
 }
 
 $topNum: 1;
 $endNum: 20;
 @for $item from 1 through $endNum {
 
-  .comment-indi:nth-child(#{$topNum}){
-    background-color: $red;
-    color: $white;
-  }
 
   .top-status:nth-child(#{$topNum})  {
     background-color: $red;
@@ -114,6 +112,7 @@ $endNum: 20;
   height: 1000px;
   background-color: $grey;
   margin-top: 75px;
+  clear:both;
 }
 
 .new-status {
@@ -122,10 +121,7 @@ $endNum: 20;
 
 $num: 1;
 @for $item from 1 through $endNum{
-  .comment-indi:nth-child(#{$num}){
-    background-color: $red;
-    color: $black;
-  }
+
   .new-status:nth-child(#{$num})  {
     background-color: $grey;
     color: $black;
@@ -177,20 +173,39 @@ $num: 1;
   float:left;
 }
 
-.comments {
-  float:right;
-  text-align:right;
-  width: 100%;
-  cursor: pointer;
-  // background-color:blue;
-  position: relative;
-  margin: .3em 0 1.5em 0;
-}
+// .comments {
+//   float:right;
+//   text-align:right;
+//   width: 100%;
+//   cursor: pointer;
+//   // background-color:blue;
+//   // position: relative;
+//   margin: .3em 0 1.5em 0;
+// }
+//
+// .comments:focus{
+//   outline: 0;
+// }
+// .comment-indi{
+//   width:100%;
+//   // position:relative;
+//   display: block;
+// }
+.ui-state-focus { outline: none; }
+.ui-accordion-header {outline: none;}
 
-.comments:focus{
-  outline: 0;
+.comments {
+    width:100%;
 }
-.comment-indi{
-  width:100%;
-  background-color: blue;
+.comments div {
+    width:100%;
+}
+.comments .header {
+    text-align:right;
+    // padding: 2px;
+    cursor: pointer;
+}
+.comments .content {
+    display: none;
+    padding : 5px;
 }

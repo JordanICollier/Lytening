@@ -20,18 +20,20 @@
         </div>
 
         <div class="comments">
-          <h4><%= "#{stryke.comments.count}" %> comments</h4>
-          <div class='comment-indi'>
-            <% stryke.comments.each do |comment| %>
-            <%= render partial: "comment", locals: {comment: comment} %>
-            <% end %>
-            <!-- Comment form -->
-            <%= simple_form_for([stryke, @comment]) do |f| %>
-              <%= f.hidden_field :title, :value => stryke.id %>
-              <%= f.text_field :body %>
-              <%= f.button :submit, id: "hot-comment" %>
-            <% end %>
-          </div>
+          <div class="header"><%= "#{stryke.comments.count}" %> comments</div>
+            <div class='content'>
+              <ul>
+                <% stryke.comments.each do |comment| %>
+                <li><%= render partial: "comment", locals: {comment: comment} %></li>
+                <% end %>
+              </ul>
+              <!-- Comment form -->
+              <%= simple_form_for([stryke, @comment]) do |f| %>
+                <%= f.hidden_field :title, :value => stryke.id %>
+                <%= f.text_field :body %>
+                <%= f.button :submit, id: "hot-comment" %>
+              <% end %>
+            </div>
         </div>
 
       </div>
@@ -61,8 +63,9 @@
         </div>
 
         <div class="comments">
-          <h4><%= "#{stryke.comments.count}" %> comments</h4>
-          <div class='comment-indi'>
+          <div class="header"><%= "#{stryke.comments.count}" %> comments</div>
+          <div class='content'>
+            <ul>
             <% stryke.comments.each do |comment| %>
               <h6><%= image_tag "#{comment.user.avatar}", class: 'thumb' %> <%= link_to "#{comment.user.full_name}", user_path(comment.user), class:"spark-header" %></h6>
               <p><%= comment.body %></p>
@@ -73,6 +76,7 @@
                   <li>sparks</li>
                 </ul>
               </div>
+            </ul>
             <% end %>
             <!-- Comment form -->
             <%= simple_form_for([stryke, @comment]) do |f| %>
