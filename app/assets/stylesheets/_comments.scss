@@ -1,0 +1,55 @@
+.comments {
+    width:100%;
+}
+.comments div {
+    width:100%;
+}
+.comments .header {
+    text-align:right;
+    // padding: 2px;
+    cursor: pointer;
+}
+.comments .content {
+    display: none;
+    padding : 5px;
+}
+
+.form{
+  margin: 100px 0 0 0;
+  // position: absolute;
+}
+
+#comment_body{
+  width:90%;
+  height: 30px;
+  background-color: rgba(255,255,255,0);
+  border-color: $black;
+  opacity: 0.5;
+  border-top-left-radius: 20px;
+  border-bottom-left-radius: 20px;
+  // float: left;
+  margin: 0;
+  padding: 0 0 0 10px;
+}
+
+#comment_body:focus{
+  outline: none;
+}
+
+input.btn{
+  position:absolute;
+  width:8%;
+  height: 30px;
+  background-color: rgba(255,255,255,0);
+  border-color: $black;
+  opacity: 0.5;
+  border-top-right-radius: 20px;
+  border-bottom-right-radius: 20px;
+  cursor: pointer;
+  // margin: 15px 0 0 0;
+  padding: 0 0 0 0;
+}
+
+input:focus{
+  outline: none;
+}

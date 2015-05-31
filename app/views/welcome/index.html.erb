@@ -28,11 +28,13 @@
                 <% end %>
               </ul>
               <!-- Comment form -->
-              <%= simple_form_for([stryke, @comment]) do |f| %>
-                <%= f.hidden_field :title, :value => stryke.id %>
-                <%= f.text_field :body %>
-                <%= f.button :submit, id: "hot-comment" %>
-              <% end %>
+              <div class="form">
+                <%= simple_form_for([stryke, @comment]) do |f| %>
+                  <%= f.hidden_field :title, :value => stryke.id %>
+                  <%= f.text_field :body %>
+                  <%= f.button :submit , id: "hot-comment", value: "Enter" %>
+                <% end %>
+              </div>
             </div>
         </div>
 
@@ -79,10 +81,13 @@
             </ul>
             <% end %>
             <!-- Comment form -->
-            <%= simple_form_for([stryke, @comment]) do |f| %>
-              <%= f.text_field :body %>
-              <%= f.button :submit, id: "fresh-comment" %>
-            <% end %>
+            <div class="form">
+              <%= simple_form_for([stryke, @comment]) do |f| %>
+                <%= f.text_field :body %>
+                <%= f.button :submit, id: "fresh-comment", value: "Enter" %>
+              <% end %>
+            </div>
+
           </div>
         </div>
 

@@ -8,6 +8,7 @@
 @import "header";
 @import "type";
 @import "layout";
+@import "comments";
 
 .user-container {
   background-color: $white;
@@ -23,8 +24,8 @@
 }*/
 
 .thumb {
-  height: 50px;
-  width: 50px;
+  height: 40px;
+  width: 40px;
   border-radius: 50%;
   opacity: .8;
 }

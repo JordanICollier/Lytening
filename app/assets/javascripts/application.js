@@ -24,7 +24,7 @@ $(function() {
 
         $header = $(this);
         $content = $header.next();
-        $content.slideToggle(500, function () {
+        $content.slideToggle(300, function () {
         });
 
     });
