@@ -1,11 +1,26 @@
-<div class="comment">
-  <h6><%= image_tag "#{comment.user.avatar}", class: 'thumb' %> <%= link_to "#{comment.user.full_name}", user_path(comment.user), class:"spark-header" %></h6>
-  <p><%= comment.body %></p>
-  <div class="sparks">
-    <ul>
-      <li><%= image_tag "spark-icon-white.png", class:"spark-icon" %></li>
-      <li><strong><%= comment.spark_count %></strong></li>
-      <li>sparks</li>
-    </ul>
+<hr class="comment-split"></hr>
+
+<div class="col-12-12 comment">
+  <div class="col-2-12 f-left">
+    <!-- <%= image_tag "#{comment.user.avatar}", class: 'thumb' %> -->
+  </div>
+  <!-- <div class="col-10-12 spark-header-box">
+    <%= link_to "#{comment.user.full_name.upcase}", user_path(comment.user), class:"spark-header" %>
+  </div> -->
+  <div class="col-12-12 comment-box">
+    <p>
+      <div class="comment-thumb">
+        <%= image_tag "#{comment.user.avatar}", class: 'thumb' %>
+      </div>
+      <%= link_to "#{comment.user.full_name.upcase}", user_path(comment.user), class:"comment-header"%>
+      <%= comment.body %>
+    </p>
+    <div class="comment-sparks">
+      <ul class="test">
+        <li><%= image_tag "spark-icon-white.png", class:"spark-icon" %></li>
+        <li><strong><%= comment.spark_count %></strong></li>
+        <li>sparks</li>
+      </ul>
+    </div>
   </div>
 </div>
