@@ -19,10 +19,14 @@
 //= require_tree .
 
 $(function() {
-    $( ".comments" ).accordion({
-      active: false,
-      collapsible: true,
-      heightStyle: "content"
+
+    $(".header").click(function () {
+
+        $header = $(this);
+        $content = $header.next();
+        $content.slideToggle(250, function () {
+        });
+
     });
 
 // ajax call on comment

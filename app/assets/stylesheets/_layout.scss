@@ -59,6 +59,10 @@ html, body {
   width: 66.6%;
 }
 
+.col-10-12{
+  width: 83.33%;
+}
+
 .col-12-12 {
   width: 100%;
 }
@@ -72,18 +76,20 @@ html, body {
 }
 
 .top {
-  height: 1000px;
+  position:relative;
   background-color: $white;
   margin-top: 75px;
 }
 
 .top-status {
   padding: 10% 15% 18% 15%;
+  position:inherit;
 }
 
 $topNum: 1;
 $endNum: 20;
 @for $item from 1 through $endNum {
+
 
   .top-status:nth-child(#{$topNum})  {
     background-color: $red;
@@ -106,9 +112,9 @@ $endNum: 20;
 }
 
 .new{
-  height: 1000px;
   background-color: $grey;
   margin-top: 75px;
+  clear:both;
 }
 
 .new-status {
@@ -117,6 +123,7 @@ $endNum: 20;
 
 $num: 1;
 @for $item from 1 through $endNum{
+
   .new-status:nth-child(#{$num})  {
     background-color: $grey;
     color: $black;
@@ -156,28 +163,27 @@ $num: 1;
 }
 
 .sparks {
+  position: absolute;
   float: left;
-  width:50%;
   z-index:1;
   margin-bottom: 1.5em;
 }
 
+.comment-sparks {
+  // position: absolute;
+  // float: left;
+  // z-index:1;
+  margin-bottom: 1.5em;
+}
+
+.comment-sparks ul li {
+  width:20px;
+  margin: 0 0 20px 0;
+  float:left;
+}
+
 .sparks ul li {
-  display: inline;
-}
-
-.comments {
-  float:right;
-  text-align:right;
-  width: 50%;
-  // background-color:blue;
-  position: relative;
-  margin: .3em 0 1.5em 0;
-}
-
-.comments:focus{
-  outline: 0;
-}
-.comment-indi{
-  width:100%;
+  width:20px;
+  // margin: 0 0 0 11px;
+  float:left;
 }
