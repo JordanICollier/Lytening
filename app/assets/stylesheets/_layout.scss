@@ -78,12 +78,15 @@ html, body {
 .top {
   position:relative;
   background-color: $white;
-  margin-top: 75px;
+  margin-top: 70px;
 }
 
 .top-status {
   padding: 10% 15% 18% 15%;
   position:inherit;
+  border-style: solid;
+  border-width: 5px;
+  border-color: $yellow;
 }
 
 $topNum: 1;
@@ -133,12 +136,16 @@ $endNum: 20;
 
 .new{
   background-color: $grey;
-  margin-top: 75px;
+  margin-top: 70px;
   clear:both;
+
 }
 
 .new-status {
   padding: 10% 15% 18% 15%;
+  border-style: solid;
+  border-width: 5px;
+  border-color: $yellow;
 }
 
 $num: 1;
