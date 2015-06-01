@@ -20,10 +20,17 @@ To do
   • [x] hyjack stryke
   • [x] styling
   • [x] User search bar to find people
+  • [x] Searching for friends
+  • [x] Profile tutorial
+  • [x] Comments ajax call
+  • [x] Mobile formating
+  • [x] User CSS styling
+  • [x] Login / signup CSS styling
 
   • [√] create database with users table that has self-relationship
   • [√] Affix navbar
   • [√] Strykes only show for 24 hours
+
 
 -User
   • [√] create a status

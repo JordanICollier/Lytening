@@ -21,8 +21,10 @@
     cursor: pointer;
 }
 .comments .content {
+    background-color: rgba(69,134,164,.4);
+    // opacity: .2;
     display: none;
-    padding : 5px;
+    padding : 75px;
 }
 
 .form{
