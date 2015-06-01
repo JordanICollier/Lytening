@@ -7,7 +7,7 @@
 footer {
   position:relative;
   width:100%;
-  height:75px;
+  height:50px;
   z-index: 10;
   // bottom: 0;
   // background-color: $blue2;
@@ -16,7 +16,7 @@ footer {
 
 .foot {
   width:100%;
-  height: 75px;
+  height: 50px;
   padding: 6px 2% 0 2%;
   background-color: $yellow;
   @include box-shadow(1px 0px 5px 0px  rgba(0, 0, 0, 0.5));
