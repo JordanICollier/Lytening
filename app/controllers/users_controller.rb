@@ -18,7 +18,7 @@ class UsersController < ApplicationController
       if params[:user][:avatar].present?
         render :crop
       else
-        redirect_to @user
+        render nothing: true
       end
     else
       render :new
@@ -29,7 +29,7 @@ class UsersController < ApplicationController
 private
 
   def user_params
-      params.require(:user).permit(:avatar, :crop_x, :crop_y, :crop_w, :crop_h)
+      params.require(:user).permit(:avatar, :crop_x, :crop_y, :crop_w, :crop_h, :spark_count)
   end
 
   def set_user

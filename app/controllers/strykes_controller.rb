@@ -16,6 +16,17 @@ class StrykesController < ApplicationController
     end
   end
 
+  def show
+    @stryke = Stryke.where(:id => params[:id]).take
+    render json: @stryke
+  end
+
+  def update
+    @stryke = Stryke.find(params[:id])
+    @stryke.update!(params.require(:stryke).permit(:spark_count))
+    render nothing: true
+  end
+
   private
 
   def stryke_params

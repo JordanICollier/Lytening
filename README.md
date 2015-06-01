@@ -14,16 +14,16 @@ Purpose: A collaborative project creating a new form of social media that is
          text, media files, and hyperlinks.
 
 To do
-  • [x] include 24 hour time circle on each stryke?
-  • [x] Validate and check for empty comment
+  • [x] Strykes post photo,text,video, etc...
+  • [x] Comments ajax call
   • [x] spark buttons and iterate spark count with ajax (user can unspark strykes they've sparked)
-  • [x] hyjack stryke
-  • [x] styling
-  • [x] User search bar to find people
+  • [x] include 24 hour time circle on each stryke?
   • [x] Searching for friends
   • [x] Profile tutorial
-  • [x] Comments ajax call
-  • [x] Mobile formating
+  • [x] Validate and check for empty comment
+  • [x] hyjack stryke
+  • [x] styling
+  • [x] Mobile formatting
   • [x] User CSS styling
   • [x] Login / signup CSS styling
 
