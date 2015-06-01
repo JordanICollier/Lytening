@@ -7,7 +7,7 @@
         <%= image_tag "#{comment.user.avatar}", class: 'thumb' %>
       </div>
       <%= link_to "#{comment.user.full_name.upcase}", user_path(comment.user), class:"comment-header"%>
-      <%= comment.body %>
+      <%= comment.body_html %>
     </p>
     <div class="comment-sparks">
       <ul class="test">
