@@ -1,13 +1,13 @@
 /**
  * Basic structure: TC_Class is the public class that is returned upon being called
- * 
+ *
  * So, if you do
  *      var tc = $(".timer").TimeCircles();
- *      
+ *
  * tc will contain an instance of the public TimeCircles class. It is important to
  * note that TimeCircles is not chained in the conventional way, check the
  * documentation for more info on how TimeCircles can be chained.
- * 
+ *
  * After being called/created, the public TimerCircles class will then- for each element
  * within it's collection, either fetch or create an instance of the private class.
  * Each function called upon the public class will be forwarded to each instance
@@ -16,7 +16,7 @@
 (function($) {
 
     var useWindow = window;
-    
+
     // From https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object/keys
     if (!Object.keys) {
         Object.keys = (function() {
@@ -58,11 +58,11 @@
             };
         }());
     }
-    
+
     // Used to disable some features on IE8
     var limited_mode = false;
     var tick_duration = 200; // in ms
-    
+
     var debug = (location.hash === "#debug");
     function debug_log(msg) {
         if (debug) {
@@ -106,7 +106,7 @@
             b: parseInt(result[3], 16)
         } : null;
     }
-    
+
     function isCanvasSupported() {
         var elem = document.createElement('canvas');
         return !!(elem.getContext && elem.getContext('2d'));
@@ -199,14 +199,14 @@
 
             var curUnits = (diff / secondsIn[unit]);
             var oldUnits = (old_diff / secondsIn[unit]);
-            
+
             if(floor) {
                 if(curUnits > 0) curUnits = Math.floor(curUnits);
                 else curUnits = Math.ceil(curUnits);
                 if(oldUnits > 0) oldUnits = Math.floor(oldUnits);
                 else oldUnits = Math.ceil(oldUnits);
             }
-            
+
             if (unit !== "Days") {
                 curUnits = curUnits % maxUnits;
                 oldUnits = oldUnits % maxUnits;
@@ -242,7 +242,7 @@
         }
         initializeAnimationFrameHandler(useWindow);
     };
-    
+
     function initializeAnimationFrameHandler(w) {
         var vendors = ['webkit', 'moz'];
         for (var x = 0; x < vendors.length && !w.requestAnimationFrame; ++x) {
@@ -267,7 +267,7 @@
             };
         }
     };
-    
+
 
     var TC_Instance = function(element, options) {
         this.element = element;
@@ -314,7 +314,7 @@
     TC_Instance.prototype.clearListeners = function() {
         this.listeners = { all: [], visible: [] };
     };
-    
+
     TC_Instance.prototype.addTime = function(seconds_to_add) {
         if(this.data.attributes.ref_date instanceof Date) {
             var d = this.data.attributes.ref_date;
@@ -324,7 +324,7 @@
             this.data.attributes.ref_date += (seconds_to_add * 1000);
         }
     };
-    
+
     TC_Instance.prototype.initialize = function(clear_listeners) {
         // Initialize drawn units
         this.data.drawn_units = [];
@@ -346,7 +346,7 @@
         this.container = $("<div>");
         this.container.addClass('time_circles');
         this.container.appendTo(this.element);
-        
+
         // Determine the needed width and height of TimeCircles
         var height = this.element.offsetHeight;
         var width = this.element.offsetWidth;
@@ -359,16 +359,16 @@
             height = width / this.data.drawn_units.length;
         else if (width === 0 && height > 0)
             width = height * this.data.drawn_units.length;
-        
+
         // Create our canvas and set it to the appropriate size
         var canvasElement = document.createElement('canvas');
         canvasElement.width = width;
         canvasElement.height = height;
-        
+
         // Add canvas elements
         this.data.attributes.canvas = $(canvasElement);
         this.data.attributes.canvas.appendTo(this.container);
-        
+
         // Check if the browser has browser support
         var canvasSupported = isCanvasSupported();
         // If the browser doesn't have browser support, check if explorer canvas is loaded
@@ -398,18 +398,18 @@
             textElement.css("top", Math.round(0.35 * this.data.attributes.item_size));
             textElement.css("left", Math.round(i++ * this.data.attributes.item_size));
             textElement.css("width", this.data.attributes.item_size);
-            textElement.appendTo(this.container);
+            // textElement.appendTo(this.container); This adds back numbers to circles
 
             var headerElement = $("<h4>");
             headerElement.text(this.config.time[key].text); // Options
             headerElement.css("font-size", Math.round(this.config.text_size * this.data.attributes.item_size));
             headerElement.css("line-height", Math.round(this.config.text_size * this.data.attributes.item_size) + "px");
-            headerElement.appendTo(textElement);
+            // headerElement.appendTo(textElement); This adds back numbers to circles
 
             var numberElement = $("<span>");
             numberElement.css("font-size", Math.round(3 * this.config.text_size * this.data.attributes.item_size));
             numberElement.css("line-height", Math.round(this.config.text_size * this.data.attributes.item_size) + "px");
-            numberElement.appendTo(textElement);
+            // numberElement.appendTo(textElement); This adds back numbers to circles
 
             this.data.text_elements[key] = numberElement;
         }
@@ -418,7 +418,7 @@
         if (!this.config.start) {
             this.data.paused = true;
         }
-        
+
         // Set up interval fallback
         var _this = this;
         this.data.interval_fallback = useWindow.setInterval(function(){
@@ -433,7 +433,7 @@
         else if(nodraw && this.data.paused) {
             return;
         }
-        
+
         if(limited_mode) {
             //Per unit clearing doesn't work in IE8 using explorer canvas, so do it in one time. The downside is that radial fade cant be used
             this.data.attributes.context.clearRect(0, 0, this.data.attributes.canvas[0].width, this.data.attributes.canvas[0].hright);
@@ -494,7 +494,7 @@
             if (Math.floor(visible_times.raw_time[key]) !== Math.floor(visible_times.raw_old_time[key])) {
                 this.notifyListeners(key, Math.floor(visible_times.time[key]), Math.floor(diff), "visible");
             }
-            
+
             if(!nodraw) {
                 // Set the text value
                 this.data.text_elements[key].text(Math.floor(Math.abs(visible_times.time[key])));
@@ -530,7 +530,7 @@
         if(this.data.paused || nodraw) {
             return;
         }
-        
+
         // We need this for our next frame either way
         var _this = this;
         var update = function() {
@@ -599,7 +599,7 @@
                     clear_radius * 2
                     );
         }
-        
+
         if (this.config.use_background) {
             this.data.attributes.context.beginPath();
             this.data.attributes.context.arc(x, y, this.data.attributes.radius, 0, 2 * Math.PI, false);
@@ -737,7 +737,7 @@
         this.stop();
         useWindow.clearInterval(this.data.interval_fallback);
         this.data.interval_fallback = null;
-        
+
         this.container.remove();
         $(this.element).removeAttr('data-tc-id');
         $(this.element).removeData('tc-id');
@@ -758,7 +758,7 @@
             useWindow = window;
         }
         updateUsedWindow();
-        
+
         this.data.total_duration = this.config.total_duration;
         if (typeof this.data.total_duration === "string") {
             if (typeof secondsIn[this.data.total_duration] !== "undefined") {
@@ -877,7 +877,7 @@
             instance.addTime(seconds_to_add);
         });
     };
-    
+
     TC_Class.prototype.foreach = function(callback) {
         var _this = this;
         this.elements.each(function() {
