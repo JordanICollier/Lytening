@@ -45,33 +45,42 @@
   background-color: rgba(255,255,255,0);
   border-color: #94E6EC;
   border-radius: 20px;
-  margin: 0 0 20px 0;
+  margin: 0 0 15px 0;
+  padding: 0 0 0 10px;
+}
+
+#user_password_confirmation{
+  width:100%;
+  height: 30px;
+  background-color: rgba(255,255,255,0);
+  border-color: #94E6EC;
+  border-radius: 20px;
+  margin: 10px 0 20px 0;
   padding: 0 0 0 10px;
 }
 
 .user_remember_me{
-  width: 78%;
+  // width: 78%;
   color: $white;
   margin: 0 0 10px 0;
-  float:left;
+  float:right;
 }
-
-// input.btn{
-//   position:absolute;
-//   width:8%;
-//   height: 30px;
-//   background-color: rgba(255,255,255,0);
-//   border-color: #94E6EC;
-//   border-top-right-radius: 20px;
-//   border-bottom-right-radius: 20px;
-//   cursor: pointer;
-//   padding: 0 0 0 0;
-// }
 
 .sign-up{
   margin: 40px 0 0 0;
   color: $white;
 }
+
+.hint{
+  color: $white;
+  margin: 0 0 10px 5px;
+
+}
+.btn.login-submit{
+  color: $white;
+  float: right;
+}
+
 a{
   color: $white;
 }
