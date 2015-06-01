@@ -11,6 +11,7 @@
 @import "layout";
 @import "comments";
 @import "user";
+@import "signinup";
 
 /*.avatar {
   height: 161px;
@@ -40,4 +41,16 @@
 a:visited{
   text-decoration: none;
   color: $white;
+}
+
+.alert{
+  position: fixed;
+  width: 100%;
+  top: 0;
+  padding: 28px 0;
+  margin: 0;
+  z-index: 10;
+  width: 100%;
+  text-align: center;
+  color: $teal1;
 }
