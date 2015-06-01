@@ -17,19 +17,16 @@
   <div class="mobile">
     <input type="checkbox" id="toggle-menu" />
     <ul class="sidenav">
-      <%= link_to(image_tag("lytening-logo-black.png", class:"sidenav-logo"), "#") %><hr>
-      <li class="search-space"><input type="text" id="search-bar" placeholder="Search"><input type="submit" value="Search" class="search-btn"></input></li><hr>
-      <li><%# link_to 'Profile', user_path(current_user) %></li><hr>
-      <li>
+      <%= link_to(image_tag("lytening-logo-white.png", class:"sidenav-logo"), "#") %><hr>
+      <li class="search-space"><input type="text" id="search-bar" placeholder="Find You're Friends"><input type="submit" value="Search" class="search-btn"></input></li><hr>
       <% if user_signed_in? %>
         Logged in as <strong><%= link_to current_user.email, user_path(current_user) %></strong>.
         <%= link_to 'Edit profile', edit_user_registration_path%> |
         <%= link_to "Logout", destroy_user_session_path, method: :delete %>
         <% else %>
-        <%= link_to "Sign up", new_user_registration_path %> |
-        <%= link_to "Login", new_user_session_path %>
+        <li><%= link_to "Login", new_user_session_path %></li><hr>
+        <li><%= link_to "Sign up", new_user_registration_path %></li><hr>
       <% end %>
-      </li>
     </ul>
     <section>
       <nav>

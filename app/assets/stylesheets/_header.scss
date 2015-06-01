@@ -93,8 +93,8 @@ nav {
   width:65%;
   height: 30px;
   background-color: rgba(255,255,255,0);
-  border-color: $black;
-  opacity: 0.5;
+  border-color: $white;
+  color:$white;
   border-top-left-radius: 20px;
   border-bottom-left-radius: 20px;
   margin: 0;
@@ -102,19 +102,19 @@ nav {
 }
 
 ::-webkit-input-placeholder {
-   color: $black;
+   color: $white;
 }
 
 :-moz-placeholder { /* Firefox 18- */
-   color: $black;
+   color: $white;
 }
 
 ::-moz-placeholder {  /* Firefox 19+ */
-   color: $black;
+   color: $white;
 }
 
 :-ms-input-placeholder {
-   color: $black;
+   color: $white;
 }
 
 input.search-btn{
@@ -122,12 +122,11 @@ input.search-btn{
   width:20%;
   height: 30px;
   background-color: rgba(255,255,255,0);
-  border-color: $black;
-  opacity: 0.5;
+  border-color: $white;
+  color: $white;
   border-top-right-radius: 20px;
   border-bottom-right-radius: 20px;
   cursor: pointer;
-  // margin: 15px 0 0 0;
   padding: 0 0 0 0;
 }
 
