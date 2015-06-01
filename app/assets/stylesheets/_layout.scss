@@ -194,6 +194,7 @@ $num: 1;
   height: 20px;
   width: 12px;
   margin: 1px 4px 0 0;
+  cursor: pointer;
 }
 
 .sparked {
@@ -208,9 +209,6 @@ $num: 1;
 }
 
 .comment-sparks {
-  // position: absolute;
-  // float: left;
-  // z-index:1;
   margin-bottom: 1.5em;
 }
 
