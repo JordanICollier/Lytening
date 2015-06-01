@@ -56,8 +56,9 @@ $(function() {
 // TimeCircles
     $(".countdown").TimeCircles({
       "start": true,
-      "direction": "Counter-clockwise",
+      "direction": "Clockwise",
       "animation": "smooth",
+      "circle_bg_color": "#F2F4D4",
       "time": {
           "Days": {
               "text": "Days",
@@ -65,9 +66,9 @@ $(function() {
               "show": false
           },
           "Hours": {
-              "text": "Hours",
-              "color": "#99CCFF",
-              "show": false
+              "text": "",
+              "color": "#FF9999",
+              "show": true
           },
           "Minutes": {
               "text": "Minutes",
