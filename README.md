@@ -14,10 +14,8 @@ Purpose: A collaborative project creating a new form of social media that is
          text, media files, and hyperlinks.
 
 To do
-  • [√] Strykes post photo,text,video, etc...
   • [x] Comments ajax call
   • [x] spark buttons and iterate spark count with ajax (user can unspark strykes they've sparked)
-  • [√] include 24 hour time circle on each stryke?
   • [x] Searching for friends
   • [x] Profile tutorial
   • [x] Validate and check for empty comment
@@ -27,6 +25,8 @@ To do
   • [x] User CSS styling
   • [x] Login / signup CSS styling
 
+  • [√] Strykes post photo,text,video, etc...
+  • [√] include 24 hour time circle on each stryke?
   • [√] create database with users table that has self-relationship
   • [√] Affix navbar
   • [√] Strykes only show for 24 hours
