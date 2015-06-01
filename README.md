@@ -14,10 +14,10 @@ Purpose: A collaborative project creating a new form of social media that is
          text, media files, and hyperlinks.
 
 To do
-  • [x] Strykes post photo,text,video, etc...
+  • [√] Strykes post photo,text,video, etc...
   • [x] Comments ajax call
   • [x] spark buttons and iterate spark count with ajax (user can unspark strykes they've sparked)
-  • [x] include 24 hour time circle on each stryke?
+  • [√] include 24 hour time circle on each stryke?
   • [x] Searching for friends
   • [x] Profile tutorial
   • [x] Validate and check for empty comment
