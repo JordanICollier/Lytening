@@ -9,18 +9,18 @@ class Stryke < ActiveRecord::Base
     html_escape
     image
     youtube(:width => 400, :height => 250, :autoplay => false)
-    soundcloud
-    dailymotion
-    google_video
-    vimeo
+    soundcloud(:width => 400, :height => 250, :autoplay => false)
+    dailymotion(:width => 400, :height => 250, :autoplay => false)
+    google_video(:width => 400, :height => 250, :autoplay => false)
+    vimeo(:width => 400, :height => 250, :autoplay => false)
     metacafe
     google_map
     twitter
     flickr
     instagram
-    liveleak
+    liveleak(:width => 400, :height => 250, :autoplay => false)
     ted
-    worldstar
+    worldstar(:width => 400, :height => 250, :autoplay => false)
     hashtag
     link :target => "_blank", :rel => "nofollow"
     simple_format
