@@ -5,6 +5,27 @@ class Stryke < ActiveRecord::Base
 
   accepts_nested_attributes_for :comments
 
+  auto_html_for :body do
+    html_escape
+    image
+    youtube(:width => 400, :height => 250, :autoplay => false)
+    soundcloud(:width => 400, :height => 250, :autoplay => false)
+    dailymotion(:width => 400, :height => 250, :autoplay => false)
+    google_video(:width => 400, :height => 250, :autoplay => false)
+    vimeo(:width => 400, :height => 250, :autoplay => false)
+    metacafe
+    google_map
+    twitter
+    flickr
+    instagram
+    liveleak(:width => 400, :height => 250, :autoplay => false)
+    ted
+    worldstar(:width => 400, :height => 250, :autoplay => false)
+    hashtag
+    link :target => "_blank", :rel => "nofollow"
+    simple_format
+  end
+
   # Old hotness algorithm
   # def hotness(stryke)
   #   s = stryke.created_at

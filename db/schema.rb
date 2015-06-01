@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150529053923) do
+ActiveRecord::Schema.define(version: 20150601190633) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -21,6 +21,7 @@ ActiveRecord::Schema.define(version: 20150529053923) do
     t.integer "stryke_id"
     t.integer "spark_count"
     t.integer "user_id"
+    t.string  "body_html"
   end
 
   create_table "followings", force: :cascade do |t|
@@ -36,6 +37,7 @@ ActiveRecord::Schema.define(version: 20150529053923) do
     t.datetime "created_at"
     t.datetime "updated_at"
     t.integer  "user_id"
+    t.string   "body_html"
   end
 
   add_index "strykes", ["created_at"], name: "index_strykes_on_created_at", using: :btree

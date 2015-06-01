@@ -12,7 +12,7 @@
         </div>
         <!-- <div class="countdown" data-timer="86400"></div> -->
         <p>
-          <%= "#{stryke.body}" %>
+          <%= stryke.body_html %>
         </p>
         <div class="sparks">
 
@@ -63,7 +63,7 @@
           <%= link_to "#{stryke.user.full_name.upcase}", user_path(stryke.user), class:"spark-header" %>
         </div>
         <p>
-          <%= "#{stryke.body}" %>
+          <%= stryke.body_html %>
         </p>
         <div class="sparks">
 
