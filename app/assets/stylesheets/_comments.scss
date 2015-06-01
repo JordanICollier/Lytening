@@ -2,29 +2,24 @@
     // width:100%;
 }
 .comment-box{
-  margin: 15px 0 0 0;
+  margin: 0 0 0 0;
 }
 .comments {
     // width:100%;
     height: 100%;
 }
-// ul.test li{
-//   background-color:blue;
-// }
 
 .comments div {
     // width:100%;
 }
 .comments .header {
     text-align:right;
-    // padding: 2px;
     cursor: pointer;
 }
 .comments .content {
     background-color: rgba(69,134,164,.4);
-    // opacity: .2;
     display: none;
-    padding : 75px;
+    padding: 20px 75px 30px 75px;
 }
 
 .form{
@@ -36,7 +31,6 @@
   height: 30px;
   background-color: rgba(255,255,255,0);
   border-color: #94E6EC;
-  // opacity: 0.5;
   border-top-left-radius: 20px;
   border-bottom-left-radius: 20px;
   margin: 0;
@@ -53,11 +47,9 @@ input.btn{
   height: 30px;
   background-color: rgba(255,255,255,0);
   border-color: #94E6EC;
-  // opacity: 0.5;
   border-top-right-radius: 20px;
   border-bottom-right-radius: 20px;
   cursor: pointer;
-  // margin: 15px 0 0 0;
   padding: 0 0 0 0;
 }
 
@@ -79,12 +71,3 @@ input:focus{
   float: left;
   margin: 0 10px 0 0;
 }
-
-// .comment-content{
-//   line-height: 1px;
-//   background-color: blue;
-// }
-
-// p{
-//   line-height: 10px;
-// }
