@@ -17,6 +17,17 @@ class CommentsController < ApplicationController
     end
   end
 
+  def show
+    @comment = Comment.where(:id => params[:id]).take
+    render json: @comment
+  end
+
+  def update
+    @comment = Comment.find(params[:id])
+    @comment.update!(params.require(:comment).permit(:spark_count))
+    render nothing: true
+  end
+
   private
 
   def comment_params
