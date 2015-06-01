@@ -64,7 +64,7 @@ nav {
 .sidenav li {
   list-style-type: none;
   // border-bottom: 1px solid $white;
-  padding: 25px 0 0 0;
+  // padding: 25px 0 0 0;
   height: 75px;
   color: $white;
 }
@@ -131,5 +131,15 @@ input.search-btn{
 }
 
 .search-space{
+  padding: 25px 0 0 0;
+
   margin: 0 50px 0 0;
+}
+
+.two-lines{
+  margin:35px 0 0 0;
+}
+
+.one-line{
+  padding: 25px 0 0 0;
 }
