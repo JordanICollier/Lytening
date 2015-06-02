@@ -20,6 +20,42 @@ nav {
 
 .header ul li {
   display: inline;
+  float: left;
+}
+
+.header form{
+  width: 100%;
+  padding: 15px 0 0 0;
+}
+
+.header-post{
+  width: 70%;
+  height: 30px;
+  color: $blue2;
+  background-color: $yellow;
+  border-color: $blue2;
+  font-size: 15px;
+  // border-top-right-radius: 20px;
+  // border-bottom-right-radius: 20px;
+  cursor: pointer;
+  z-index: 20;
+  padding: 0 0 0 10px;
+}
+
+.header-post-btn{
+  width:15%;
+  height: 30px;
+  color: $yellow;
+  background-color: $blue1;
+  border-color: $blue2;
+  font-size: 15px;
+  // border-top-right-radius: 20px;
+  // border-bottom-right-radius: 20px;
+  cursor: pointer;
+}
+
+.header-post-box{
+  width:100%;
 }
 
 .menu {
@@ -43,6 +79,7 @@ nav {
 .mobile section {
   position: relative;
   transition: all 0.25s ease-in-out;
+  background-color: $yellow;
 }
 
 .mobile section label {
