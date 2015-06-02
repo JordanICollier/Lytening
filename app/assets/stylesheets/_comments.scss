@@ -30,7 +30,7 @@
   width:90%;
   height: 30px;
   background-color: rgba(255,255,255,0);
-  border-color: #94E6EC;
+  border-color: $white;
   border-top-left-radius: 20px;
   border-bottom-left-radius: 20px;
   margin: 0;
@@ -47,7 +47,7 @@ input.btn{
   height: 30px;
   color: $white;
   background-color: $blue2;
-  border-color: #94E6EC;
+  border-color: $white;
   border-top-right-radius: 20px;
   border-bottom-right-radius: 20px;
   cursor: pointer;
@@ -59,7 +59,7 @@ input:focus{
 }
 
 .comment-split{
-  border-color: #94E6EC;
+  border-color: $white;
   opacity: .8;
   margin: 15px 0 15px 0;
 }
