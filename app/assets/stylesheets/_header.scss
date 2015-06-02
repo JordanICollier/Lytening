@@ -32,26 +32,31 @@ nav {
   width: 70%;
   height: 30px;
   color: $blue2;
-  background-color: $yellow;
-  border-color: $blue2;
+  background-color: $teal1;
+  border-color: $teal1;
   font-size: 15px;
-  // border-top-right-radius: 20px;
-  // border-bottom-right-radius: 20px;
-  cursor: pointer;
+  cursor: text;
   z-index: 20;
   padding: 0 0 0 10px;
 }
-
+.header-post:focus{
+  background-color: $yellow;
+}
 .header-post-btn{
   width:15%;
   height: 30px;
   color: $yellow;
-  background-color: $blue1;
-  border-color: $blue2;
+  background-color: $teal1;
+  border-color: $teal1;
   font-size: 15px;
   // border-top-right-radius: 20px;
   // border-bottom-right-radius: 20px;
   cursor: pointer;
+  padding: 0;
+}
+
+.header-post-btn:hover{
+  background-color: $blue2;
 }
 
 .header-post-box{
