@@ -11,7 +11,11 @@
     </p>
     <div class="comment-sparks">
       <ul class="test">
-        <li><%= image_tag "spark-icon-white.png", class:"spark-icon", id:"#{comment.id} #{comment.user.id}" %></li>
+        <% if current_user.sparks.include? comment.id %>
+          <li><%= image_tag "spark-icon-yellow.png", class:"spark-icon", id:"#{comment.id} #{comment.user.id}" %></li>
+        <% else %>
+          <li><%= image_tag "spark-icon-white.png", class:"spark-icon", id:"#{comment.id} #{comment.user.id}" %></li>
+        <% end %>
         <li><strong><%= comment.spark_count %></strong></li>
         <li>sparks</li>
       </ul>

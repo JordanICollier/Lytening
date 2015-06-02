@@ -17,7 +17,11 @@
         <div class="sparks">
 
           <ul>
-            <li><%= image_tag "spark-icon-white.png", class:"spark-icon", id:"#{stryke.id} #{stryke.user.id}" %></li>
+            <% if current_user.sparks.include? stryke.id %>
+              <li><%= image_tag "spark-icon-yellow.png", class:"spark-icon", id:"#{stryke.id} #{stryke.user.id}" %></li>
+            <% else %>
+              <li><%= image_tag "spark-icon-white.png", class:"spark-icon", id:"#{stryke.id} #{stryke.user.id}" %></li>
+            <% end %>
             <li><strong><%= "#{stryke.spark_count}" %></strong></li>
             <li>sparks</li>
           </ul>
@@ -69,7 +73,11 @@
         <div class="sparks">
 
           <ul>
-            <li><%= image_tag "spark-icon-white.png", class:"spark-icon", id:"#{stryke.id} #{stryke.user.id}" %></li>
+            <% if current_user.sparks.include? stryke %>
+              <li><%= image_tag "spark-icon-yellow.png", class:"spark-icon", id:"#{stryke.id} #{stryke.user.id}" %></li>
+            <% else %>
+              <li><%= image_tag "spark-icon-white.png", class:"spark-icon", id:"#{stryke.id} #{stryke.user.id}" %></li>
+            <% end %>
             <li><strong><%= "#{stryke.spark_count}" %></strong></li>
             <li>sparks</li>
           </ul>
