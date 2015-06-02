@@ -9,148 +9,77 @@ var sparks = (function() {
     $('.spark-icon').click(function(e) {
       e.preventDefault();
       var spark = $(e.delegateTarget);
-      var stryke_id = e.target.id[0];
-      var comment_id = e.target.id[0];
-      var user_id = e.target.id[2];
-      var spark_count_stryke;
-      var spark_count_comment;
-      var spark_count_user;
+      var stryke_id = e.target.id.split(" ")[0];
+      var comment_id = e.target.id.split(" ")[0];
+      var user_id = e.target.id.split(" ")[1];
+      var spark_id;
       var spark_num = parseInt(spark.parent().parent().children().eq(1).text());
-      // spark.effect("pulsate", "slow");
+      spark.effect("pulsate", "slow");
 
-      // If sparked and a comment, decrement spark_count in comments table
-      if (spark.hasClass('sparked') && spark.parent().parent().parent().hasClass('comment-sparks')){
-        // Decrement spark_count_comment
-        spark_count_comment = spark_num;
-        spark_count_comment--;
-        // Update spark_count in comments table
+      // If sparked, decrement spark_count and delete spark
+      if (spark.hasClass('yellow')){
+        // Decrement spark_num
+        spark_num--;
+        // Find spark id
+        spark_id = e.target.id.split(" ")[2];
+
+        // Destroy existing spark
         $.ajax({
-            url: '/comments/' + comment_id,
-            method: "PATCH",
-            data: {comment: {spark_count: spark_count_comment}}
+          url: "/sparks/" + spark_id,
+          method: "DELETE",
         })
         .done(function() {
-          spark.removeClass('sparked'); // Remove sparked class
-          spark.parent().parent().children().eq(1).html("<strong>" + spark_count_comment + "</strong>"); // Update spark number
-        });
-
-        // Grab existing spark_count from users table
-        $.ajax({
-            url: '/users/' + user_id,
-            method: "GET"
-        })
-        // Decrement spark_count_user
-        .done(function(data) {
-          spark_count_user = data.spark_count;
-          spark_count_user--;
-          // Update spark_count in users table
-          $.ajax({
-              url: '/users/' + user_id,
-              method: "PATCH",
-              data: {user: {spark_count: spark_count_user}}
-          });
+          spark.removeClass('yellow'); // Remove yellow class
+          spark.addClass('white'); // Add white class
+          spark.parent().parent().children().eq(1).html("<strong>" + spark_num + "</strong>"); // Update spark number
         });
       }
 
-      // If not sparked and a comment, increment spark_count in comments table
+      // If not sparked and a comment, create a new spark with comment_id
       else if (spark.parent().parent().parent().hasClass('comment-sparks')){
-        // Increment spark_count_comment
-        spark_count_comment = spark_num;
-        spark_count_comment++;
-        // Update spark_count in comments table
-        $.ajax({
-            url: '/comments/' + comment_id,
-            method: "PATCH",
-            data: {comment: {spark_count: spark_count_comment}}
-        })
-        .done(function() {
-          spark.addClass('sparked'); // Add sparked class
-          spark.parent().parent().children().eq(1).html("<strong>" + spark_count_comment + "</strong>"); // Update spark number
-        });
+        // Increment spark_num
+        spark_num++;
 
-        // Grab existing spark_count from users table
+        // Create new spark
         $.ajax({
-            url: '/users/' + user_id,
-            method: "GET"
+          url: "/sparks",
+          method: "POST",
+          data: {
+            spark: {
+              user_id: user_id,
+              comment_id: comment_id
+            }
+          }
         })
-        // Increment spark_count_user
         .done(function(data) {
-          spark_count_user = data.spark_count;
-          spark_count_user++;
-          // Update spark_count in users table
-          $.ajax({
-              url: '/users/' + user_id,
-              method: "PATCH",
-              data: {user: {spark_count: spark_count_user}}
-          });
+          spark.removeClass('white'); // Remove white class
+          spark.addClass('yellow'); // Add yellow class
+          spark.attr("id", "" + comment_id + " " + user_id + " " + data.id + ""); // Add spark ID as id
+          spark.parent().parent().children().eq(1).html("<strong>" + spark_num + "</strong>"); // Update spark number
         });
       }
 
-      // If sparked and a stryke, decrement spark_count in strykes table
-      else if (spark.hasClass('sparked') && spark.parent().parent().parent().hasClass('sparks')){
-        // Decrement spark_count_stryke
-        spark_count_stryke = spark_num;
-        spark_count_stryke--;
-        // Update spark_count in strykes table
-        $.ajax({
-            url: '/strykes/' + stryke_id,
-            method: "PATCH",
-            data: {stryke: {spark_count: spark_count_stryke}}
-        })
-        .done(function() {
-          spark.removeClass('sparked'); // Remove sparked class
-          spark.parent().parent().children().eq(1).html("<strong>" + spark_count_stryke + "</strong>"); // Update spark number
-        });
-
-        // Grab existing spark_count from users table
-        $.ajax({
-            url: '/users/' + user_id,
-            method: "GET"
-        })
-        // Decrement spark_count_user
-        .done(function(data) {
-          spark_count_user = data.spark_count;
-          spark_count_user--;
-          // Update spark_count in users table
-          $.ajax({
-              url: '/users/' + user_id,
-              method: "PATCH",
-              data: {user: {spark_count: spark_count_user}}
-          });
-        });
-      }
-
-      // If not sparked and a stryke, increment spark_count in strykes table
+      // If not sparked and a stryke, create a new spark with stryke_id
       else if (spark.parent().parent().parent().hasClass('sparks')){
-        // Increment spark_count_stryke
-        spark_count_stryke = spark_num;
-        spark_count_stryke++;
-        // Update spark_count in strykes table
-        $.ajax({
-            url: '/strykes/' + stryke_id,
-            method: "PATCH",
-            data: {stryke: {spark_count: spark_count_stryke}}
-        })
-        .done(function() {
-          spark.addClass('sparked'); // Add sparked class
-          spark.parent().parent().children().eq(1).html("<strong>" + spark_count_stryke + "</strong>"); // Update spark number
-        });
+        // Increment spark_num
+        spark_num++;
 
-        // Grab existing spark_count from users table
+        // Create new spark
         $.ajax({
-            url: '/users/' + user_id,
-            method: "GET"
+          url: "/sparks",
+          method: "POST",
+          data: {
+            spark: {
+              user_id: user_id,
+              stryke_id: stryke_id
+            }
+          }
         })
-        // Increment spark_count_user
         .done(function(data) {
-          spark_count_user = data.spark_count;
-          spark_count_user++;
-          // Update spark_count in users table
-          $.ajax({
-              url: '/users/' + user_id,
-              method: "PATCH",
-              data: {user: {spark_count: spark_count_user}}
-          });
+          spark.removeClass('white'); // Remove white class
+          spark.addClass('yellow'); // Add yellow class
+          spark.attr("id", "" + stryke_id + " " + user_id + " " + data.id + ""); // Add spark ID as id
+          spark.parent().parent().children().eq(1).html("<strong>" + spark_num + "</strong>"); // Update spark number
         });
       }
 
