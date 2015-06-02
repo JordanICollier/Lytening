@@ -18,7 +18,8 @@ User.create(location: "Denver",
             password: "password",
             first_name: "Juniper",
             last_name: "Billyums",
-            avatar: "juniperBillyums.jpg"
+            avatar: "juniperBillyums.jpg",
+            username: "JuniBill"
             )
 
 User.create(location: "Denver",
@@ -33,7 +34,8 @@ User.create(location: "Denver",
             password: "password",
             first_name: "Big",
             last_name: "McLargeHuge",
-            avatar: "bigMclargehuge.jpg"
+            avatar: "bigMclargehuge.jpg",
+            username: "BigDaddyMcLarge"
             )
 
 User.create(location: "Denver",
@@ -48,7 +50,8 @@ User.create(location: "Denver",
             password: "password",
             first_name: "Runkle",
             last_name: "Bargefarge",
-            avatar: "bargefarge.png"
+            avatar: "bargefarge.png",
+            username: "BargyFargy"
             )
 
 Stryke.create(body: "Is anybody even reading this?",

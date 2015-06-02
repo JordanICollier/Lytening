@@ -1,0 +1,94 @@
+.search-container{
+  height: 100%;
+  width: 100%;
+  padding: 75px 0 0 0;
+  background-color: $green2;
+  background-image: url(logo-bg.png);
+}
+
+.search-header{
+  height: 110px;
+  color: $white;
+  opacity:0.4;
+  background-color: $green2;
+  font-size: 80px;
+  padding: 10px 0 0 0;
+  margin: 0 0 10px 5px;
+  text-align: center;
+}
+
+.search-box{
+  width: 100%;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.search-avatar{
+  height:50px;
+  width: 50px;
+}
+
+.search-txt{
+  padding: 13px 0 0 0;
+}
+.result-container{
+  width: 100%;
+  height: 1000px;
+  text-align: left;
+}
+
+.result-individual{
+  height: 100px;
+  padding: 20px 0 0 20px;
+  font-size: 20px;
+  // background-color: red;
+  border-style: solid;
+  border-width: 5px;
+  border-color: $yellow;
+}
+
+
+$topNum: 1;
+$endNum: 20;
+@for $item from 1 through $endNum {
+
+
+  .result-individual:nth-child(#{$topNum})  {
+    background-color: $blue1;
+    color: $white;
+    $topNum: $topNum + 1;
+  }
+
+  .result-individual:nth-child(#{$topNum})  {
+    background-color: $blue2;
+    color: $white;
+    $topNum: $topNum + 1;
+  }
+
+  .result-individual:nth-child(#{$topNum})  {
+    background-color: $purple1;
+    color: $white;
+    $topNum: $topNum + 1;
+  }
+
+  .result-individual:nth-child(#{$topNum})  {
+    background-color: $purple2;
+    color: $white;
+    $topNum: $topNum + 1;
+  }
+
+  .result-individual:nth-child(#{$topNum})  {
+    background-color: $purple1;
+    color: $white;
+    $topNum: $topNum + 1;
+  }
+
+  .result-individual:nth-child(#{$topNum})  {
+    background-color: $blue2;
+    color: $white;
+    $topNum: $topNum + 1;
+    $endNum: $endNum + 2;
+
+  }
+
+}

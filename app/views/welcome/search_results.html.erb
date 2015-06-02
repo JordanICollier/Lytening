@@ -1,7 +1,27 @@
-<div class="user-container">
-  <% @friends.each do |friend| %>
-    <%= link_to friend.full_name, user_path(friend) %>
-    <%= friend.email %>
-    <%= friend.username %>
-  <% end %>
+<div class="col-12-12">
+  <div class="search-container">
+    <div class="search-box">
+      <%#= link_to(image_tag("lytening-logo-white.png", class:"sign-logo"), "#") %>
+      <div class="search-header">SEARCH RESULTS</div>
+      <div class="result-container">
+        <% @friends.each do |friend| %>
+          <div class="result-individual">
+            <div class="col-3-12">
+              <%= image_tag friend.avatar, class: "search-avatar" %>
+            </div>
+            <div class="col-3-12 search-txt">
+              <%= link_to friend.full_name, user_path(friend) %>
+            </div>
+            <div class="col-3-12 search-txt">
+              <%= friend.email %>
+            </div>
+            <div class="col-3-12 search-txt">
+              <%= friend.username %>
+            </div>
+          </div>
+        <% end %>
+      </div>
+      </div>
+    </div>
+  </div>
 </div>
