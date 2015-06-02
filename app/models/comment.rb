@@ -2,6 +2,7 @@ class Comment < ActiveRecord::Base
 
   belongs_to :user
   belongs_to :stryke
+  has_many :sparks
 
   auto_html_for :body do
     html_escape
