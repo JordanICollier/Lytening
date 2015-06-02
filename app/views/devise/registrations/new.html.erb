@@ -15,12 +15,13 @@
             <%= f.input :password_confirmation, label: false, required: true, placeholder: "Password Confirmation" %>
           </div>
 
-          <div class="form-actions">
-            <%= f.button :submit, "Sign up", class:"login-submit" %>
+          <div class="col-6-12 form-actions">
+            <%= f.button :submit, "SIGN UP", class:"update" %>
           </div>
         <% end %>
-        <div class="sign-up">
-          <%= render "devise/shared/links" %>
+
+        <div class="col-6-12">
+          <%= button_to "LOG IN", user_session_path, class: "login" %>
         </div>
       </div>
     </div>

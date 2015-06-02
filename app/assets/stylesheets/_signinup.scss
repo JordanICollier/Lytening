@@ -1,8 +1,8 @@
 .sign-container{
   height: 100%;
   width: 100%;
-  padding: 15% 10% 25% 10%;
-  background-color: $teal1;
+  padding: 10% 10% 25% 10%;
+  background-color: $green2;
   background-image: url(logo-bg.png);
 }
 
@@ -24,16 +24,18 @@
 }
 
 .sign-header{
-  color: $white;
+  color: $purple1;
   margin: 0 0 10px 5px;
+  text-align: left;
 }
 
 #user_email{
   width:100%;
-  height: 30px;
-  background-color: rgba(255,255,255,0);
-  border-color: #94E6EC;
-  border-radius: 20px;
+  height: 50px;
+  background-color: $blue2;
+  border-color: $blue2;
+  // border-radius: 20px;
+  font-size: 15px;
   color: $white;
   margin: 0 0 20px 0;
   padding: 0 0 0 10px;
@@ -41,21 +43,34 @@
 
 #user_password{
   width:100%;
-  height: 30px;
-  background-color: rgba(255,255,255,0);
-  border-color: #94E6EC;
-  border-radius: 20px;
+  height: 50px;
+  background-color: $blue2;
+  border-color: $blue2;
+  font-size: 15px;
+  // border-radius: 20px;
   margin: 0 0 15px 0;
   padding: 0 0 0 10px;
 }
 
 #user_password_confirmation{
   width:100%;
-  height: 30px;
-  background-color: rgba(255,255,255,0);
-  border-color: #94E6EC;
-  border-radius: 20px;
+  height: 50px;
+  background-color: $blue2;
+  border-color: $blue2;
+  font-size: 15px;
+  // border-radius: 20px;
   margin: 10px 0 20px 0;
+  padding: 0 0 0 10px;
+}
+
+#user_current_password{
+  width:100%;
+  height: 50px;
+  background-color: $blue2;
+  border-color: $blue2;
+  // border-radius: 20px;
+  font-size: 15px;
+  margin: 0 0 15px 0;
   padding: 0 0 0 10px;
 }
 
@@ -76,10 +91,10 @@
   margin: 0 0 10px 5px;
 
 }
-.btn.login-submit{
-  color: $white;
-  float: right;
-}
+// .btn.login-submit{
+//   color: $white;
+//   float: right;
+// }
 
 a{
   color: $white;
@@ -89,15 +104,119 @@ a:visited{
   color: $white;
 }
 
-.login-submit{
-  position:absolute;
-  width:8%;
-  height: 30px;
-  background-color: $purple2;
-  border-color: #94E6EC;
-  border-radius: 20px;
+btn.login-submit{
+  // position:absolute;
+  width:100%;
+  height: 50px;
+  background-color: $yellow;
+  border-color: $blue2;
+  // border-radius: 20px;
   color: $white;
   // border-bottom-right-radius: 20px;
   cursor: pointer;
   padding: 0 0 0 0;
+}
+
+input.cancel{
+  width:100%;
+  height: 50px;
+  color: $teal1;
+  background-color: $blue2;
+  border-color: $blue2;
+  font-size: 15px;
+  // border-top-right-radius: 20px;
+  // border-bottom-right-radius: 20px;
+  cursor: pointer;
+}
+
+input.update{
+  width:100%;
+  height: 50px;
+  color: $blue2;
+  background-color: $yellow;
+  border-color: $blue2;
+  font-size: 15px;
+  // border-top-right-radius: 20px;
+  // border-bottom-right-radius: 20px;
+  cursor: pointer;
+}
+
+.cancel-box{
+  margin: 8px 0 0 0;
+}
+
+input.login{
+  width:100%;
+  height: 50px;
+  color: $yellow;
+  background-color: $blue1;
+  border-color: $blue2;
+  font-size: 15px;
+  // border-top-right-radius: 20px;
+  // border-bottom-right-radius: 20px;
+  cursor: pointer;
+}
+
+a.signup-loginpage{
+  width:100%;
+  height: 50px;
+  text-decoration: none;;
+  font-size: 15px;
+  text-align: center;
+  // border-top-right-radius: 20px;
+  // border-bottom-right-radius: 20px;
+  cursor: pointer;
+}
+
+.forgot-password{
+  color: $white;
+}
+
+.btn-container{
+  margin: 0 0 70px 0;
+}
+
+.check{
+  width:50%;
+  height: 50px;
+  text-align: center;
+  color: $yellow;
+  background-color: $blue1;
+  border-color: $blue2;
+  border-style: solid;
+  border-width: 2px;
+  border-top-color: $blue2;
+  border-left-color: $blue2;
+  border-bottom-color: $black;
+  border-right-color: $black;
+  font-size: 15px;
+  padding: 13px 0 0 0;
+}
+
+.send-pass{
+  margin: 0 0 20px 0;
+}
+
+input.send-pass-btn{
+  width:100%;
+  height: 50px;
+  color: $blue2;
+  background-color: $yellow;
+  border-color: $blue2;
+  font-size: 15px;
+  // border-top-right-radius: 20px;
+  // border-bottom-right-radius: 20px;
+  cursor: pointer;
+}
+
+input.forget-signup{
+  width:100%;
+  height: 50px;
+  color: $yellow;
+  background-color: $blue1;
+  border-color: $blue2;
+  font-size: 15px;
+  // border-top-right-radius: 20px;
+  // border-bottom-right-radius: 20px;
+  cursor: pointer;
 }
