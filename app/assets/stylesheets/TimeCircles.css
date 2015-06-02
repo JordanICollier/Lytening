@@ -4,8 +4,9 @@
  **/
 .time_circles {
     position: relative;
-    width: 100%;
-    height: 100%;
+    width: 35px;
+    height: 35px;
+    /*float: right; */
 }
 
 /**
@@ -39,4 +40,10 @@
     font-size: 300%;
     margin-top: 0.4em;
     font-weight: bold;
+}
+
+.countdown{
+  height:45px;
+  padding: 0 0 0 0;
+  margin: 0 0 21px 0;
 }
