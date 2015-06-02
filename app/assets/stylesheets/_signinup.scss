@@ -2,7 +2,7 @@
   height: 100%;
   width: 100%;
   padding: 10% 10% 25% 10%;
-  background-color: $teal1;
+  background-color: $green2;
   background-image: url(logo-bg.png);
 }
 
@@ -24,16 +24,17 @@
 }
 
 .sign-header{
-  color: $white;
+  color: $purple1;
   margin: 0 0 10px 5px;
 }
 
 #user_email{
   width:100%;
-  height: 30px;
-  background-color: rgba(255,255,255,0);
-  border-color: $white;
-  border-radius: 20px;
+  height: 50px;
+  background-color: $blue2;
+  border-color: $blue2;
+  // border-radius: 20px;
+  font-size: 15px;
   color: $white;
   margin: 0 0 20px 0;
   padding: 0 0 0 10px;
@@ -41,21 +42,34 @@
 
 #user_password{
   width:100%;
-  height: 30px;
-  background-color: rgba(255,255,255,0);
-  border-color: $white;
-  border-radius: 20px;
+  height: 50px;
+  background-color: $blue2;
+  border-color: $blue2;
+  font-size: 15px;
+  // border-radius: 20px;
   margin: 0 0 15px 0;
   padding: 0 0 0 10px;
 }
 
 #user_password_confirmation{
   width:100%;
-  height: 30px;
-  background-color: rgba(255,255,255,0);
-  border-color: #94E6EC;
-  border-radius: 20px;
+  height: 50px;
+  background-color: $blue2;
+  border-color: $blue2;
+  font-size: 15px;
+  // border-radius: 20px;
   margin: 10px 0 20px 0;
+  padding: 0 0 0 10px;
+}
+
+#user_current_password{
+  width:100%;
+  height: 50px;
+  background-color: $blue2;
+  border-color: $blue2;
+  // border-radius: 20px;
+  font-size: 15px;
+  margin: 0 0 15px 0;
   padding: 0 0 0 10px;
 }
 
@@ -92,12 +106,40 @@ a:visited{
 .login-submit{
   position:absolute;
   width:8%;
-  height: 30px;
+  height: 50px;
   background-color: $purple2;
   border-color: #94E6EC;
-  border-radius: 20px;
+  // border-radius: 20px;
   color: $white;
   // border-bottom-right-radius: 20px;
   cursor: pointer;
   padding: 0 0 0 0;
+}
+
+input.cancel{
+  width:100%;
+  height: 50px;
+  color: $teal1;
+  background-color: $blue2;
+  border-color: $blue2;
+  font-size: 15px;
+  // border-top-right-radius: 20px;
+  // border-bottom-right-radius: 20px;
+  cursor: pointer;
+}
+
+input.update{
+  width:100%;
+  height: 50px;
+  color: $blue2;
+  background-color: $yellow;
+  border-color: $blue2;
+  font-size: 15px;
+  // border-top-right-radius: 20px;
+  // border-bottom-right-radius: 20px;
+  cursor: pointer;
+}
+
+.cancel-box{
+  margin: 8px 0 0 0;
 }
