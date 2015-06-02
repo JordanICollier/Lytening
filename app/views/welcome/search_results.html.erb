@@ -1,0 +1,7 @@
+<div class="user-container">
+  <% @friends.each do |friend| %>
+    <%= link_to friend.full_name, user_path(friend) %>
+    <%= friend.email %>
+    <%= friend.username %>
+  <% end %>
+</div>

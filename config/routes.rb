@@ -11,6 +11,7 @@ Rails.application.routes.draw do
   resources :followings
   resources :comments
   resources :sparks
+  get 'search_results' => 'welcome#search_results'
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 

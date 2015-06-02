@@ -1,7 +1,7 @@
 class WelcomeController < ApplicationController
 
   def index
-    
+
     @strykes_hot_recent = []
     @strykes_hot = Stryke.order(created_at: :asc).order(spark_count: :asc).distinct
     @strykes_hot.each do |stryke|
@@ -19,6 +19,11 @@ class WelcomeController < ApplicationController
     end
 
     @comment = Comment.new
+  end
+
+  def search_results
+    @search = params[:search]
+    @friends = User.where("email LIKE :query OR username LIKE :query OR concat(first_name, ' ', last_name) LIKE :query", query: "%#{@search}%")
   end
 
 end
