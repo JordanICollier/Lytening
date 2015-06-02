@@ -1,4 +1,4 @@
-<div class="<%= top_class %>">
+<div class="<%= top_class %>" data-stryke-id="<%= stryke.id %>">
   <div class="col-1-12">
     <%= image_tag "#{stryke.user.avatar}", class: 'thumb' %>
   </div>
@@ -31,18 +31,19 @@
     <div class="header"><%= "#{stryke.comments.count}" %> comments</div>
       <div class='content'>
 
-        <% stryke.comments.each do |comment| %>
-          <%= render partial: "comment", locals: {comment: comment} %>
-        <% end %>
+        <div class="comment-list">
+          <% stryke.comments.each do |comment| %>
+            <%= render partial: "comment", locals: {comment: comment} %>
+          <% end %>
+        </div>
 
       <!-- Comment form -->
       <div class="form">
         <hr class="comment-split"></hr>
 
         <%= simple_form_for([stryke, @comment]) do |f| %>
-          <%= f.hidden_field :title, :value => stryke.id %>
           <%= f.text_field :body %>
-          <%= f.button :submit , id: "hot-comment", value: "Post" %>
+          <%= f.button :submit, value: "Post" %>
         <% end %>
 
       </div>
