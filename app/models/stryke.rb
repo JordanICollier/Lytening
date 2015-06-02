@@ -18,7 +18,7 @@ class Stryke < ActiveRecord::Base
     google_map
     twitter
     flickr
-    instagram
+    # instagram currently buggy
     liveleak(:width => 400, :height => 250, :autoplay => false)
     ted
     worldstar(:width => 400, :height => 250, :autoplay => false)
