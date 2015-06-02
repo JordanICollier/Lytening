@@ -42,15 +42,20 @@ a:visited{
   text-decoration: none;
   color: $white;
 }
-
+.alert-box{
+  width: 300px;
+  margin: 0 40%;
+  z-index: 10;
+  height: 40px;
+  position: absolute;
+}
 .alert{
-  position: fixed;
-  width: 100%;
+  // position: fixed;
   top: 0;
   padding: 28px 0;
-  margin: 0;
+  // margin: 0 auto;
   z-index: 10;
-  width: 100%;
+  width: 300px;
   text-align: center;
   color: $teal1;
 }
