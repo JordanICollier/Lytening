@@ -1,15 +1,26 @@
-<h2>Forgot your password?</h2>
+<div class="col-12-12">
+  <div class="sign-container">
+    <div class="sign-box">
+      <%= link_to(image_tag("lytening-logo-white.png", class:"sign-logo"), "#") %>
+      <div class="sign-header">FORGOT YOUR PASSWORD?</div>
+        <%= simple_form_for(resource, as: resource_name, url: password_path(resource_name), html: { method: :post }) do |f| %>
+          <%= f.error_notification %>
 
-<%= simple_form_for(resource, as: resource_name, url: password_path(resource_name), html: { method: :post }) do |f| %>
-  <%= f.error_notification %>
+          <div class="form-inputs">
+            <%= f.input :email, label: false, placeholder: "Email", required: true, autofocus: true %>
+          </div>
 
-  <div class="form-inputs">
-    <%= f.input :email, required: true, autofocus: true %>
+          <div class="form-actions send-pass">
+            <%= f.button :submit, "SEND ME RESET PASSWORD INSTRUCTIONS", class:"send-pass-btn" %>
+          </div>
+        <% end %>
+
+        <div class="col-6-12">
+          <%= button_to "LOG IN", user_session_path, class: "login" %>
+        </div>
+        <div class="col-6-12 form-actions">
+          <%= button_to "SIGN UP", user_registration_path, class:"forget-signup" %>
+        </div>
+    </div>
   </div>
-
-  <div class="form-actions">
-    <%= f.button :submit, "Send me reset password instructions" %>
-  </div>
-<% end %>
-
-<%= render "devise/shared/links" %>
+</div>

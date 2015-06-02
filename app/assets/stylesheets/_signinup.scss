@@ -26,6 +26,7 @@
 .sign-header{
   color: $purple1;
   margin: 0 0 10px 5px;
+  text-align: left;
 }
 
 #user_email{
@@ -190,4 +191,32 @@ a.signup-loginpage{
   border-right-color: $black;
   font-size: 15px;
   padding: 13px 0 0 0;
+}
+
+.send-pass{
+  margin: 0 0 20px 0;
+}
+
+input.send-pass-btn{
+  width:100%;
+  height: 50px;
+  color: $blue2;
+  background-color: $yellow;
+  border-color: $blue2;
+  font-size: 15px;
+  // border-top-right-radius: 20px;
+  // border-bottom-right-radius: 20px;
+  cursor: pointer;
+}
+
+input.forget-signup{
+  width:100%;
+  height: 50px;
+  color: $yellow;
+  background-color: $blue1;
+  border-color: $blue2;
+  font-size: 15px;
+  // border-top-right-radius: 20px;
+  // border-bottom-right-radius: 20px;
+  cursor: pointer;
 }
