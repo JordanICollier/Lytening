@@ -17,10 +17,15 @@
         <div class="sparks">
 
           <ul>
-            <% if current_user.sparks.include? stryke.id %>
-              <li><%= image_tag "spark-icon-yellow.png", class:"spark-icon", id:"#{stryke.id} #{stryke.user.id}" %></li>
+            <% unless current_user %>
+              <li><%= image_tag "spark-icon-white.png", class:"spark-icon white", id:"#{stryke.id} #{stryke.user.id}" %></li>
             <% else %>
-              <li><%= image_tag "spark-icon-white.png", class:"spark-icon", id:"#{stryke.id} #{stryke.user.id}" %></li>
+              <% spark = current_user.sparks.find_by(stryke_id: stryke.id) %>
+              <% if spark %>
+                <li><%= image_tag "spark-icon-yellow.png", class:"spark-icon yellow", id:"#{stryke.id} #{stryke.user.id} #{spark.id}" %></li>
+              <% else %>
+                <li><%= image_tag "spark-icon-white.png", class:"spark-icon white", id:"#{stryke.id} #{stryke.user.id}" %></li>
+              <% end %>
             <% end %>
             <li><strong><%= "#{stryke.spark_count}" %></strong></li>
             <li>sparks</li>
@@ -73,10 +78,15 @@
         <div class="sparks">
 
           <ul>
-            <% if current_user.sparks.include? stryke %>
-              <li><%= image_tag "spark-icon-yellow.png", class:"spark-icon", id:"#{stryke.id} #{stryke.user.id}" %></li>
+            <% unless current_user %>
+              <li><%= image_tag "spark-icon-white.png", class:"spark-icon white", id:"#{stryke.id} #{stryke.user.id}" %></li>
             <% else %>
-              <li><%= image_tag "spark-icon-white.png", class:"spark-icon", id:"#{stryke.id} #{stryke.user.id}" %></li>
+              <% spark = current_user.sparks.find_by(stryke_id: stryke.id) %>
+              <% if spark %>
+                <li><%= image_tag "spark-icon-yellow.png", class:"spark-icon yellow", id:"#{stryke.id} #{stryke.user.id} #{spark.id}" %></li>
+              <% else %>
+                <li><%= image_tag "spark-icon-white.png", class:"spark-icon white", id:"#{stryke.id} #{stryke.user.id}" %></li>
+              <% end %>
             <% end %>
             <li><strong><%= "#{stryke.spark_count}" %></strong></li>
             <li>sparks</li>
