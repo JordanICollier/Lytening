@@ -31,25 +31,35 @@ $(function() {
 
 // ajax call on comment
 
-    $("#hot-comment").on('click', function(e) {
+    $('.status-container').on('submit', '.comments .form', function(e) {
       e.preventDefault();
-      var strykeId = e.target.form[2].defaultValue;
-      var comment = e.target.form[3].value;
+      // find top level element
+      var stryke = $(this).closest('.new-status, .top-status');
+      // grab the stryke_id
+      var strykeId = stryke.data('stryke-id');
+      // grab the comment text to submit
+      var commentInput = $(this).find('input[name="comment[body]"]');
+      var comment = commentInput.val();
+      // send the ajax request
       $.ajax({
         url: "/strykes/" + strykeId + "/comments",
         method: "POST",
         contentType: "application/json",
+        // serialize the data be sending over the wire
         data: JSON.stringify({
           comment: {
             body: comment
           }
         })
       }).done(function(data){
-        $('.comment-indi')
-          .first()
-          .children('.comment')
-          .last()
-          .after(data);
+        // find all strykes with the same id on the page
+        var sameStrykes = $('[data-stryke-id=' + strykeId + ']');
+        // add the comment to each one
+        sameStrykes
+          .find('.comment-list')
+          .append(data);
+        // clear the input
+        commentInput.val('');
       });
     });
 

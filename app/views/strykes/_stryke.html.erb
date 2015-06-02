@@ -1,0 +1,52 @@
+<div class="<%= top_class %>" data-stryke-id="<%= stryke.id %>">
+  <div class="col-1-12">
+    <%= image_tag "#{stryke.user.avatar}", class: 'thumb' %>
+  </div>
+  <div class="col-10-12 spark-header-box">
+    <%= link_to "#{stryke.user.full_name.upcase}", user_path(stryke.user), class:"spark-header" %>
+  </div>
+  <div class="col-1-12 countdown" data-date="<%= (stryke.created_at + 24.hours).strftime('%Y-%m-%d %H:%M:%S') %>"></div>
+  <p>
+    <%= stryke.body_html %>
+  </p>
+
+  <div class="sparks">
+    <ul>
+      <% unless current_user %>
+        <li><%= image_tag "spark-icon-white.png", class:"spark-icon white", id:"#{stryke.id} #{stryke.user.id}" %></li>
+      <% else %>
+        <% spark = current_user.sparks.find_by(stryke_id: stryke.id) %>
+        <% if spark %>
+          <li><%= image_tag "spark-icon-yellow.png", class:"spark-icon yellow", id:"#{stryke.id} #{stryke.user.id} #{spark.id}" %></li>
+        <% else %>
+          <li><%= image_tag "spark-icon-white.png", class:"spark-icon white", id:"#{stryke.id} #{stryke.user.id}" %></li>
+        <% end %>
+      <% end %>
+      <li><strong><%= "#{stryke.spark_count}" %></strong></li>
+      <li>sparks</li>
+    </ul>
+  </div>
+
+  <div class="comments">
+    <div class="header"><%= "#{stryke.comments.count}" %> comments</div>
+      <div class='content'>
+
+        <div class="comment-list">
+          <% stryke.comments.each do |comment| %>
+            <%= render partial: "comment", locals: {comment: comment} %>
+          <% end %>
+        </div>
+
+      <!-- Comment form -->
+      <div class="form">
+        <hr class="comment-split"></hr>
+
+        <%= simple_form_for([stryke, @comment]) do |f| %>
+          <%= f.text_field :body %>
+          <%= f.button :submit, value: "Post" %>
+        <% end %>
+
+      </div>
+    </div>
+  </div>
+</div>

@@ -15,15 +15,17 @@ Purpose: A collaborative project creating a new form of social media that is
 
 To do
   • [x] Comments ajax call
-  • [x] Searching for friends
   • [x] Profile tutorial
   • [x] Validate and check for empty comment
+  • [x] limit strykes to 500 characters
   • [x] hyjack stryke
+  • [x] feed
   • [x] styling
   • [x] Mobile formatting
   • [x] User CSS styling
   • [x] Login / signup CSS styling
-  
+
+  • [√] Searching for friends
   • [√] spark buttons and iterate spark count with ajax (user can unspark strykes they've sparked)
   • [√] Strykes post photo,text,video, etc...
   • [√] include 24 hour time circle on each stryke?
@@ -45,7 +47,7 @@ To do
       -[√] birthday
       -[√] sex
       -[√] interest
-  • [x] spark-count
+  • [√] spark-count
   • [√] follow people
       -[√] following
       -[√] followers
