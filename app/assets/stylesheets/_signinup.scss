@@ -90,10 +90,10 @@
   margin: 0 0 10px 5px;
 
 }
-.btn.login-submit{
-  color: $white;
-  float: right;
-}
+// .btn.login-submit{
+//   color: $white;
+//   float: right;
+// }
 
 a{
   color: $white;
@@ -103,12 +103,12 @@ a:visited{
   color: $white;
 }
 
-.login-submit{
-  position:absolute;
-  width:8%;
+btn.login-submit{
+  // position:absolute;
+  width:100%;
   height: 50px;
-  background-color: $purple2;
-  border-color: #94E6EC;
+  background-color: $yellow;
+  border-color: $blue2;
   // border-radius: 20px;
   color: $white;
   // border-bottom-right-radius: 20px;
@@ -142,4 +142,36 @@ input.update{
 
 .cancel-box{
   margin: 8px 0 0 0;
+}
+
+input.login{
+  width:100%;
+  height: 50px;
+  color: $yellow;
+  background-color: $blue1;
+  border-color: $blue2;
+  font-size: 15px;
+  // border-top-right-radius: 20px;
+  // border-bottom-right-radius: 20px;
+  cursor: pointer;
+}
+
+input.signup-loginpage{
+  width:100%;
+  height: 50px;
+  color: $yellow;
+  background-color: $blue1;
+  border-color: $blue2;
+  font-size: 15px;
+  // border-top-right-radius: 20px;
+  // border-bottom-right-radius: 20px;
+  cursor: pointer;
+}
+
+.forgot-password{
+  color: $white;
+}
+
+.btn-container{
+  margin: 0 0 70px 0;
 }

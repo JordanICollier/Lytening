@@ -11,15 +11,21 @@
       <div class="form-inputs">
         <%= f.input :email, label: false, required: false, autofocus: true, placeholder: "Email"  %>
         <%= f.input :password, label: false, required: false, placeholder: "Password"  %>
+        <div class="btn-container">
+          <div class="col-6-12 form-actions">
+            <%= f.button :submit, "LOG IN", class:"update" %>
+          </div>
+          <div class="col-6-12 form-actions">
+            <%= f.button :submit, "SIGN UP", class:"signup-loginpage" %>
+          </div>
+        </div>
         <%= f.input :remember_me, as: :boolean if devise_mapping.rememberable? %>
       </div>
 
-      <div class="form-actions">
-        <%= f.button :submit, "Log in", class:"login-submit" %>
-      </div>
+
     <% end %>
-    <div class="sign-up">
-      <%= render "devise/shared/links" %>
+    <div class="forgot-password">
+      <%= link_to "Forgot password", new_user_password_path %>
     </div>
     </div>
 
