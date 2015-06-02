@@ -6,9 +6,9 @@ var sparks = (function() {
 
   function spark() {
     // Spark / Unspark
-    $('.spark-icon').click(function(e) {
+    $('.status-container').on('click', '.spark-icon', function(e) {
       e.preventDefault();
-      var spark = $(e.delegateTarget);
+      var spark = $(this);
       var stryke_id = e.target.id.split(" ")[0];
       var comment_id = e.target.id.split(" ")[0];
       var user_id = e.target.id.split(" ")[1];
