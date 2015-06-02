@@ -10,6 +10,7 @@ class User < ActiveRecord::Base
 
   has_many :strykes
   has_many :comments
+  has_many :sparks
 
   has_many :followings
   has_many :followers, :through => :followings
