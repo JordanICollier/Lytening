@@ -18,7 +18,12 @@
     <input type="checkbox" id="toggle-menu" />
     <ul class="sidenav">
       <%= link_to(image_tag("lytening-logo-white.png", class:"sidenav-logo"), "#") %><hr>
-      <li class="search-space"><input type="text" id="search-bar" placeholder="Find Your Friends"><input type="submit" value="SEARCH" class="search-btn"></input></li><hr>
+      <li class="search-space">
+        <form class="navbar-form navbar-left" role="search" action="/search_results">
+          <input type="text" id="search-bar" placeholder="Find Your Friends" name="search">
+          <input type="submit" value="SEARCH" class="search-btn"></input>
+        </form>
+      </li><hr>
       <% if user_signed_in? %>
         <li class="two-lines">Logged in as <br><strong><%= link_to current_user.email, user_path(current_user) %></strong></li><hr>
         <li class= "one-line"><%= link_to 'Edit profile', edit_user_registration_path%></li><hr>
