@@ -156,13 +156,12 @@ input.login{
   cursor: pointer;
 }
 
-input.signup-loginpage{
+a.signup-loginpage{
   width:100%;
   height: 50px;
-  color: $yellow;
-  background-color: $blue1;
-  border-color: $blue2;
+  text-decoration: none;;
   font-size: 15px;
+  text-align: center;
   // border-top-right-radius: 20px;
   // border-bottom-right-radius: 20px;
   cursor: pointer;
@@ -174,4 +173,21 @@ input.signup-loginpage{
 
 .btn-container{
   margin: 0 0 70px 0;
+}
+
+.check{
+  width:50%;
+  height: 50px;
+  text-align: center;
+  color: $yellow;
+  background-color: $blue1;
+  border-color: $blue2;
+  border-style: solid;
+  border-width: 2px;
+  border-top-color: $blue2;
+  border-left-color: $blue2;
+  border-bottom-color: $black;
+  border-right-color: $black;
+  font-size: 15px;
+  padding: 13px 0 0 0;
 }

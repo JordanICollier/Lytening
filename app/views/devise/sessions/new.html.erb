@@ -15,9 +15,11 @@
           <div class="col-6-12 form-actions">
             <%= f.button :submit, "LOG IN", class:"update" %>
           </div>
-          <div class="col-6-12 form-actions">
-            <%= f.button :submit, "SIGN UP", class:"signup-loginpage" %>
+          <%= link_to new_user_registration_path do %>
+          <div class="col-6-12 check">
+            SIGN UP
           </div>
+          <% end %>
         </div>
         <%= f.input :remember_me, as: :boolean if devise_mapping.rememberable? %>
       </div>

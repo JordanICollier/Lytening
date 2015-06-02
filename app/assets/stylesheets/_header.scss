@@ -94,8 +94,8 @@ nav {
 #search-bar{
   width:65%;
   height: 40px;
-  background-color: rgba(255,255,255,0);
-  border-color: $white;
+  background-color: $blue2;
+  border-color: $blue1;
   color:$white;
   font-size: 15px;
   // border-top-left-radius: 20px;
@@ -124,8 +124,8 @@ input.search-btn{
   position:absolute;
   width:20%;
   height: 40px;
-  background-color: rgba(255,255,255,0);
-  border-color: $white;
+  background-color: $blue2;
+  border-color: $blue1;
   color: $white;
   // border-top-right-radius: 20px;
   // border-bottom-right-radius: 20px;
