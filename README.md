@@ -15,7 +15,6 @@ Purpose: A collaborative project creating a new form of social media that is
 
 To do
   • [x] Comments ajax call
-  • [x] spark buttons and iterate spark count with ajax (user can unspark strykes they've sparked)
   • [x] Searching for friends
   • [x] Profile tutorial
   • [x] Validate and check for empty comment
@@ -24,7 +23,8 @@ To do
   • [x] Mobile formatting
   • [x] User CSS styling
   • [x] Login / signup CSS styling
-
+  
+  • [√] spark buttons and iterate spark count with ajax (user can unspark strykes they've sparked)
   • [√] Strykes post photo,text,video, etc...
   • [√] include 24 hour time circle on each stryke?
   • [√] create database with users table that has self-relationship
