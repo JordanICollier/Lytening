@@ -24,6 +24,12 @@ Dir.chdir APP_ROOT do
   system "rm -f log/*"
   system "rm -rf tmp/cache"
 
+  remotes = `git remote show`.each_line.to_a.map(&:chomp)
+  puts "\n== Adding git remotes =="
+  unless remotes.include? 'heroku'
+    system 'git remote add heroku git@heroku.com:lytening.git'
+  end
+
   puts "\n== Restarting application server =="
   system "touch tmp/restart.txt"
 end
