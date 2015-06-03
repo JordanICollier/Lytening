@@ -5,8 +5,8 @@ class WelcomeController < ApplicationController
     my_stryke = current_user.active_stryke
     @strykes << my_stryke if my_stryke
 
-    @strykes_hot = @strykes.sort_by(&:spark_count)
-    @strykes_new = @strykes.sort_by(&:created_at)
+    @strykes_hot = @strykes.sort_by(&:spark_count).first(25)
+    @strykes_new = @strykes.sort_by(&:created_at).first(25)
 
     @comment = Comment.new
   end
