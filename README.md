@@ -14,50 +14,27 @@ Purpose: A collaborative project creating a new form of social media that is
          text, media files, and hyperlinks.
 
 To do
-  • [x] Comments ajax call
   • [x] Profile tutorial
-  • [x] Validate and check for empty comment
-  • [x] limit strykes to 500 characters
-  • [x] hyjack stryke
-  • [x] feed
-  • [x] styling
+  • [x] Validate and check for empty comment/stryke
+  • [x] Limit strykes to 500 characters
+  • [x] Feed
+  • [x] Load 25 at a time
+  • [x] Back to top button
+  • [x] User CSS styling / styling in general
   • [x] Mobile formatting
-  • [x] User CSS styling
-  • [x] Login / signup CSS styling
 
+Stretch
+  • [x] Hyjack stryke
+  • [x] Web sockets
+  • [x] Mobile app
+
+Done
+  • [√] Login / signup CSS styling
+  • [√] Comments ajax call
   • [√] Searching for friends
-  • [√] spark buttons and iterate spark count with ajax (user can unspark strykes they've sparked)
+  • [√] Spark buttons and iterate spark count with ajax (user can unspark strykes they've sparked)
   • [√] Strykes post photo,text,video, etc...
-  • [√] include 24 hour time circle on each stryke?
-  • [√] create database with users table that has self-relationship
+  • [√] Include 24 hour time circle on each stryke?
+  • [√] Create database with users table that has self-relationship
   • [√] Affix navbar
   • [√] Strykes only show for 24 hours
-
-
--User
-  • [√] create a status
-  • [x] hyjack
-  • [√] Profile-picture
-      -[√] can upload photo
-      -[√] can crop photo
-  • [√] about
-      -[√] location
-      -[√] work
-      -[√] school
-      -[√] birthday
-      -[√] sex
-      -[√] interest
-  • [√] spark-count
-  • [√] follow people
-      -[√] following
-      -[√] followers
-      -[x] mutual?
-  • [x] feed
-      -[x] users can see what this person has recently sparked
-
--Strykes)
-  • media-file
-  • text
-  • hyperlink
-  • user_id
-  • created at
