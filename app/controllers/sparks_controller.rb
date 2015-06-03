@@ -12,7 +12,7 @@ class SparksController < ApplicationController
     @spark.comment_id = spark_params[:comment_id]
     @spark.save
 
-    if params[:stryke_id] == ""
+    if params[:stryke_id] == nil
       @comment = Comment.find(spark_params[:comment_id])
       @comment.spark_count += 1
       @comment.save
@@ -41,7 +41,7 @@ class SparksController < ApplicationController
   def destroy
     @spark = Spark.find(params[:id])
 
-    if params[:stryke_id] == ""
+    if params[:stryke_id] == nil
       @comment = Comment.find(@spark.comment_id)
       @comment.spark_count -= 1
       @comment.save
