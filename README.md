@@ -16,9 +16,8 @@ Purpose: A collaborative project creating a new form of social media that is
 To do
   • [x] Profile tutorial
   • [x] Validate and check for empty comment/stryke
-  • [x] Limit strykes to 500 characters
-  • [x] Feed
   • [x] Load 25 at a time
+  • [x] Spark buttons and iterate spark count with ajax (user can unspark strykes they've sparked)
   • [x] Back to top button
   • [x] User CSS styling / styling in general
   • [x] Mobile formatting
@@ -29,10 +28,11 @@ Stretch
   • [x] Mobile app
 
 Done
+  • [√] Limit strykes to 500 characters
+  • [√] Feed
   • [√] Login / signup CSS styling
   • [√] Comments ajax call
   • [√] Searching for friends
-  • [√] Spark buttons and iterate spark count with ajax (user can unspark strykes they've sparked)
   • [√] Strykes post photo,text,video, etc...
   • [√] Include 24 hour time circle on each stryke?
   • [√] Create database with users table that has self-relationship
