@@ -41,7 +41,8 @@
               <li class="col-4-12">
                 <%= form_for current_user, {:url => user_strykes_path(current_user), method: :post } do |f| %>
                   <%= fields_for Stryke.new do |fs| %>
-                    <%= fs.text_field :body, class: "header-post" %>
+                    <%= fs.text_field :body, class: "header-post", id:"textarea" %>
+                    <span id="textarea_feedback"></span>
                   <% end %>
                   <%= f.submit "Stryke", class:"header-post-btn" %>
                 <% end %>
