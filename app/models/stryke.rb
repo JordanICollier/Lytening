@@ -6,6 +6,8 @@ class Stryke < ActiveRecord::Base
 
   accepts_nested_attributes_for :comments
 
+  validates :body, length: { maximum: 500 }
+
   auto_html_for :body do
     html_escape
     image
