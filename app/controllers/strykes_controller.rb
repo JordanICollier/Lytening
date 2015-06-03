@@ -10,7 +10,7 @@ class StrykesController < ApplicationController
     @stryke.user_id = @user.id
     @stryke.spark_count = 0
     if @stryke.save
-      redirect_to user_path(@user)
+      render json: @stryke.to_json
     else
       render :new
     end
