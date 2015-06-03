@@ -29,6 +29,25 @@ $(function() {
 
     });
 
+    // 500 character countdown on strykes
+    var text_max = 500;
+    $('#textarea_feedback').html(text_max);
+
+    $('#textarea').keyup(function() {
+      var text_length = $('#textarea').val().length;
+      var text_remaining = text_max - text_length;
+
+      $('#textarea_feedback').html(text_remaining);
+
+      if(text_remaining < 0) {
+        $("#textarea_feedback").css("color","red");
+      }
+      else {
+        $("#textarea_feedback").css("color","black");
+      }
+    });
+
+
 // ajax call on comment
 
     $('.status-container').on('submit', '.comments .form', function(e) {
