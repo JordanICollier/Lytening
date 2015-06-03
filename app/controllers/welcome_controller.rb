@@ -1,22 +1,12 @@
 class WelcomeController < ApplicationController
 
   def index
+    @strykes = current_user.followers.map {|user| user.active_stryke}.compact
+    my_stryke = current_user.active_stryke
+    @strykes << my_stryke if my_stryke
 
-    @strykes_hot_recent = []
-    @strykes_hot = Stryke.order(created_at: :asc).order(spark_count: :asc).distinct
-    @strykes_hot.each do |stryke|
-      if DateTime.now.utc - 24.hours <= stryke.created_at
-        @strykes_hot_recent << stryke
-      end
-    end
-
-    @strykes_new_recent = []
-    @strykes_new = Stryke.order(created_at: :desc).distinct.all
-    @strykes_new.each do |stryke|
-      if DateTime.now.utc - 24.hours <= stryke.created_at
-        @strykes_new_recent << stryke
-      end
-    end
+    @strykes_hot = @strykes.sort_by(&:spark_count)
+    @strykes_new = @strykes.sort_by(&:created_at)
 
     @comment = Comment.new
   end

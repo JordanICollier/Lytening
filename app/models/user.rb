@@ -28,4 +28,11 @@ class User < ActiveRecord::Base
     first_name + " " + last_name
   end
 
+  def active_stryke
+    stryke = self.strykes.order(created_at: :desc).first
+    if DateTime.now.utc - 24.hours <= stryke.created_at
+      stryke
+    end
+  end
+
 end
