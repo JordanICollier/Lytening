@@ -56,29 +56,29 @@ User.create(location: "Denver",
 
 Stryke.create(body: "Is anybody even reading this?",
               spark_count: 21,
-              created_at: '2015-06-02 02:45:00 -0600',
-              updated_at: '2015-06-02 02:45:00 -0600',
+              created_at: '2015-06-03 02:45:00 -0600',
+              updated_at: '2015-06-03 02:45:00 -0600',
               user_id: 1
               )
 
 Stryke.create(body: "Gorgonzola Duck Circus!",
               spark_count: 17,
-              created_at: '2015-06-02 02:47:00 -0600',
-              updated_at: '2015-06-02 02:47:00 -0600',
+              created_at: '2015-06-03 02:47:00 -0600',
+              updated_at: '2015-06-03 02:47:00 -0600',
               user_id: 2
               )
 
 Stryke.create(body: "Life is like a box of horseshoe mayonnaise; WHIPPLE!",
               spark_count: 13,
-              created_at: '2015-06-02 02:49:00 -0600',
-              updated_at: '2015-06-02 02:49:00 -0600',
+              created_at: '2015-06-03 02:49:00 -0600',
+              updated_at: '2015-06-03 02:49:00 -0600',
               user_id: 3
               )
 
 Stryke.create(body: "Within 24 hours",
               spark_count: 13,
-              created_at: '2015-06-02 12:10:00 -0600',
-              updated_at: '2015-06-02 12:10:00 -0600',
+              created_at: '2015-06-03 12:10:00 -0600',
+              updated_at: '2015-06-03 12:10:00 -0600',
               user_id: 3
               )
 
