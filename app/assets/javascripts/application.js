@@ -29,6 +29,11 @@ $(function() {
 
     });
 
+    $('.back-to-top').on('click', function(){
+      event.preventDefault();
+      $('html, body').animate({ scrollTop: 0 }, 'slow');
+    });
+
     // 500 character countdown on strykes
     var text_max = 500;
     $('#textarea_feedback').html(text_max);
