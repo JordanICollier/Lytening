@@ -1,15 +1,21 @@
-<div class="status-container">
-<!-- Hot Strykes -->
-  <div class="col-6-12">
-    <div class="top">
-      <%= render partial: @strykes_hot, locals: {top_class: 'top-status'} %>
+<div class="bg-no-status">
+  <div class="status-container">
+  <!-- Hot Strykes -->
+    <div class="col-6-12">
+      <div class="top" id="top">
+        <%= render partial: @strykes_hot, locals: {top_class: 'top-status'} %>
+      </div>
+    </div>
+
+  <!-- New Strykes -->
+    <div class="col-6-12">
+      <div class="new">
+        <%= render partial: @strykes_new, locals: {top_class: 'new-status'} %>
+      </div>
     </div>
   </div>
 
-<!-- New Strykes -->
-  <div class="col-6-12">
-    <div class="new">
-      <%= render partial: @strykes_new, locals: {top_class: 'new-status'} %>
-    </div>
+  <div class="f-right">
+    <img src="assets/up-arrow.png" class='back-to-top'>
   </div>
 </div>

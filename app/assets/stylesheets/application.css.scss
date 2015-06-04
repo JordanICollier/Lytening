@@ -51,12 +51,28 @@ a:visited{
   position: absolute;
 }
 .alert{
-  // position: fixed;
   top: 0;
   padding: 28px 0;
-  // margin: 0 auto;
   z-index: 10;
   width: 330px;
   text-align: center;
   color: $teal1;
+}
+
+.back-to-top{
+  position: fixed;
+  z-index:11;
+  bottom: 10px;
+  right: 5px;
+  color: $black;
+  height: 40px;
+  width: 40px;
+  float:right;
+  cursor: pointer;
+
+}
+
+a.back-to-top:visited{
+  text-decoration: none;
+  color: $black;
 }
