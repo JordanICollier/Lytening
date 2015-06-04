@@ -17,22 +17,28 @@ class AvatarUploader < CarrierWave::Uploader::Base
   end
 
   version :profile do
+    process :crop
     process resize_to_fill: [200,200]
   end
 
   version :profile1 do
+    process :crop
     process resize_to_fill: [300,300]
   end
 
   version :profile2 do
+    process :crop
     process resize_to_fill: [400,400]
   end
 
   version :profile3 do
+    process :crop
     process resize_to_fill: [500,500]
   end
 
   version :large do
+    #add process crop to save cropped state
+    process :crop
     resize_to_limit(600, 600)
   end
 
