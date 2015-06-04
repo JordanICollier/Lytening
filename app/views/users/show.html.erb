@@ -45,7 +45,7 @@
         <strong>SCHOOL</strong><br>
         <%= @user.school %><br>
 
-        <% if current_user %>
+        <% if current_user == @user %>
           <%= link_to "Edit?", edit_user_path(current_user) %>
         <% end %>
     </div>
@@ -64,7 +64,7 @@
 
     <!-- •HEY ANDREW- THIS BELOW ALLOWS A USER TO SEE ALL OF HIS/HER POSTS ONLY IF
           THEY ARE THE CURRENT USER CAN THEY SEE THE HISTORY OF THEIR OWN POSTS -->
-    <div class="user-stryke-header">STRYKE'S</div>
+    <div class="user-stryke-header">STRYKES</div>
     <% if current_user %>
       <% @user.strykes.order(created_at: :desc).each do |stryke| %>
         <%= stryke.body %><br>
