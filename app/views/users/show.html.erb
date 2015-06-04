@@ -40,7 +40,7 @@
         <%= @user.location %><br>
 
         <strong>BIRTHDAY</strong><br>
-        <%= @user.birthday %><br>
+        <%= @user.birthday.strftime('%B %d, %Y') %><br>
 
         <strong>SCHOOL</strong><br>
         <%= @user.school %><br>
@@ -55,7 +55,7 @@
     </div>
 
     <div class="col-12-12 user-interests-con">
-      <strong>Interest</strong><br>
+      <strong>INTERESTS</strong><br>
       <%= @user.interest %><br>
     </div>
   </div>
@@ -67,7 +67,7 @@
     <div class="user-stryke-header">STRYKES</div>
     <% if current_user %>
       <% @user.strykes.order(created_at: :desc).each do |stryke| %>
-        <%= stryke.body %><br>
+        <%= stryke.body %><br><hr>
       <% end %>
     <% end %>
     <%# @user.strykes.order(created_at: :desc).first.body %>
