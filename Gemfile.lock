@@ -76,6 +76,8 @@ GEM
     erubis (2.7.0)
     eventmachine (1.0.7)
     execjs (2.5.2)
+    faker (1.4.3)
+      i18n (~> 0.5)
     globalid (0.3.5)
       activesupport (>= 4.1.0)
     haml (4.0.6)
@@ -207,6 +209,7 @@ DEPENDENCIES
   carrierwave
   coffee-rails (~> 4.1.0)
   devise
+  faker
   haml
   jbuilder (~> 2.0)
   jquery-rails
