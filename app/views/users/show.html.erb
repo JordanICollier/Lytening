@@ -1,72 +1,70 @@
+<div class="col-12-12 main-con">
+
 <div class="user-container">
   <div class="col-6-12 user-stats">
-    <div class="user-avatar">
 
-    </div>
-    <% if current_user == @user %>
-      <%= form_for @user, {:url => user_strykes_path(@user), method: :post } do |f| %>
+    <div class="col-12-12 user-quick-glance">
+      <div class="col-5-12 user-avatar">
+        <%= image_tag @user.avatar_url(:large) %>
+      </div>
+      <div class="col-7-12">
+        <div class="user-header"><%= @user.username %></div>
+        <div class="user-spark-count"><%= @user.spark_count %></div>
+        <div class="user-spark-header">Total Sparks</div>
 
-        <%= fields_for @stryke do |fs| %>
-          <%= fs.text_field :body %>
+        <!-- These are the Follow / Unfollow links -->
+        <% unless current_user == @user %>
+        <div class="follow-btn">
+          <% unless current_user.followers.include? @user %>
+            <%= link_to "FOLLOW", followings_path(:follower_id => @user.id), :method => :post %>
+            </div>
+          <% else %>
+            <%= link_to "UNFOLLOW", following_path(current_user.followings.find_by(follower_id: @user.id)), :method => :delete %>
+            </div>
+          <% end %>
         <% end %>
+      </div>
+    </div>
 
-        <%= f.submit "Stryke!" %>
+    <div class="col-12-12 user-info-con">
+        <strong>WORK</strong><br>
+        <%= @user.work %><br>
 
-      <% end %>
-    <% end %>
-    <%= image_tag @user.avatar_url(:profile) %>
+        <strong>NAME</strong><br>
+        <%= @user.first_name %> <%= @user.last_name %><br>
 
-    <strong>WORK</strong><br>
-    <%= @user.work %><br>
+        <strong>SEX</strong><br>
+        <%= @user.sex %><br>
 
-    <strong>First Name</strong><br>
-    <%= @user.first_name %><br>
+        <strong>LOCATION</strong><br>
+        <%= @user.location %><br>
 
-    <strong>Last Name</strong><br>
-    <%= @user.last_name %><br>
+        <strong>BIRTHDAY</strong><br>
+        <%= @user.birthday %><br>
 
-    <strong>Username</strong><br>
-    <%= @user.username %><br>
+        <strong>SCHOOL</strong><br>
+        <%= @user.school %><br>
 
-    <strong>Sex</strong><br>
-    <%= @user.sex %><br>
+        <% if current_user %>
+          <%= link_to "Edit?", edit_user_path(current_user) %>
+        <% end %>
+    </div>
+    <div class="col-12-12 user-about-con">
+      <strong>ABOUT</strong><br>
+      <%= @user.about %><br>
+    </div>
 
-    <strong>Location</strong><br>
-    <%= @user.location %><br>
-
-    <strong>birthday</strong><br>
-    <%= @user.birthday %><br>
-
-    <strong>interest</strong><br>
-    <%= @user.interest %><br>
-
-    <strong>School</strong><br>
-    <%= @user.school %><br>
-
-    <strong>About</strong><br>
-    <%= @user.about %><br>
-
-
-    <% if current_user %>
-      <%= link_to "Edit?", edit_user_path(current_user) %>
-    <% end %>
-
-    <!-- These are the Follow / Unfollow links -->
-    <% unless current_user == @user %>
-      <% unless current_user.followers.include? @user %>
-        <p><%= link_to "Follow", followings_path(:follower_id => @user.id), :method => :post %></p>
-      <% else %>
-        <p><%= link_to "Unfollow", following_path(current_user.followings.find_by(follower_id: @user.id)), :method => :delete %></p>
-      <% end %>
-    <% end %>
-
+    <div class="col-12-12 user-interests-con">
+      <strong>Interest</strong><br>
+      <%= @user.interest %><br>
+    </div>
   </div>
 
   <div class="col-6-12 user-comments">
 
     <!-- •HEY ANDREW- THIS BELOW ALLOWS A USER TO SEE ALL OF HIS/HER POSTS ONLY IF
           THEY ARE THE CURRENT USER CAN THEY SEE THE HISTORY OF THEIR OWN POSTS -->
-    <h1>Stryke's</h1>
+    <div class="user-stryke-header">STRYKE'S</div>
     <% if current_user %>
       <% @user.strykes.order(created_at: :desc).each do |stryke| %>
         <%= stryke.body %><br>
@@ -75,4 +73,5 @@
     <%# @user.strykes.order(created_at: :desc).first.body %>
   </div>
 
+</div>
 </div>

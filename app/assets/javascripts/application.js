@@ -85,6 +85,16 @@ $(function() {
     $('.spark-anywhere').on('click', function(){
         $('.header-stryke').toggleClass('upSlide');
     });
+
+    // Mobile toggle between to and new strykes
+    $('.toggle-top-new').on('click', function(){
+        event.preventDefault();
+        $('.new').toggleClass('hide');
+        $('.top').toggleClass('hide');
+        $('.toggle-top-new').text('VIEW NEW');
+
+    });
+
     // 500 character countdown on strykes
     var text_max = 500;
     $('#textarea_feedback').html(text_max);

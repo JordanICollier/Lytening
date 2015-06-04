@@ -1,8 +1,22 @@
-<div class="user-container">
+<div class="col-12-12">
+  <div class="sign-container">
+    <div class="sign-box">
+      <%= link_to(image_tag("lytening-logo-white.png", class:"sign-logo"), "#") %>
+      <div class="sign-log">
 
-<%= simple_form_for(@user) do |f| %>
-  <%= f.file_field :avatar %>
-  <%= f.button :submit %>
-<% end %>
+    <div class="sign-header">SIGN UP</div>
 
+
+          <div class="col-6-12 form-actions">
+            <%= simple_form_for(@user) do |f| %>
+              <%= f.file_field :avatar %>
+              <div class="col-6-12">
+                <%= f.button :submit, class: "login" %>
+              </div>
+            <% end %>
+          </div>
+
+      </div>
+    </div>
+  </div>
 </div>

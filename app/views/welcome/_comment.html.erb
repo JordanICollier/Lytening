@@ -8,15 +8,15 @@
       <%= comment.body_html %>
     </p>
     <div class="comment-sparks">
-      <ul class="test">
+      <ul class="spark-list">
         <% unless current_user %>
-          <li><%= image_tag "spark-icon-white.png", class:"spark-icon white", id:"#{comment.id} #{comment.user.id}" %></li>
+          <li><%= image_tag "spark-icon-teal.png", class:"spark-icon white", id:"#{comment.id} #{comment.user.id}" %></li>
         <% else %>
           <% spark = current_user.sparks.find_by(comment_id: comment.id) %>
           <% if spark %>
-            <li><%= image_tag "spark-icon-yellow.png", class:"spark-icon yellow", id:"#{comment.id} #{comment.user.id} #{spark.id}" %></li>
+            <li><%= image_tag "spark-icon-teal.png", class:"spark-icon yellow", id:"#{comment.id} #{comment.user.id} #{spark.id}" %></li>
           <% else %>
-            <li><%= image_tag "spark-icon-white.png", class:"spark-icon white", id:"#{comment.id} #{comment.user.id}" %></li>
+            <li><%= image_tag "spark-icon-teal.png", class:"spark-icon white", id:"#{comment.id} #{comment.user.id}" %></li>
           <% end %>
         <% end %>
         <li><strong><%= comment.spark_count %></strong></li>

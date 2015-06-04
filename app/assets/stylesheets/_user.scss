@@ -1,32 +1,119 @@
 .user-container {
-  background-color: $white;
+  background-color: $yellow;
   width: 100%;
-  height: 1200px;
-  // position: fixed;
-  padding-top: 75px;
+  height: 100%;
+  padding-top: 70px;
+  color:$white;
+  line-height: 30px;
+}
+
+.user-container strong{
+  color: $green1;
 }
 
 .user-stats{
   // width:200px;
   height:100%;
-  background-color: $lime;
-  float:left;
-  padding: 5% 5% 5% 5%;
-
 }
 
 .user-comments{
   height:100%;
-  background-color: $red;
-  padding: 5% 5% 5% 5%;
-
+  background-color: $green2;
+  padding: 1% 2% 2% 2%;
+  border-style: solid;
+  border-width: 5px;
+  border-color: $yellow;
 }
 
 .user-avatar{
-  width:200px;
-  height:200px;
-  background-color: $black;
-  // float:left;
-  // padding: 5% 5% 5% 5%;
+  float:left;
+}
 
+.user-header{
+  height: 20%;
+  font-size: 2.2em;
+}
+
+.user-info-con{
+  background-color: $blue2;
+  float:left;
+  padding: 5% 5% 5% 5%;
+  border-style: solid;
+  border-width: 5px;
+  border-color: $yellow;
+}
+
+.user-quick-glance{
+  background-color: $blue1;
+  float:left;
+  padding: 5% 5% 5% 5%;
+  border-style: solid;
+  border-width: 5px;
+  border-color: $yellow;
+}
+
+.user-about-con{
+  background-color: $purple1;
+  float:left;
+  padding: 5% 5% 5% 5%;
+  border-style: solid;
+  border-width: 5px;
+  border-color: $yellow;
+}
+
+.user-interests-con{
+  background-color: $purple2;
+  float:left;
+  padding: 5% 5% 5% 5%;
+  border-style: solid;
+  border-width: 5px;
+  border-color: $yellow;
+}
+
+.follow-btn{
+  width: 100%;
+  height: 40px;
+  bottom:0;
+  background-color: $purple1;
+  text-align: center;
+  padding-top: 5px;
+
+}
+.follow-btn a{
+  text-decoration: none;
+}
+
+.follow-btn a:hover{
+  color: $teal1;
+  text-decoration: none;
+}
+
+.user-spark-count{
+  font-size: 5em;
+  height: 90px;
+  line-height: 90px;
+}
+.user-spark-header{
+  font-size: 1.4em;
+  margin-bottom: 10px;
+}
+
+.user-stryke-header{
+  font-size: 4.5em;
+  height: 90px;
+  line-height: 90px;
+}
+
+.main-con{
+  height:100%;
+  background-color: $yellow;
+}
+
+.edit-user-container{
+  width: 80%;
+  height: 300px;
+  margin: 0 auto;
+  padding-top: 70px;
+  color:$white;
+  line-height: 30px;
 }
