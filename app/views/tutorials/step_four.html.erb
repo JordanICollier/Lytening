@@ -1,0 +1,35 @@
+<div class="col-12-12">
+  <div class="search-container">
+    Based on your interests...
+    <div class="result-container">
+      <% @friends.each do |friend| %>
+        <div class="result-individual">
+          <div class="">
+            <%= image_tag friend.avatar, class: "search-avatar" %>
+          </div>
+          <div class="search-txt">
+            <%= link_to friend.full_name, user_path(friend) %>
+          </div>
+          <div class="search-txt">
+            <%= friend.email %>
+          </div>
+          <div class="search-txt">
+            <%= friend.username %>
+          </div>
+          <div class="">
+            <% unless current_user.followers.include? @user %>
+              <%= link_to "Follow", followings_path(:follower_id => @user.id), :method => :post %>
+            <% else %>
+              <%= link_to "Unfollow", following_path(current_user.followings.find_by(follower_id: @user.id)), :method => :delete %>
+            <% end %>
+          </div>
+        </div>
+      <% end %>
+    </div>
+
+    <%# button to finish %>
+
+    Don't see who you're looking for?
+    <%# search bar for friend search %>
+  </div>
+</div>

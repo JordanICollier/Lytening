@@ -1,0 +1,22 @@
+<div class="user-container">
+  <section>
+    <h1>Add a profile picture</h1>
+
+    <div>
+      <%= image_tag @user.avatar_url(:thumb) %>
+    </div>
+
+    <%= simple_form_for(@user) do |f| %>
+      <%= f.file_field :avatar %>
+      <%= f.button :submit %>
+    <% end %>
+
+    <div class="">
+      <!-- images -->
+    </div>
+
+    <div>
+      <%= link_to 'skip to next section', step_three_path %>
+    </div>
+  </section>
+</div>

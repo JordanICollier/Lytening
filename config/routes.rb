@@ -12,6 +12,13 @@ Rails.application.routes.draw do
   resources :comments
   resources :sparks
   get 'search_results' => 'welcome#search_results'
+
+  # Tutorial routes
+  get 'step_one' => 'tutorials#step_one'
+  get 'step_two' => 'tutorials#step_two'
+  get 'step_three' => 'tutorials#step_three'
+  get 'step_four' => 'tutorials#step_four'
+
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 

@@ -1,0 +1,49 @@
+<div class="user-container">
+  <section>
+    <h1>Customize your profile</h1>
+
+    <%= simple_form_for(@user) do |f| %>
+
+      <%= f.label :first_name %>
+      <%= f.text_field :first_name %>
+
+      <%= f.label :last_name %>
+      <%= f.text_field :last_name %>
+
+      <%= f.label :username %>
+      <%= f.text_field :username %>
+
+      <%= f.label :birthday %>
+      <%= f.date_field :birthday %>
+
+      <%= f.label :sex %>
+      <%# f.collection_select  %>
+
+      <%= f.label :location %>
+      <%= f.text_field :location %> E.g. Denver, CO
+
+      Separate by commas
+      <%= f.label :interest %>
+      <%= f.text_field :interest %>
+      We'll make some suggestions on people to follow
+      based on what you list here
+
+      <%= f.label :school %>
+      <%= f.text_field :school %>
+
+      <%= f.label :work %>
+      <%= f.text_field :work %>
+
+      <%= f.label :about %>
+      <%= f.text_area :about %>
+
+      <%= f.submit %>
+
+    <% end %>
+
+    <div class="">
+      <!-- images -->
+    </div>
+
+  </section>
+</div>
