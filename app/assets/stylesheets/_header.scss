@@ -175,19 +175,27 @@ input.search-btn{
 .header-stryke{
   position: fixed;
   z-index:9;
-  height:200px;
+  height:75px;
   background-color: $yellow;
-  padding: 110px 0 0 0;
   @include box-shadow(0 0 .4em 0 rgba(0, 0, 0, 0.5));
   opacity: .95;
-  -webkit-transform: translate3d(0,-150px,0);
-  transition: all .75s cubic-bezier(0.7,0,0.3,1);
+  -webkit-transition: .5s ease-in-out;
+  -moz-transition: .5s ease-in-out;
+  -o-transition: .5s ease-in-out;
+  -ms-transition: .5s ease-in-out;
+  transition: .5s ease-in-out;
 
 }
 
 .upSlide{
-  -webkit-transform: translate3d(0,0,0);
-  transition: all .75s cubic-bezier(0.7,0,0.3,1);
+  height:125px;
+  padding: 30px 0 0 0;
+  -webkit-transform: translate(0,75px);
+  -moz-transform: translate(0,75px);
+  -o-transform: translate(0,75px);
+  -ms-transform: translate(0,75px);
+  transform: translate(0,75px);
+
 }
 
 .spark-anywhere{
