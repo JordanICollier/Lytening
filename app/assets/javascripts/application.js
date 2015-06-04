@@ -30,8 +30,8 @@ $(function() {
     });
 
     //Scroll to top
-    $('.back-to-top').on('click', function(){
-      event.preventDefault();
+    $('.back-to-top').on('click', function(e){
+      e.preventDefault();
       $('html, body').animate({ scrollTop: 0 }, 'slow');
     });
 
