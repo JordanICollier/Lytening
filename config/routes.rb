@@ -19,6 +19,8 @@ Rails.application.routes.draw do
   get 'step_three' => 'tutorials#step_three'
   resources :step_four
 
+  get 'feed' => 'welcome#index'
+
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 
