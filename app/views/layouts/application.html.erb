@@ -53,11 +53,13 @@
         <div class="header">
           <ul>
             <% if current_user%>
-              <li class="col-10-12"><%= link_to(image_tag("lytening-logo-black.png"), root_path) %></li>
+              <li class="col-10-12"><%= link_to(image_tag("lytening-logo-black.png"), root_path) %>
+              <a href="#" class="toggle-top-new">VIEW TOP</a>
+              </li>
               <li class="col-1-12">
                 <%= image_tag "spark_icon.png", class:"spark-anywhere" %>
+                <label for="toggle-menu"><%= image_tag "menu-icon.png", class:"menu" %></label>
               </li>
-              <li class="col-1-12"><label for="toggle-menu"><%= image_tag "menu-icon.png", class:"menu" %></label></li>
             <% else %>
               <li class="col-6-12"><%= link_to(image_tag("lytening-logo-black.png"), root_path) %></li>
               <li class="col-6-12"><label for="toggle-menu"><%= image_tag "menu-icon.png", class:"menu" %></label></li>
