@@ -33,21 +33,24 @@
         <li class= "one-line"><%= link_to "Sign up", new_user_registration_path %></li><hr>
       <% end %>
     </ul>
+    <div class="col-12-12 header-stryke">
+      <%= form_for current_user, {:url => user_strykes_path(current_user), method: :post } do |f| %>
+        <%= fields_for Stryke.new do |fs| %>
+          <%= fs.text_area :body, class: "header-post", id:"textarea" %>
+          <span id="textarea_feedback"></span>
+        <% end %>
+        <%= f.submit "Stryke", class:"header-post-btn" %>
+      <% end %>
+    </div>
       <nav>
         <div class="header">
           <ul>
             <% if current_user%>
-              <li class="col-4-12"><%= link_to(image_tag("lytening-logo-black.png"), root_path) %></li>
-              <li class="col-4-12">
-                <%= form_for current_user, {:url => user_strykes_path(current_user), method: :post } do |f| %>
-                  <%= fields_for Stryke.new do |fs| %>
-                    <%= fs.text_field :body, class: "header-post", id:"textarea" %>
-                    <span id="textarea_feedback"></span>
-                  <% end %>
-                  <%= f.submit "Stryke", class:"header-post-btn" %>
-                <% end %>
+              <li class="col-10-12"><%= link_to(image_tag("lytening-logo-black.png"), root_path) %></li>
+              <li class="col-1-12">
+                <%= image_tag "spark_icon.png", class:"spark-anywhere" %>
               </li>
-              <li class="col-4-12"><label for="toggle-menu"><%= image_tag "menu-icon.png", class:"menu" %></label></li>
+              <li class="col-1-12"><label for="toggle-menu"><%= image_tag "menu-icon.png", class:"menu" %></label></li>
             <% else %>
               <li class="col-6-12"><%= link_to(image_tag("lytening-logo-black.png"), root_path) %></li>
               <li class="col-6-12"><label for="toggle-menu"><%= image_tag "menu-icon.png", class:"menu" %></label></li>

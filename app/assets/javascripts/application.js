@@ -35,6 +35,10 @@ $(function() {
       $('html, body').animate({ scrollTop: 0 }, 'slow');
     });
 
+    //Stryke Anywhere
+    $('.spark-anywhere').on('click', function(){
+      $('.header-stryke').addClass('enlarge');
+    });
     // 500 character countdown on strykes
     var text_max = 500;
     $('#textarea_feedback').html(text_max);

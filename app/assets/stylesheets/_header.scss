@@ -187,3 +187,20 @@ input.search-btn{
 .one-line{
   padding: 25px 0 0 0;
 }
+
+.header-stryke{
+  position: absolute;
+  z-index:9;
+}
+
+.spark-anywhere{
+  float:right;
+  padding: 16px 0 0 0;
+  cursor: pointer;
+}
+
+.enlarge{
+  height:200px;
+  background-color: $yellow;
+  padding: 100px 0 0 0;
+}
