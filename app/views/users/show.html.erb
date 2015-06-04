@@ -14,16 +14,42 @@
 
       <% end %>
     <% end %>
-    <%= image_tag @user.avatar_url(:thumb) %>
+    <%= image_tag @user.avatar_url(:profile) %>
 
     <strong>WORK</strong><br>
     <%= @user.work %><br>
 
+    <strong>First Name</strong><br>
+    <%= @user.first_name %><br>
+
+    <strong>Last Name</strong><br>
+    <%= @user.last_name %><br>
+
+    <strong>Username</strong><br>
+    <%= @user.username %><br>
+
+    <strong>Sex</strong><br>
+    <%= @user.sex %><br>
+
+    <strong>Location</strong><br>
+    <%= @user.location %><br>
+
+    <strong>birthday</strong><br>
+    <%= @user.birthday %><br>
+
+    <strong>interest</strong><br>
+    <%= @user.interest %><br>
+
+    <strong>School</strong><br>
+    <%= @user.school %><br>
+
+    <strong>About</strong><br>
+    <%= @user.about %><br>
+
 
     <% if current_user %>
-    <%= link_to "Edit?", edit_user_path(current_user) %>
+      <%= link_to "Edit?", edit_user_path(current_user) %>
     <% end %>
-    <%= image_tag @user.avatar_url(:thumb) %>
 
     <!-- These are the Follow / Unfollow links -->
     <% unless current_user == @user %>
