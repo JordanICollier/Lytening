@@ -5,7 +5,7 @@
   <div class="col-10-12 spark-header-box">
     <%= link_to "#{stryke.user.full_name.upcase}", user_path(stryke.user), class:"spark-header" %>
   </div>
-  <div class="col-1-12 countdown" data-date="<%= (stryke.created_at + 24.hours).strftime('%Y-%m-%d %H:%M:%S') %>"></div>
+  <div class="col-1-12 countdown" data-date="<%= (stryke.created_at + 24.hours).strftime('%Y-%m-%d %H:%M:%S %Z') %>"></div>
   <p>
     <%= stryke.body_html %>
   </p>
