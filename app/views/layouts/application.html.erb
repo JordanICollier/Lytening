@@ -2,6 +2,8 @@
 <html>
 <head>
   <title>Lytening</title>
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+
   <%= favicon_link_tag 'lytening_favicon.png' %>
   <%= stylesheet_link_tag    'application', media: 'all' %>
   <script src="https://code.jquery.com/jquery-2.1.4.min.js"></script>
@@ -66,14 +68,6 @@
         </div>
       </nav>
       <section>
-  <div class="alert-box">
-    <% if notice %>
-    <p class="alert alert-success"><%= notice %></p>
-    <% end %>
-    <% if alert %>
-    <p class="alert alert-danger"><%= alert %></p>
-    <% end %>
-  </div>
 
 <%= yield %>
     <footer class="col-12-12">
