@@ -125,8 +125,17 @@ nav {
 #toggle-menu:checked ~ section {
   transform: translateX(-25%);
 }
+
 #toggle-menu:checked ~ .sidenav a {
   transform: translateX(0);
+}
+
+.two-lines{
+  padding: 18px 0 0 0;
+}
+
+.one-line{
+  padding: 25px 0 0 0;
 }
 
 #search-bar{
