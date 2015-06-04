@@ -45,7 +45,7 @@
         <strong>SCHOOL</strong><br>
         <%= @user.school %><br>
 
-        <% if current_user %>
+        <% if current_user == @user %>
           <%= link_to "Edit?", edit_user_path(current_user) %>
         <% end %>
     </div>
