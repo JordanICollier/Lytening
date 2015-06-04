@@ -30,6 +30,60 @@ class Stryke < ActiveRecord::Base
     simple_format
   end
 
+  def self.get_columns(user, limit, offset = 0)
+    # find ever user's, including our, active stryke
+    strykes = user.followers.map {|follower| follower.active_stryke}
+    strykes << user.active_stryke
+    # remove nil values
+    strykes.compact!
+    # calculate columns
+    new_strykes = strykes
+      .sort_by(&:created_at)
+      .drop(offset)
+      .first(limit)
+    top_strykes = strykes
+      .sort_by(&:spark_count)
+      .reverse
+      .drop(offset)
+      .first(limit)
+    # see if were done
+    done = new_strykes.size < limit or top_strykes.size < limit
+    # return information about what we found
+    {
+      new: new_strykes,
+      top: top_strykes,
+      size: limit,
+      done: done,
+    }
+
+    # TODO: optimize using this code
+    ## join query
+    #join_query = <<EOF
+#INNER JOIN users
+#ON strykes.user_id = users.id OR users.id = 1531
+#INNER JOIN followings
+#ON followings.user_id = users.id
+#EOF
+    ## new strykes
+    #new_strykes = Stryke
+      #.joins(join_query)
+      #.where('followings.follower_id = ?', user.id)
+      #.where('created_at > ?', 24.hours.ago)
+      #.order('created_at')
+      #.offset(offset)
+      #.limit(limit)
+    #top_strykes = Stryke
+      #.joins(join_query)
+      #.where('followings.follower_id = ?', user.id)
+      #.where('created_at > ?', 24.hours.ago)
+      #.offset(offset)
+      #.limit(limit)
+    #{
+      #new: new_strykes,
+      #top: top_strykes,
+    #}
+  end
+
   # Old hotness algorithm
   # def hotness(stryke)
   #   s = stryke.created_at

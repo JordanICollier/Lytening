@@ -1,12 +1,9 @@
 class WelcomeController < ApplicationController
 
   def index
-    @strykes = current_user.followers.map {|user| user.active_stryke}.compact
-    my_stryke = current_user.active_stryke
-    @strykes << my_stryke if my_stryke
-
-    @strykes_hot = @strykes.sort_by(&:spark_count).first(25)
-    @strykes_new = @strykes.sort_by(&:created_at).first(25)
+    columns = Stryke.get_columns(current_user, 25)
+    @strykes_hot = columns[:top]
+    @strykes_new = columns[:new]
 
     @comment = Comment.new
   end
