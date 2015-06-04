@@ -18,7 +18,7 @@ class UsersController < ApplicationController
       if params[:user][:avatar].present?
         render :crop
       else
-        redirect_to :show
+        redirect_to user_path(current_user)
       end
     else
       render :new
