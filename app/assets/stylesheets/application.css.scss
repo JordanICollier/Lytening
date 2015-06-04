@@ -62,9 +62,8 @@ a:visited{
 .back-to-top{
   position: fixed;
   z-index:11;
-  // float: right;
-  bottom: 1%;
-  right: 0;
+  bottom: 10px;
+  right: 5px;
   color: $black;
   height: 40px;
   width: 40px;
@@ -77,23 +76,3 @@ a.back-to-top:visited{
   text-decoration: none;
   color: $black;
 }
-
-// .back-to-top-txt{
-//   color: $black;
-//   text-decoration: none;
-//   text-align: right;
-// }
-//
-// a.back-to-top-txt:visited{
-//   text-decoration: none;
-//   color: $black;
-//   margin: 20px 0 0 0;
-//
-// }
-
-// .top-arrow{
-//   height: 40px;
-//   width: 40px;
-//   float:right;
-//   cursor: pointer;
-// }

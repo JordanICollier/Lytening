@@ -14,14 +14,16 @@ html, body {
     height: 100%;
     margin: 0;
     padding: 0;
-    background-color: $yellow;
+
 }
 
 .status-container{
   width: 100%;
   height: 100%;
   background-color: $yellow;
-  // margin: 75px 0 0 0;
+  background-image: url(logo-bg-10percent.png);
+
+
 }
 
 [class*='col-'] {
@@ -224,6 +226,11 @@ $num: 1;
 
 .sparks ul li {
   width:20px;
-  // margin: 0 0 0 11px;
   float:left;
+}
+
+.bg-no-status{
+  width:100%;
+  height: 1000px;
+  background-color: $yellow;
 }
