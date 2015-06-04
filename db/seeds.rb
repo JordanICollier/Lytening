@@ -1,95 +1,102 @@
-# This file should contain all the record creation needed to seed the database with its default values.
-# The data can then be loaded with the rake db:seed (or created alongside the db with db:setup).
-#
-# Examples:
-#
-#   cities = City.create([{ name: 'Chicago' }, { name: 'Copenhagen' }])
-#   Mayor.create(name: 'Emanuel', city: cities.first)
+# sizes
+users_count = 150
 
-User.create(location: "Denver",
-            work: "Programmer at Galgabize",
-            school: "gSnool",
-            birthday: 1992-03-24,
-            sex: "Male",
-            interest: "Hot Dogs!",
-            about: "I'll give you a nickel for that hot dog!",
-            spark_count: 21,
-            email: "juniper@billyums.com",
-            password: "password",
-            first_name: "Juniper",
-            last_name: "Billyums",
-            avatar: "juniperBillyums.jpg",
-            username: "JuniBill"
-            )
+# clear out data
+%w[
+  comments
+  strykes
+  users
+].each do |table_name|
+  ActiveRecord::Base.connection.execute("TRUNCATE TABLE #{table_name}")
+end
 
-User.create(location: "Denver",
-            work: "ShimSham",
-            school: "Donut",
-            birthday: 1987-01-30,
-            sex: "Male",
-            interest: "Stuff & Things",
-            about: "I do things and junk",
-            spark_count: 17,
-            email: "big@mclargehuge.com",
-            password: "password",
-            first_name: "Big",
-            last_name: "McLargeHuge",
-            avatar: "bigMclargehuge.jpg",
-            username: "BigDaddyMcLarge"
-            )
+print "creating users"
+# create some users
+users = users_count.times.map do
+  print '.'
+  first_name = Faker::Name.first_name
+  last_name = Faker::Name.last_name
+  full_name = "#{first_name}, #{last_name}"
+  User.create(
+    location: "#{Faker::Address.city}, #{Faker::Address.state}",
+    work: Faker::Name.title,
+    school: "#{rand('A'.ord..'Z'.ord).chr}SU",
+    birthday: Faker::Date.between(21.years.ago, 40.years.ago),
+    sex: rand(2) == 1 ? 'Male' : 'Female',
+    interest: Faker::Company.catch_phrase,
+    about: "My mission is to #{Faker::Company.bs}.",
+    spark_count: rand(1..15),
+    email: Faker::Internet.safe_email(full_name),
+    password: "password",
+    first_name: first_name,
+    last_name: last_name,
+    avatar: [
+      "juniperBillyums.jpg",
+      "bigMclargehuge.jpg",
+      "bargefarge.png"
+    ].sample,
+    username: Faker::Internet.user_name(full_name)
+  )
+end
+puts
 
-User.create(location: "Denver",
-            work: "Gumby.net",
-            school: "Grease Monkey",
-            birthday: 1987-03-13,
-            sex: "Male",
-            interest: "Licking other people's ice cream",
-            about: "Call me Mabel",
-            spark_count: 13,
-            email: "runkle@bargefarge.com",
-            password: "password",
-            first_name: "Runkle",
-            last_name: "Bargefarge",
-            avatar: "bargefarge.png",
-            username: "BargyFargy"
-            )
+# create a stryke for each user
+print "creating strykes"
+strykes = users.map do |user|
+  print '.'
+  time = Faker::Time.between(4.hours.ago, Time.now)
+  user.strykes.create(
+    body: Faker::Lorem.sentences(rand(1..3)).join(' '),
+    created_at: time,
+    updated_at: time,
+    spark_count: rand(0..users_count / 2),
+  )
+end
+puts
 
-Stryke.create(body: "Is anybody even reading this?",
-              spark_count: 21,
-              created_at: '2015-06-03 02:45:00 -0600',
-              updated_at: '2015-06-03 02:45:00 -0600',
-              user_id: 1
-              )
+# create some comments on each stryke
+print 'creating comments'
+comments = [strykes.shuffle, users].transpose.flat_map do |stryke, user|
+  print '.'
+  # use the yielded to ensure that every user has a comment
+  Comment.create(
+    body: Faker::Lorem.sentence,
+    stryke: stryke,
+    user: user,
+    spark_count: rand(0..users_count / 4),
+  )
+  # create some more comments from random users
+  rand(1..5).times.map do
+    Comment.create(
+      body: Faker::Lorem.sentence,
+      spark_count: rand(0..users_count / 4),
+      stryke: stryke,
+      user: users.sample,
+    )
+  end
+end
+puts
 
-Stryke.create(body: "Gorgonzola Duck Circus!",
-              spark_count: 17,
-              created_at: '2015-06-03 02:47:00 -0600',
-              updated_at: '2015-06-03 02:47:00 -0600',
-              user_id: 2
-              )
+print 'making users follow each other'
+followings = users.each_with_index.flat_map do |user, index|
+  print '.'
+  # create a list of users that does not include the current one
+  others = Array.new users
+  others.delete_at index
+  # follow a few random users
+  followers = others.sample rand(users_count / 2..users_count * 2 / 3)
+  followers.map do |follower|
+    Following.create(
+      user_id: user.id,
+      follower_id: follower.id,
+    )
+  end
+end
+puts
 
-Stryke.create(body: "Life is like a box of horseshoe mayonnaise; WHIPPLE!",
-              spark_count: 13,
-              created_at: '2015-06-03 02:49:00 -0600',
-              updated_at: '2015-06-03 02:49:00 -0600',
-              user_id: 3
-              )
+puts <<EOF
 
-Stryke.create(body: "Within 24 hours",
-              spark_count: 13,
-              created_at: '2015-06-03 12:10:00 -0600',
-              updated_at: '2015-06-03 12:10:00 -0600',
-              user_id: 3
-              )
-
-Comment.create(body: "So 24 hours ago!",
-               stryke_id: 4,
-               spark_count: 3,
-               user_id: 1
-               )
-
-Comment.create(body: "Comments?",
-              stryke_id: 4,
-              spark_count: 2,
-              user_id: 2
-              )
+Log in with:
+  email:    #{users[0].email}
+  password: #{users[0].password}
+EOF

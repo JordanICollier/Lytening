@@ -33,6 +33,7 @@
         <li class= "one-line"><%= link_to "Sign up", new_user_registration_path %></li><hr>
       <% end %>
     </ul>
+    <% if current_user%>
     <div class="col-12-12 header-stryke">
       <%= form_for current_user, {:url => user_strykes_path(current_user), method: :post } do |f| %>
         <%= fields_for Stryke.new do |fs| %>
@@ -42,6 +43,8 @@
         <%= f.submit "Stryke", class:"header-post-btn" %>
       <% end %>
     </div>
+    <% end %>
+
       <nav>
         <div class="header">
           <ul>

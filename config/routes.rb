@@ -12,11 +12,24 @@ Rails.application.routes.draw do
   resources :comments
   resources :sparks
   get 'search_results' => 'welcome#search_results'
+
+  # Tutorial routes
+  get 'step_one' => 'tutorials#step_one'
+  get 'step_two' => 'tutorials#step_two'
+  get 'step_three' => 'tutorials#step_three'
+  resources :step_four
+
+  get 'feed' => 'welcome#index'
+
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 
   # You can have the root of your site routed with "root"
-  root 'welcome#index'
+  # root 'welcome#index'
+
+    devise_scope :user do
+      root to: "devise/sessions#new"
+    end
 
   # Example of regular route:
   #   get 'products/:id' => 'catalog#view'
