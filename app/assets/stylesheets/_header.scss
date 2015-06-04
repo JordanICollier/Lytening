@@ -223,3 +223,15 @@ input.search-btn{
     }
 
 }
+
+@media screen and (max-width: 600px) {
+    .spark-anywhere{
+      padding: 13px 0 0 10px;
+    }
+    .header .col-10-12{
+      width:50%;
+    }
+    .header .col-1-12{
+      width:16%;
+    }
+}
