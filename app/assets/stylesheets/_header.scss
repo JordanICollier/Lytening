@@ -221,7 +221,12 @@ input.search-btn{
     .header .col-10-12{
       width:75%;
     }
-
+    .sidenav{
+      width:50%;
+    }
+    #toggle-menu:checked ~ section {
+      transform: translateX(-50%);
+    }
 }
 
 @media screen and (max-width: 600px) {
@@ -233,5 +238,11 @@ input.search-btn{
     }
     .header .col-1-12{
       width:16%;
+    }
+    .sidenav{
+      width:75%;
+    }
+    #toggle-menu:checked ~ section {
+      transform: translateX(-75%);
     }
 }
