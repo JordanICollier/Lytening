@@ -4,6 +4,9 @@ class Comment < ActiveRecord::Base
   belongs_to :stryke
   has_many :sparks
 
+  validates :body, length: { maximum: 500 }
+  validates :body, :body_html, presence: true
+
   auto_html_for :body do
     html_escape
     image
