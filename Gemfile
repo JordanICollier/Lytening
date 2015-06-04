@@ -23,6 +23,7 @@ end
 group :development, :test do
   gem 'better_errors'
   gem 'byebug'
+  gem 'faker'
   gem 'pry-byebug'
   gem 'pry-rails'
   gem 'quiet_assets'
