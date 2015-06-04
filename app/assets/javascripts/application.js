@@ -29,6 +29,7 @@ $(function() {
 
     });
 
+    //Scroll to top
     $('.back-to-top').on('click', function(){
       event.preventDefault();
       $('html, body').animate({ scrollTop: 0 }, 'slow');
