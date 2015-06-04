@@ -6,8 +6,7 @@ class StrykesController < ApplicationController
 
   def create
     @stryke = Stryke.new(stryke_params)
-    @user = User.find(params[:user_id])
-    @stryke.user_id = @user.id
+    @stryke.user_id = current_user.id
     @stryke.spark_count = 0
     if @stryke.save
       render json: @stryke.to_json
