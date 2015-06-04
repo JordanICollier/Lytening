@@ -10,6 +10,10 @@ class UsersController < ApplicationController
   end
 
   def edit
+    unless current_user == @user
+      redirect_to '/'
+      flash[:alert] = "You don't have access to that page!"
+    end
   end
 
   def update
