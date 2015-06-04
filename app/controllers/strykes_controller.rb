@@ -8,8 +8,9 @@ class StrykesController < ApplicationController
     @stryke = Stryke.new(stryke_params)
     @stryke.user_id = current_user.id
     @stryke.spark_count = 0
+    @comment = Comment.new
     if @stryke.save
-      render json: @stryke.to_json
+      render partial: @stryke, locals: {top_class: "new-status"}
     else
       render :new
     end
