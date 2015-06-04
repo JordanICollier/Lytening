@@ -61,6 +61,7 @@ $(function() {
         // clear the input
         strykeInput.val('');
         $("#textarea_feedback").html(500);
+        timeCircle();
       });
     }
   });
@@ -138,6 +139,7 @@ $(function() {
     });
 
 // TimeCircles
+function timeCircle() {
     $(".countdown").TimeCircles({
       "start": true,
       "direction": "Clockwise",
@@ -166,4 +168,7 @@ $(function() {
           }
       }
     });
+  }
+
+  timeCircle();
 });
