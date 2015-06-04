@@ -15,7 +15,7 @@
       <% unless current_user %>
         <li><%= image_tag "spark-icon-white.png", class:"spark-icon white", id:"#{stryke.id} #{stryke.user.id}" %></li>
       <% else %>
-        <% spark = current_user.sparks.find_by(stryke_id: stryke.id) %>
+        <% spark = stryke.sparks.find_by(user: current_user) %>
         <% if spark %>
           <li><%= image_tag "spark-icon-yellow.png", class:"spark-icon yellow", id:"#{stryke.id} #{stryke.user.id} #{spark.id}" %></li>
         <% else %>

@@ -31,9 +31,11 @@ ActiveRecord::Schema.define(version: 20150605071612) do
 
   create_table "sparks", force: :cascade do |t|
     t.integer "user_id"
-    t.integer "stryke_id"
-    t.integer "comment_id"
+    t.integer "sparkable_id"
+    t.string  "sparkable_type"
   end
+
+  add_index "sparks", ["sparkable_type", "sparkable_id"], name: "index_sparks_on_sparkable_type_and_sparkable_id", using: :btree
 
   create_table "strykes", force: :cascade do |t|
     t.string   "body"

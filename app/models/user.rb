@@ -9,9 +9,10 @@ class User < ActiveRecord::Base
   after_update :crop_avatar
   before_create :set_first_setup_step
 
+  include SparkCountable
   has_many :strykes
   has_many :comments
-  has_many :sparks
+  has_many :sparks, dependent: :destroy
 
   has_many :followings
   has_many :followers, :through => :followings

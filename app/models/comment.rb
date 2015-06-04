@@ -2,7 +2,7 @@ class Comment < ActiveRecord::Base
 
   belongs_to :user
   belongs_to :stryke
-  has_many :sparks
+  include Sparkable
 
   validates :body, length: { maximum: 500 }
   validates :body, :body_html, presence: true

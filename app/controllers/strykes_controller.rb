@@ -19,7 +19,6 @@ class StrykesController < ApplicationController
   def create
     @stryke = Stryke.new(stryke_params)
     @stryke.user_id = current_user.id
-    @stryke.spark_count = 0
     @comment = Comment.new
     if @stryke.save
       render partial: @stryke, locals: {top_class: "new-status"}

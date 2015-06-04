@@ -12,7 +12,7 @@
         <% unless current_user %>
           <li><%= image_tag "spark-icon-teal.png", class:"spark-icon white", id:"#{comment.id} #{comment.user.id}" %></li>
         <% else %>
-          <% spark = current_user.sparks.find_by(comment_id: comment.id) %>
+          <% spark = comment.sparks.find_by(user: current_user) %>
           <% if spark %>
             <li><%= image_tag "spark-icon-teal.png", class:"spark-icon yellow", id:"#{comment.id} #{comment.user.id} #{spark.id}" %></li>
           <% else %>
