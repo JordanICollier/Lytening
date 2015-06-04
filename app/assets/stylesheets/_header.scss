@@ -201,9 +201,25 @@ input.search-btn{
 .spark-anywhere{
   padding: 13px 0 0 50%;
   cursor: pointer;
+  // float:right;
 }
 
 .stryke-con{
   width: 50%;
   margin: 0 auto;
+}
+
+.toggle-top-new{
+  margin: 22px 0 0 0;
+  text-decoration: none;
+}
+
+@media screen and (max-width: 968px) {
+    .spark-anywhere{
+      padding: 13px 0 0 20px;
+    }
+    .header .col-10-12{
+      width:75%;
+    }
+
 }

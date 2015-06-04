@@ -87,12 +87,18 @@ $(function() {
     });
 
     // Mobile toggle between to and new strykes
+    var toggle = 0;
     $('.toggle-top-new').on('click', function(){
         event.preventDefault();
         $('.new').toggleClass('hide');
         $('.top').toggleClass('hide');
-        $('.toggle-top-new').text('VIEW NEW');
-
+        if (toggle === 0){
+          $('.toggle-top-new').text('NEW');
+          toggle = 1;
+        } else if (toggle === 1){
+          $('.toggle-top-new').text('TOP');
+          toggle = 0;
+        }
     });
 
     // 500 character countdown on strykes

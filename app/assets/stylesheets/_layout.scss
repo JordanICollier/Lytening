@@ -64,6 +64,10 @@ html, body {
   width: 66.6%;
 }
 
+.col-9-12{
+  width: 75%;
+}
+
 .col-10-12{
   width: 83.33%;
 }
@@ -249,4 +253,8 @@ $num: 1;
     .new-status {
       padding: 5% 10% 10% 10%;
     }
+    .top-status {
+      padding: 5% 10% 10% 10%;
+    }
+
 }
