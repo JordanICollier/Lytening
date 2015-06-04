@@ -29,28 +29,29 @@ nav {
 }
 
 .header-post{
-  width: 70%;
-  height: 30px;
+  width: 80%;
+  height: 50px;
   color: $blue2;
   background-color: $teal1;
-  border-color: $teal1;
+  border-top: 3px solid $purple1;
+  border-left: 3px solid $purple1;
   font-size: 15px;
   cursor: text;
   z-index: 20;
-  padding: 0 0 0 10px;
+  float: left;
 }
 .header-post:focus{
   background-color: $yellow;
+  outline: none;
 }
+
 .header-post-btn{
   width:15%;
-  height: 30px;
+  height: 50px;
   color: $yellow;
-  background-color: $teal1;
-  border-color: $teal1;
+  background-color: $blue2;
+  border-color: $blue2;
   font-size: 15px;
-  // border-top-right-radius: 20px;
-  // border-bottom-right-radius: 20px;
   cursor: pointer;
   padding: 0;
 }
@@ -81,6 +82,7 @@ nav {
 #toggle-menu {
   display: none;
 }
+
 .mobile section {
   position: relative;
   transition: all 0.25s ease-in-out;
@@ -100,15 +102,10 @@ nav {
   top: 0;
   bottom: 0;
   text-align: center;
-  // -webkit-box-shadow: inset 10px 0px 18px -7px rgba(0,0,0,0.5);
-  // -moz-box-shadow: inset 10px 0px 18px -7px rgba(0,0,0,0.5);
-  // box-shadow: inset 10px 0px 18px -7px rgba(0,0,0,0.5);
 }
 
 .sidenav li {
   list-style-type: none;
-  // border-bottom: 1px solid $white;
-  // padding: 25px 0 0 0;
   height: 75px;
   color: $white;
 }
@@ -123,7 +120,6 @@ nav {
 .sidenav-logo {
   position:relative;
   padding: 25px 0 20px 0;
-
 }
 
 #toggle-menu:checked ~ section {
@@ -140,8 +136,6 @@ nav {
   border-color: $white;
   color:$white;
   font-size: 15px;
-  // border-top-left-radius: 20px;
-  // border-bottom-left-radius: 20px;
   margin: 0;
   padding: 0 0 0 10px;
 }
@@ -169,8 +163,6 @@ input.search-btn{
   background-color: $blue2;
   border-color: $white;
   color: $white;
-  // border-top-right-radius: 20px;
-  // border-bottom-right-radius: 20px;
   cursor: pointer;
   padding: 0 0 0 0;
 }
@@ -180,17 +172,22 @@ input.search-btn{
   margin: 0 50px 0 0;
 }
 
-.two-lines{
-  margin:35px 0 0 0;
-}
-
-.one-line{
-  padding: 25px 0 0 0;
-}
-
 .header-stryke{
   position: fixed;
   z-index:9;
+  height:200px;
+  background-color: $yellow;
+  padding: 110px 0 0 0;
+  @include box-shadow(0 0 .4em 0 rgba(0, 0, 0, 0.5));
+  opacity: .95;
+  -webkit-transform: translate3d(0,-150px,0);
+  transition: all .75s cubic-bezier(0.7,0,0.3,1);
+
+}
+
+.upSlide{
+  -webkit-transform: translate3d(0,0,0);
+  transition: all .75s cubic-bezier(0.7,0,0.3,1);
 }
 
 .spark-anywhere{
@@ -199,8 +196,7 @@ input.search-btn{
   cursor: pointer;
 }
 
-.enlarge{
-  height:200px;
-  background-color: $yellow;
-  padding: 100px 0 0 0;
+.stryke-con{
+  width: 50%;
+  margin: 0 auto;
 }

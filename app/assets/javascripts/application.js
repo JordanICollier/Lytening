@@ -36,15 +36,8 @@ $(function() {
     });
 
     //Stryke Anywhere
-    var enlarge = 0;
     $('.spark-anywhere').on('click', function(){
-      if(enlarge === 0){
-        $('.header-stryke').addClass('enlarge');
-        enlarge = 1;
-      }else{
-        $('.header-stryke').removeClass('enlarge');
-        enlarge = enlarge - 1;
-      }
+        $('.header-stryke').toggleClass('upSlide');
     });
     // 500 character countdown on strykes
     var text_max = 500;

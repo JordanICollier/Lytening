@@ -35,10 +35,7 @@
 #comment_body{
   width:80%;
   height: 40px;
-  background-color: rgba(255,255,255,0);
   font-size: 15px;
-  // border-top-left-radius: 20px;
-  // border-bottom-left-radius: 20px;
   margin: 0;
   padding: 0 0 0 10px;
   color: $yellow;
@@ -56,7 +53,6 @@ input.btn:hover{
 }
 
 input.btn{
-  // position:absolute;
   width:18%;
   height: 40px;
   color: $white;
@@ -64,8 +60,6 @@ input.btn{
   background-color: $teal1;
   border-color: $teal1;
   font-size: 15px;
-  // border-top-right-radius: 20px;
-  // border-bottom-right-radius: 20px;
   cursor: pointer;
   padding: 0 0 0 0;
 }
