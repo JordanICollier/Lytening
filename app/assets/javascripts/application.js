@@ -20,6 +20,51 @@
 
 $(function() {
 
+  // Validations and stryke submittal
+  $(".stryke-con form").on("submit", function (e) {
+    e.preventDefault();
+    // grab the stryke text to submit
+    var strykeInput = $(this).find('textarea[name="stryke[body]"]');
+    var stryke = strykeInput.val();
+    var user_id = e.target[4].id;
+    // Check if stryke body is empty
+    if (stryke === null || stryke === "") {
+      strykeInput.css("background-color", "#EEB4B4");
+      $(".header-post").val("Strykes cannot be blank");
+      $(".header-post").on("click", function (e) {
+        strykeInput.css("background-color", "#EAF1D2");
+        $(".header-post").val("");
+      });
+    }
+    // Check if stryke body is longer than 500 characters
+    else if (stryke.length > 500) {
+      strykeInput.css("background-color", "#EEB4B4");
+    }
+    // Post stryke to database and prepend to new column
+    else {
+      $.ajax({
+        url: "/strykes",
+        method: "POST",
+        contentType: "application/json",
+        // serialize the data be sending over the wire
+        data: JSON.stringify({
+          stryke: {
+            body: stryke,
+            user_id: user_id
+          }
+        })
+      }).done(function(data){
+        // Append stryke to new column
+        $(".new").prepend(data);
+        // Slide stryke panel back up
+        $(".upSlide").removeClass("upSlide");
+        // clear the input
+        strykeInput.val('');
+        $("#textarea_feedback").html(500);
+      });
+    }
+  });
+
     $(".header").click(function () {
 
         $header = $(this);
