@@ -79,8 +79,16 @@ a.back-to-top:visited{
 
 .toggle-top-new{
   color:$black;
+  display: none;
 }
 
 a.toggle-top-new:visited{
   color:$black;
+}
+
+
+@media screen and (max-width: 968px) {
+  .toggle-top-new{
+    display: block;
+  }
 }
