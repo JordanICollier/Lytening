@@ -247,6 +247,10 @@ input.search-btn{
       width:50%;
     }
     #toggle-menu:checked ~ section {
+      -webkit-transform: translateX(-50%);
+      -moz-transform: translateX(-50%);
+      -o-transform: translateX(-50%);
+      -ms-transform: translateX(-50%);
       transform: translateX(-50%);
     }
 }
@@ -265,6 +269,10 @@ input.search-btn{
       width:75%;
     }
     #toggle-menu:checked ~ section {
+      -webkit-transform: translateX(-75%);
+      -moz-transform: translateX(-75%);
+      -o-transform: translateX(-75%);
+      -ms-transform: translateX(-75%);
       transform: translateX(-75%);
     }
 }
