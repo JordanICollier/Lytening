@@ -135,3 +135,21 @@
 input#user_avatar{
   margin: 0 0 10px 0;
 }
+
+@media screen and (max-width: 968px) {
+  .user-comments{
+    width: 100%;
+  }
+  .user-stats{
+    width: 100%;
+  }
+}
+
+@media screen and (max-width: 600px) {
+  .user-avatar{
+    width:100%;
+  }
+  .user-quick-glance .col-7-12{
+    width: 100%;
+  }
+}
