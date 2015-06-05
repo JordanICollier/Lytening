@@ -6,15 +6,15 @@
 
       </div>
 
-      <div class="col-6-12">
+      <div class="col-12-12">
         <div class="sign-header">CROP AVATAR</div>
-        <%= image_tag @user.avatar_url(:large), id: "cropbox" %>
+        <%= image_tag current_user.avatar_url(:large), id: "cropbox" %>
       </div>
-      <div class="col-6-12">
+      <div class="col-12-12">
         <div class="sign-header">PREVIEW</div>
 
       <div style="width:100px; height:100px; overflow:hidden">
-        <%= image_tag @user.avatar.url(:large), :id => "preview" %>
+        <%= image_tag current_user.avatar.url(:large), :id => "preview" %>
       </div>
     </div>
       <%= form_for @user do |f| %>
@@ -22,7 +22,7 @@
         <%= f.hidden_field "crop_#{attribute}" %>
         <% end %>
         <div class="col-4-12 form-actions cancel-box">
-          <%= f.submit "Crop", class:"update" %>
+          <%= f.submit "Update Profile", class:"update" %>
         </div>
       <% end %>
 

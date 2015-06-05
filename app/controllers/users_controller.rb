@@ -18,6 +18,7 @@ class UsersController < ApplicationController
 
   def update
     if current_user.update(user_params)
+
       if params[:user][:avatar].present?
         render :crop
       else
@@ -28,11 +29,12 @@ class UsersController < ApplicationController
         elsif user_params.values.first == "C"
           render text: "Do not specify"
         else
-          render text: user_params.values.first
+          redirect_to user_path(current_user)
         end
       end
+
     else
-      render :new
+      render :crop
     end
     # respond_with @user
   end
