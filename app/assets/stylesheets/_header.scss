@@ -113,8 +113,13 @@ nav {
 .sidenav a {
   color: $white;
   text-decoration: none;
-  transform: translateX(15%);
   transition: all 0.25s ease-in-out;
+  -webkit-transform: translateX(15%);
+  -moz-transform: translateX(15%);
+  -o-transform: translateX(15%);
+  -ms-transform: translateX(15%);
+  transform: translateX(15%);
+
 }
 
 .sidenav-logo {
@@ -123,12 +128,20 @@ nav {
 }
 
 #toggle-menu:checked ~ section {
+  -webkit-transform: translateX(-25%);
+  -moz-transform: translateX(-25%);
+  -o-transform: translateX(-25%);
+  -ms-transform: translateX(-25%);
   transform: translateX(-25%);
-}
+  }
 
 #toggle-menu:checked ~ .sidenav a {
-  transform: translateX(0);
-}
+  -webkit-transform: translateX(0%);
+  -moz-transform: translateX(0%);
+  -o-transform: translateX(0%);
+  -ms-transform: translateX(0%);
+  transform: translateX(0%);
+  }
 
 .two-lines{
   padding: 18px 0 0 0;
