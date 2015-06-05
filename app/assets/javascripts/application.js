@@ -18,6 +18,7 @@
 //= require TimeCircles
 //= require follow
 //= require Jeditable
+//= require inline
 //= require_tree .
 
 $(function() {

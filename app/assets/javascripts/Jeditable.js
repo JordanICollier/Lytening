@@ -341,7 +341,7 @@
 
                               /* defaults for ajaxoptions */
                               var ajaxoptions = {
-                                  type    : 'POST',
+                                  type    : 'PUT',
                                   data    : submitdata,
                                   dataType: 'html',
                                   url     : settings.target,
@@ -539,5 +539,23 @@
         submitdata : {},
         ajaxoptions: {}
     };
+
+    /* Create an inline datepicker which leverages the
+   jQuery UI datepicker
+    */
+    $.editable.addInputType('datepicker', {
+      element: function(settings, original) {
+        var input = $('<input />');
+
+        input.datepicker({
+          onSelect: function(dateText, inst) {
+            $(this).parents("form").submit();
+          }
+        });
+
+        $(this).append(input);
+        return (input);
+      }
+    });
 
 })(jQuery);
