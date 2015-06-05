@@ -1,5 +1,5 @@
 # sizes
-users_count = 150
+users_count = 100
 
 # clear out data
 %w[
