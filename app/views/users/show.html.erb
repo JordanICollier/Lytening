@@ -25,34 +25,37 @@
       </div>
     </div>
 
-    <div class="col-12-12 user-info-con">
+    <div class="col-12-12 user-info-con" data-user-id="<%=current_user.id%>">
         <strong>WORK</strong><br>
-        <%= @user.work %><br>
+        <div class="edit fake" data-field-name="work"><%= @user.work %></div>
 
-        <strong>NAME</strong><br>
-        <%= @user.first_name %> <%= @user.last_name %><br>
+        <strong>FIRST NAME</strong><br>
+        <div class="edit fake" data-field-name="first_name"><%= @user.first_name %></div>
+
+        <strong>LAST NAME</strong><br>
+        <div class="edit fake" data-field-name="last_name"><%= @user.last_name %></div>
 
         <strong>SEX</strong><br>
-        <%= @user.sex %><br>
+        <div class="edit_sex fake" data-field-name="sex"><%= @user.sex %></div>
 
         <strong>LOCATION</strong><br>
-        <%= @user.location %><br>
+        <div class="edit fake" data-field-name="location"><%= @user.location %></div>
 
         <strong>BIRTHDAY</strong><br>
-        <%= @user.birthday.strftime('%B %d, %Y') %><br>
+        <div class="edit_date fake" data-field-name="birthday"><%= @user.birthday.strftime('%B %d, %Y') %></div>
 
         <strong>SCHOOL</strong><br>
-        <%= @user.school %><br>
+        <div class="edit fake" data-field-name="school"><%= @user.school %></div>
 
     </div>
     <div class="col-12-12 user-about-con">
       <strong>ABOUT</strong><br>
-      <%= @user.about %><br>
+      <div class="edit_area fake" data-field-name="about"><%= @user.about %></div>
     </div>
 
     <div class="col-12-12 user-interests-con">
       <strong>INTERESTS</strong><br>
-      <%= @user.interest %><br>
+      <div class="edit fake" data-field-name="interest"><%= @user.interest %></div>
     </div>
   </div>
 
