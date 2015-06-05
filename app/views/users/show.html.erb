@@ -14,18 +14,13 @@
 
         <!-- These are the Follow / Unfollow links -->
         <% if current_user == @user %>
-        <div class="follow-btn">
-          <%= link_to "Edit Profile Picture", edit_user_path(current_user) %>
-        </div>
+          <%= button_to "Edit Profile Picture", edit_user_path(current_user), class: "follow-btn" %>
         <% end %>
         <% unless current_user == @user %>
-        <div class="follow-btn">
           <% unless current_user.followers.include? @user %>
-            <%= link_to "FOLLOW", followings_path(:follower_id => @user.id), :method => :post %>
-            </div>
+            <%= button_to "FOLLOW", followings_path(:follower_id => @user.id), :method => :post, class:"follow-btn" %>
           <% else %>
-            <%= link_to "UNFOLLOW", following_path(current_user.followings.find_by(follower_id: @user.id)), :method => :delete %>
-            </div>
+            <%= button_to "UNFOLLOW", following_path(current_user.followings.find_by(follower_id: @user.id)), :method => :delete, class:"follow-btn" %>
           <% end %>
         <% end %>
       </div>
