@@ -7,7 +7,9 @@ $(function() {
     $.ajax({
       url: url,
     }).success(function(data) {
-      elem.replaceWith(data)
+      var newElem = $(data);
+      elem.replaceWith(newElem)
+      newElem.find('.spark-icon').effect("pulsate", "slow");
     });
   });
 });
