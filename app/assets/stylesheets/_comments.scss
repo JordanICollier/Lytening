@@ -88,6 +88,7 @@ input:focus{
 }
 
 @media screen and (max-width: 600px) {
-  padding: 15px 20px 15px 20px;
-
+  .comments .content {
+    padding: 15px 20px 15px 20px;
+  }
 }
