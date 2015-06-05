@@ -136,11 +136,13 @@ input.update{
   background-color: $yellow;
   border-color: $blue2;
   font-size: 15px;
-  // border-top-right-radius: 20px;
-  // border-bottom-right-radius: 20px;
   cursor: pointer;
 }
 
+input.update:hover{
+  background-color: $blue2;
+  color:$yellow;
+}
 .cancel-box{
   margin: 8px 0 0 0;
 }

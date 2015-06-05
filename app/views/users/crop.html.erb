@@ -1,21 +1,31 @@
-<div class="user-container">
+<div class="col-12-12">
+  <div class="photo-edit-container">
+    <div class="photo-edit-box">
+      <div class="col-12-12">
+        <%= link_to(image_tag("lytening-logo-white.png", class:"sign-logo"), "#") %>
 
-<h1>Crop Avatar</h1>
+      </div>
 
-<%= image_tag @user.avatar_url(:large), id: "cropbox" %>
+      <div class="col-6-12">
+        <div class="sign-header">CROP AVATAR</div>
+        <%= image_tag @user.avatar_url(:large), id: "cropbox" %>
+      </div>
+      <div class="col-6-12">
+        <div class="sign-header">PREVIEW</div>
 
-<h4>Preview</h4>
-<div style="width:100px; height:100px; overflow:hidden">
-  <%= image_tag @user.avatar.url(:large), :id => "preview" %>
-</div>
+      <div style="width:100px; height:100px; overflow:hidden">
+        <%= image_tag @user.avatar.url(:large), :id => "preview" %>
+      </div>
+    </div>
+      <%= form_for @user do |f| %>
+        <% %w[x y w h].each do |attribute| %>
+        <%= f.hidden_field "crop_#{attribute}" %>
+        <% end %>
+        <div class="col-4-12 form-actions cancel-box">
+          <%= f.submit "Crop", class:"update" %>
+        </div>
+      <% end %>
 
-<%= form_for @user do |f| %>
-  <% %w[x y w h].each do |attribute| %>
-  <%= f.hidden_field "crop_#{attribute}" %>
-  <% end %>
-  <div class="actions">
-    <%= f.submit "Crop" %>
+      </div>
+    </div>
   </div>
-<% end %>
-
-</div>
