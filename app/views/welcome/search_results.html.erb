@@ -6,7 +6,7 @@
       <div class="result-container">
         <% @friends.each do |friend| %>
           <div class="result-individual">
-            <div class="col-3-12">
+            <div class="col-1-12">
               <%= image_tag friend.avatar, class: "search-avatar" %>
             </div>
             <div class="col-3-12 search-txt">
@@ -15,8 +15,17 @@
             <div class="col-3-12 search-txt">
               <%= friend.email %>
             </div>
-            <div class="col-3-12 search-txt">
+            <div class="col-2-12 search-txt">
               <%= friend.username %>
+            </div>
+            <div class="col-2-12 search-txt">
+              <% unless current_user == @user %>
+                <% unless current_user.followers.include? friend %>
+                  <%= button_to "FOLLOW", followings_path(:follower_id => friend.id), :method => :post, class:"follow-btn", "data-follower-id":"#{friend.id}" %>
+                <% else %>
+                  <%= button_to "UNFOLLOW", following_path(current_user.followings.find_by(follower_id: friend.id)), :method => :delete, class:"follow-btn", "data-follower-id":"#{friend.id}" %>
+                <% end %>
+              <% end %>
             </div>
           </div>
         <% end %>

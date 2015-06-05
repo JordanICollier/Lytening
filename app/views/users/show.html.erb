@@ -15,8 +15,7 @@
         <!-- These are the Follow / Unfollow links -->
         <% if current_user == @user %>
           <%= button_to "Edit Profile Picture", edit_user_path(current_user), :method => :get, class: "follow-btn" %>
-        <% end %>
-        <% unless current_user == @user %>
+        <% else %>
           <% unless current_user.followers.include? @user %>
             <%= button_to "FOLLOW", followings_path(:follower_id => @user.id), :method => :post, class:"follow-btn", "data-follower-id":"#{@user.id}" %>
           <% else %>
