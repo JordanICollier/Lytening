@@ -5,34 +5,40 @@
       <%= link_to(image_tag("lytening-logo-white.png", class:"sign-logo"), "#") %>
       <div class="sign-log">
 
-    <div class="sign-header">LOG IN</div>
+        <div class="sign-header">LOG IN</div>
 
-    <%= simple_form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
-      <div class="form-inputs">
-        <%= f.input :email, label: false, required: false, autofocus: true, placeholder: "Email"  %>
-        <%= f.input :password, label: false, required: false, placeholder: "Password"  %>
-        <div class="btn-container">
-          <div class="col-6-12 form-actions">
-            <%= f.button :submit, "LOG IN", class:"update" %>
+          <%= simple_form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
+          <div class="form-inputs">
+            <%= f.input :email, label: false, required: false, autofocus: true, placeholder: "Email"  %>
+            <%= f.input :password, label: false, required: false, placeholder: "Password"  %>
+              <div class="btn-container">
+                <div class="col-6-12 form-actions">
+                  <%= f.button :submit, "LOG IN", class:"update" %>
+                </div>
+                  <%= link_to new_user_registration_path do %>
+                <div class="col-6-12 login-signup-btn">
+                  SIGN UP
+                </div>
+            <% end %>
+              </div>
+            <%= f.input :remember_me, as: :boolean if devise_mapping.rememberable? %>
           </div>
-          <%= link_to new_user_registration_path do %>
-          <div class="col-6-12 login-signup-btn">
-            SIGN UP
-          </div>
+
           <% end %>
-        </div>
-        <%= f.input :remember_me, as: :boolean if devise_mapping.rememberable? %>
+
+          <div class="forgot-password">
+            <%= link_to "Forgot password", new_user_password_path %>
+          </div>
       </div>
 
-
-    <% end %>
-    <div class="forgot-password">
-      <%= link_to "Forgot password", new_user_password_path %>
-    </div>
     </div>
 
-    </div>
+    <div class="about">
+      <p>
+        As developers, our passion is to be contributors on a team where the code we write truly matters. This was and still is an exciting opportunity that allows us to be a part of a collaborative team that informs, educates, and breathes community into people's lives.
 
+  We desire to be part of a company which encourages personal and logical growth and sets a new standard for teams in our industry, and this project allowed us to experience that on a small scale.
+      </p>
+    </div>
   </div>
-
 </div>
