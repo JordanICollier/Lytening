@@ -39,7 +39,9 @@
         <%= @user.location %><br>
 
         <strong>BIRTHDAY</strong><br>
-        <%= @user.birthday.strftime('%B %d, %Y') %><br>
+        <% if @user.birthday %>
+          <%= @user.birthday.strftime('%B %d, %Y') %><br>
+        <% end %></br>
 
         <strong>SCHOOL</strong><br>
         <%= @user.school %><br>
