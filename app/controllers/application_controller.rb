@@ -4,19 +4,24 @@ class ApplicationController < ActionController::Base
   protect_from_forgery with: :exception
 
   before_action :authenticate_user!
+  before_action :setup_user!
+
+  private
 
   def after_sign_in_path_for(resource)
-    if current_user.num_type == 1
-      "/step_one"
-    elsif current_user.num_type == 2
-      "/step_two"
-    elsif current_user.num_type == 3
-      "/step_three"
-    elsif current_user.num_type == 4
-      "/step_four"
-    else
-      "/feed"
-    end
+    '/feed'
+  end
+
+  def setup_user!
+    # don't do if were signed in
+    return if !current_user or
+      # or done with the setup
+      current_user.setup_step.nil? or
+      # or on the right page
+      (params[:controller] == 'setup' &&
+       params[:id] == current_user.setup_step.to_s)
+    # go to the right place
+    redirect_to setup_path(current_user.setup_step)
   end
 
 end

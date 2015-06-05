@@ -2,7 +2,7 @@
   <section>
     <h1>Customize your profile</h1>
 
-    <%= form_for @user , :url => "/step_four/#{current_user}" do |f| %>
+    <%= form_for @user , url: @url do |f| %>
 
       <%= f.label :first_name %>
       <%= f.text_field :first_name %>
