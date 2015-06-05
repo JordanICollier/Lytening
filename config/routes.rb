@@ -14,10 +14,9 @@ Rails.application.routes.draw do
   get 'search_results' => 'welcome#search_results'
 
   # Tutorial routes
-  get 'step_one' => 'tutorials#step_one'
-  get 'step_two' => 'tutorials#step_two'
-  get 'step_three' => 'tutorials#step_three'
-  resources :step_four
+  get 'setup/:id' =>  'setup#show', as: :setup
+  post 'setup/:id' => 'setup#save'
+  patch 'setup/:id' => 'setup#save'
 
   get 'feed' => 'welcome#index'
 

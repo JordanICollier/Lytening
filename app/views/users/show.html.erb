@@ -42,7 +42,11 @@
         <div class="edit fake" data-field-name="location"><%= @user.location %></div>
 
         <strong>BIRTHDAY</strong><br>
-        <div class="edit_date fake" data-field-name="birthday"><%= @user.birthday.strftime('%B %d, %Y') %></div>
+        <div class="edit_date fake" data-field-name="birthday">
+          <% if @user.birthday %>
+            <%= @user.birthday.strftime('%B %d, %Y') %>
+          <% end %>
+        </div>
 
         <strong>SCHOOL</strong><br>
         <div class="edit fake" data-field-name="school"><%= @user.school %></div>

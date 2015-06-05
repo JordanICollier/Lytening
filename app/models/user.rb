@@ -7,6 +7,7 @@ class User < ActiveRecord::Base
   mount_uploader :avatar, AvatarUploader
   attr_accessor :crop_x, :crop_y, :crop_w, :crop_h
   after_update :crop_avatar
+  before_create :set_first_setup_step
 
   has_many :strykes
   has_many :comments
@@ -30,9 +31,15 @@ class User < ActiveRecord::Base
 
   def active_stryke
     stryke = self.strykes.order(created_at: :desc).first
-    if DateTime.now.utc - 24.hours <= stryke.created_at
+    if stryke and DateTime.now.utc - 24.hours <= stryke.created_at
       stryke
     end
+  end
+
+  private
+
+  def set_first_setup_step
+    self.setup_step = 0
   end
 
 end
