@@ -1,0 +1,34 @@
+.tutorial-container{
+  height: 1000px;
+  width: 100%;
+  padding: 10% 10% 25% 10%;
+  background-color: $green2;
+  background-image: url(logo-bg.png);
+  text-size: 40px;
+}
+
+.tutorial-box{
+  width: 45%;
+  margin: 0 auto;
+  text-align: center;
+  line-height: 3em;
+}
+
+.next-tut-box{
+  margin: 0 auto;
+}
+
+input.next-tut{
+  width:50%;
+  height: 50px;
+  color: $yellow;
+  background-color: $blue2;
+  border-color: $blue2;
+  font-size: 15px;
+  cursor: pointer;
+}
+
+input.next-tut:hover{
+  background-color: $blue1;
+  color:$yellow;
+}
