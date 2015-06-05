@@ -17,12 +17,19 @@ class UsersController < ApplicationController
   end
 
   def update
-    # @user.avatar = params[:file]
-    if @user.update(user_params)
+    if current_user.update(user_params)
       if params[:user][:avatar].present?
         render :crop
       else
-        redirect_to user_path(current_user)
+        if user_params.values.first == "A"
+          render text: "Male"
+        elsif user_params.values.first == "B"
+          render text: "Female"
+        elsif user_params.values.first == "C"
+          render text: "Do not specify"
+        else
+          render text: user_params.values.first
+        end
       end
     else
       render :new
@@ -33,7 +40,9 @@ class UsersController < ApplicationController
 private
 
   def user_params
-      params.require(:user).permit(:avatar, :crop_x, :crop_y, :crop_w, :crop_h, :spark_count)
+      params.require(:user).permit(:avatar, :crop_x, :crop_y, :crop_w, :crop_h,
+      :spark_count, :location, :work, :school, :birthday, :sex, :interest,
+      :about, :first_name, :last_name)
   end
 
   def set_user
