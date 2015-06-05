@@ -21,7 +21,7 @@
 
 $(function() {
 
-  // Validations and stryke submittal
+  // Stryke validations and submittal
   $(".stryke-con form").on("submit", function (e) {
     e.preventDefault();
     // grab the stryke text to submit
@@ -102,21 +102,20 @@ $(function() {
         }
     });
 
-    // 500 character countdown on strykes
+    // 500 character countdown
     var text_max = 500;
-    $('#textarea_feedback').html(text_max);
-
-    $('#textarea').keyup(function() {
-      var text_length = $('#textarea').val().length;
+    $('[data-area-countdown]').html(text_max);
+    $('.comments .form').on('input', 'input[name="comment[body]"]', function(e) {
+      var text_length = $(this).val().length;
       var text_remaining = text_max - text_length;
-
-      $('#textarea_feedback').html(text_remaining);
+      var countDown = $(e.delegateTarget).find('[data-area-countdown]');
+      countDown.html(text_remaining);
 
       if(text_remaining < 0) {
-        $("#textarea_feedback").css("color","red");
+        countDown.css("color","red");
       }
       else {
-        $("#textarea_feedback").css("color","black");
+        countDown.css("color","black");
       }
     });
 
