@@ -94,4 +94,8 @@ a.toggle-top-new:visited{
   .toggle-top-new{
     display: block;
   }
+  input{
+    -webkit-appearance: none;
+    border-radius: 0;
+  }
 }
