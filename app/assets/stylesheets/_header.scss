@@ -275,4 +275,21 @@ input.search-btn{
       -ms-transform: translateX(-75%);
       transform: translateX(-75%);
     }
+    .sidenav-logo {
+      display: none;
+    }
+    .sidenav li{
+      height: 50px;
+    }
+
+    .search-space{
+      padding: 5px 0 0 0;
+    }
+    .two-lines{
+      padding: 5px 0 0 0;
+    }
+
+    .one-line{
+      padding: 13px 0 0 0;
+    }
 }
