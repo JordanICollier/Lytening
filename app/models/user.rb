@@ -30,7 +30,7 @@ class User < ActiveRecord::Base
 
   def active_stryke
     stryke = self.strykes.order(created_at: :desc).first
-    if DateTime.now.utc - 24.hours <= stryke.created_at
+    if stryke and DateTime.now.utc - 24.hours <= stryke.created_at
       stryke
     end
   end
