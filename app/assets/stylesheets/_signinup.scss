@@ -222,3 +222,21 @@ input.forget-signup{
   // border-bottom-right-radius: 20px;
   cursor: pointer;
 }
+
+@media screen and (max-width: 968px) {
+  .sign-container{
+    padding: 15% 0 25% 0;
+  }
+  .sign-box{
+    width: 70%;
+  }
+}
+
+@media screen and (max-width: 600px) {
+  .sign-container{
+    padding: 25% 0 25% 0;
+  }
+  .sign-box{
+    width: 92%;
+  }
+}
