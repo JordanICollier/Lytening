@@ -62,6 +62,8 @@ input.btn{
   font-size: 15px;
   cursor: pointer;
   padding: 0 0 0 0;
+  -webkit-appearance: none;
+  border-radius: 0;
 }
 
 input:focus{
@@ -88,6 +90,10 @@ input:focus{
 }
 
 @media screen and (max-width: 600px) {
-  padding: 15px 20px 15px 20px;
-
+  .comments .content {
+    padding: 15px 20px 15px 20px;
+  }
+  #comment_body{
+    width:70%;
+  }
 }
