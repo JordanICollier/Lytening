@@ -16,6 +16,7 @@
 //= require jquery.Jcrop
 //= require sparks
 //= require TimeCircles
+//= require follow
 //= require_tree .
 
 $(function() {
