@@ -117,3 +117,21 @@
   color:$white;
   line-height: 30px;
 }
+
+.photo-edit-container{
+  height: 1000px;
+  width: 100%;
+  padding: 10% 10% 25% 10%;
+  background-color: $green2;
+  background-image: url(logo-bg.png);
+}
+
+.photo-edit-box{
+  width: 45%;
+  margin: 0 auto;
+  text-align: center;
+}
+
+input#user_avatar{
+  margin: 0 0 10px 0;
+}
