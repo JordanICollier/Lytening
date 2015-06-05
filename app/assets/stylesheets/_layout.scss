@@ -155,6 +155,24 @@ $endNum: 20;
 
 }
 
+.stryke-sign{
+  position: absolute;
+  z-index:8;
+  height: 110px;
+  width: 175px;
+  margin: 0 19%;
+  background-color: $blue2;
+  text-align: center;
+  color: $white;
+  border-style: solid;
+  padding: 75px 0 0 0;
+  border-width: 5px;
+  border-color: $yellow;
+  border-bottom-left-radius: 1em;
+  border-bottom-right-radius: 1em;
+  opacity:.95;
+}
+
 .new-status {
   padding: 10% 15% 10% 15%;
   border-style: solid;
