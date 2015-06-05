@@ -31,10 +31,10 @@ $(function() {
     // Check if stryke body is empty
     if (stryke === null || stryke === "") {
       strykeInput.css("background-color", "#EEB4B4");
-      $(".header-post").val("Strykes cannot be blank");
-      $(".header-post").on("click", function (e) {
+      strykeInput.val("Strykes cannot be blank");
+      strykeInput.on("click", function (e) {
         strykeInput.css("background-color", "#EAF1D2");
-        $(".header-post").val("");
+        strykeInput.val("");
       });
     }
     // Check if stryke body is longer than 500 characters
@@ -61,7 +61,7 @@ $(function() {
         $(".upSlide").removeClass("upSlide");
         // clear the input
         strykeInput.val('');
-        $("#textarea_feedback").html(500);
+        countDown.html(500);
         timeCircle();
       });
     }
@@ -119,9 +119,7 @@ $(function() {
       }
     });
 
-
-// ajax call on comment
-
+    // Comment validations and submittal
     $('.status-container').on('submit', '.comments .form', function(e) {
       e.preventDefault();
       // find top level element
@@ -131,27 +129,45 @@ $(function() {
       // grab the comment text to submit
       var commentInput = $(this).find('input[name="comment[body]"]');
       var comment = commentInput.val();
-      // send the ajax request
-      $.ajax({
-        url: "/strykes/" + strykeId + "/comments",
-        method: "POST",
-        contentType: "application/json",
-        // serialize the data be sending over the wire
-        data: JSON.stringify({
-          comment: {
-            body: comment
-          }
-        })
-      }).done(function(data){
-        // find all strykes with the same id on the page
-        var sameStrykes = $('[data-stryke-id=' + strykeId + ']');
-        // add the comment to each one
-        sameStrykes
-          .find('.comment-list')
-          .append(data);
-        // clear the input
-        commentInput.val('');
-      });
+      var countDown = $(this).find('[data-area-countdown]');
+      // Check if stryke body is empty
+      if (comment === null || comment === "") {
+        commentInput.css("background-color", "#EEB4B4");
+        commentInput.val("Comments cannot be blank");
+        commentInput.on("click", function (e) {
+          commentInput.css("background-color", "#40ADB4");
+          commentInput.val("");
+        });
+      }
+      // Check if comment body is longer than 500 characters
+      else if (comment.length > 500) {
+        commentInput.css("background-color", "#EEB4B4");
+      }
+      // Post comment to database and append to comments list
+      else {
+        $.ajax({
+          url: "/strykes/" + strykeId + "/comments",
+          method: "POST",
+          contentType: "application/json",
+          // serialize the data be sending over the wire
+          data: JSON.stringify({
+            comment: {
+              body: comment
+            }
+          })
+        }).done(function(data){
+          // find all strykes with the same id on the page
+          var sameStrykes = $('[data-stryke-id=' + strykeId + ']');
+          // add the comment to each one
+          sameStrykes
+            .find('.comment-list')
+            .append(data);
+          // clear the input
+          commentInput.val('');
+          // reset counter to 500
+          countDown.html(500);
+        });
+      }
     });
 
 // TimeCircles
