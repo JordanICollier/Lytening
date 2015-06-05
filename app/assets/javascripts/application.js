@@ -17,6 +17,7 @@
 //= require sparks
 //= require TimeCircles
 //= require follow
+//= require Jeditable
 //= require_tree .
 
 $(function() {
