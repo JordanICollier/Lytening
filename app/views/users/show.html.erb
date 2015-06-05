@@ -25,42 +25,81 @@
       </div>
     </div>
 
-    <div class="col-12-12 user-info-con" data-user-id="<%=current_user.id%>">
-        <strong>WORK</strong><br>
-        <div class="edit fake" data-field-name="work"><%= @user.work %></div>
+    <% if current_user == @user %>
+      <div class="col-12-12 user-info-con" data-user-id="<%=current_user.id%>">
+          <strong>WORK</strong><br>
+          <div class="edit fake" data-field-name="work"><%= @user.work %></div>
 
-        <strong>FIRST NAME</strong><br>
-        <div class="edit fake" data-field-name="first_name"><%= @user.first_name %></div>
+          <strong>FIRST NAME</strong><br>
+          <div class="edit fake" data-field-name="first_name"><%= @user.first_name %></div>
 
-        <strong>LAST NAME</strong><br>
-        <div class="edit fake" data-field-name="last_name"><%= @user.last_name %></div>
+          <strong>LAST NAME</strong><br>
+          <div class="edit fake" data-field-name="last_name"><%= @user.last_name %></div>
 
-        <strong>SEX</strong><br>
-        <div class="edit_sex fake" data-field-name="sex"><%= @user.sex %></div>
+          <strong>SEX</strong><br>
+          <div class="edit_sex fake" data-field-name="sex"><%= @user.sex %></div>
 
-        <strong>LOCATION</strong><br>
-        <div class="edit fake" data-field-name="location"><%= @user.location %></div>
+          <strong>LOCATION</strong><br>
+          <div class="edit fake" data-field-name="location"><%= @user.location %></div>
 
-        <strong>BIRTHDAY</strong><br>
-        <div class="edit_date fake" data-field-name="birthday">
-          <% if @user.birthday %>
-            <%= @user.birthday.strftime('%B %d, %Y') %>
-          <% end %>
-        </div>
+          <strong>BIRTHDAY</strong><br>
+          <div class="edit_date fake" data-field-name="birthday">
+            <% if @user.birthday %>
+              <%= @user.birthday.strftime('%B %d, %Y') %>
+            <% end %>
+          </div>
 
-        <strong>SCHOOL</strong><br>
-        <div class="edit fake" data-field-name="school"><%= @user.school %></div>
+          <strong>SCHOOL</strong><br>
+          <div class="edit fake" data-field-name="school"><%= @user.school %></div>
 
-    </div>
-    <div class="col-12-12 user-about-con">
-      <strong>ABOUT</strong><br>
-      <div class="edit_area fake" data-field-name="about"><%= @user.about %></div>
-    </div>
+      </div>
+      <div class="col-12-12 user-about-con">
+        <strong>ABOUT</strong><br>
+        <div class="edit_area fake" data-field-name="about"><%= @user.about %></div>
+      </div>
 
-    <div class="col-12-12 user-interests-con">
-      <strong>INTERESTS</strong><br>
-      <div class="edit fake" data-field-name="interest"><%= @user.interest %></div>
-    </div>
+      <div class="col-12-12 user-interests-con">
+        <strong>INTERESTS</strong><br>
+        <div class="edit fake" data-field-name="interest"><%= @user.interest %></div>
+      </div>
+    <% else %>
+      <div class="col-12-12 user-info-con" data-user-id="<%=current_user.id%>">
+          <strong>WORK</strong><br>
+          <div><%= @user.work %></div>
+
+          <strong>FIRST NAME</strong><br>
+          <div><%= @user.first_name %></div>
+
+          <strong>LAST NAME</strong><br>
+          <div><%= @user.last_name %></div>
+
+          <strong>SEX</strong><br>
+          <div><%= @user.sex %></div>
+
+          <strong>LOCATION</strong><br>
+          <div><%= @user.location %></div>
+
+          <strong>BIRTHDAY</strong><br>
+          <div>
+            <% if @user.birthday %>
+              <%= @user.birthday.strftime('%B %d, %Y') %>
+            <% end %>
+          </div>
+
+          <strong>SCHOOL</strong><br>
+          <div><%= @user.school %></div>
+
+      </div>
+      <div class="col-12-12 user-about-con">
+        <strong>ABOUT</strong><br>
+        <div><%= @user.about %></div>
+      </div>
+
+      <div class="col-12-12 user-interests-con">
+        <strong>INTERESTS</strong><br>
+        <div><%= @user.interest %></div>
+      </div>
+    <% end %>
   </div>
 
   <div class="col-6-12 user-comments">
