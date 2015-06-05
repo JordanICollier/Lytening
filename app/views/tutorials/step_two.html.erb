@@ -1,22 +1,25 @@
-<div class="user-container">
-  <section>
-    <h1>Add a profile picture</h1>
+<div class="col-12-12">
+  <div class="tutorial-container">
+    <div class="tutorial-box">
+      <div class="col-12-12">
+        <%= link_to(image_tag("lytening-logo-white.png", class:"sign-logo"), "#") %>
+      </div>
+    <h1>ADD A PROFILE PICTURE</h1>
 
-    <div>
-      <%= image_tag @user.avatar_url(:thumb) %>
-    </div>
+    <div class="btn-container">
 
     <%= simple_form_for(@user) do |f| %>
       <%= f.file_field :avatar %>
+      <div class="col-6-12 next-tut-box">
       <%= f.button :submit %>
+      </div>
+
     <% end %>
 
-    <div class="">
-      <!-- images -->
-    </div>
-
-    <div>
+    <div class="col-6-12 next-tut-box">
       <%= link_to 'skip to next section', step_three_path %>
     </div>
-  </section>
+  </div>
+</div>
+</div>
 </div>
