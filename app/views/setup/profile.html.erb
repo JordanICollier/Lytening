@@ -1,49 +1,47 @@
-<div class="user-container">
-  <section>
-    <h1>Customize your profile</h1>
+<div class="col-12-12">
+  <div class="tutorial-container">
+    <div class="tutorial-box">
+      <div class="col-12-12">
+        <div class="sign-header">CUSTOMIZE YOUR PROFILE</div>
 
     <%= form_for @user , url: @url do |f| %>
 
-      <%= f.label :first_name %>
-      <%= f.text_field :first_name %>
+      <%#= f.label :first_name %>
+      <%= f.text_field :first_name, placeholder: "First Name" %>
 
-      <%= f.label :last_name %>
-      <%= f.text_field :last_name %>
+      <%#= f.label :last_name %>
+      <%= f.text_field :last_name, placeholder: "Last Name" %>
 
-      <%= f.label :username %>
-      <%= f.text_field :username %>
+      <%#= f.label :username %>
+      <%= f.text_field :username, placeholder: "User Name" %>
 
-      <%= f.label :birthday %>
-      <%= f.date_field :birthday %>
+      <%#= f.label :birthday %>
+      <%= f.date_field :birthday, placeholder: "Birthday" %>
 
       <%= f.label :sex %>
       <%# f.collection_select  %>
 
-      <%= f.label :location %>
-      <%= f.text_field :location %> E.g. Denver, CO
+      <%#= f.label :location %>
+      <%= f.text_field :location, placeholder: "Location E.g. Denver, CO" %>
 
-      Separate by commas
-      <%= f.label :interest %>
-      <%= f.text_field :interest %>
-      We'll make some suggestions on people to follow
-      based on what you list here
+      Separate Interests by commas.  We'll make some suggestions on people to follow based on what you list here
+      <%#= f.label :interest %>
+      <%= f.text_field :interest, placeholder: "Interests" %>
 
-      <%= f.label :school %>
-      <%= f.text_field :school %>
+      <%#= f.label :school %>
+      <%= f.text_field :school, placeholder: "School" %>
 
-      <%= f.label :work %>
-      <%= f.text_field :work %>
+      <%#= f.label :work %>
+      <%= f.text_field :work, placeholder: "Work" %>
 
-      <%= f.label :about %>
-      <%= f.text_area :about %>
+      <%#= f.label :about %>
+      <%= f.text_area :about, placeholder: "About" %>
 
-      <%= f.submit %>
+      <%= f.submit "Update User", class: "next-tut" %>
 
     <% end %>
 
-    <div class="">
-      <!-- images -->
     </div>
-
-  </section>
+  </div>
+  </div>
 </div>
