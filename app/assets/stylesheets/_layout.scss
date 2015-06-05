@@ -274,4 +274,19 @@ $num: 1;
     .top-status {
       padding: 5% 10% 10% 10%;
     }
+    .stryke-sign{
+      margin: 0 40%;
+    }
+}
+
+@media screen and (max-width: 600px) {
+  .stryke-sign{
+    margin: 0 30%;
+  }
+  .top{
+    margin-top: 80px;
+  }
+  .new{
+    margin-top: 80px;
+  }
 }
