@@ -6,11 +6,13 @@ Rails.application.routes.draw do
 
   resources :strykes do
     resources :comments
+    get '/spark' => 'strykes#spark'
   end
 
   resources :followings
-  resources :comments
-  resources :sparks
+  resources :comments do
+    get '/spark' => 'comments#spark'
+  end
   get 'search_results' => 'welcome#search_results'
 
   # Tutorial routes

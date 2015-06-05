@@ -11,20 +11,11 @@
   </p>
 
   <div class="sparks">
-    <ul>
-      <% unless current_user %>
-        <li><%= image_tag "spark-icon-white.png", class:"spark-icon white", id:"#{stryke.id} #{stryke.user.id}" %></li>
-      <% else %>
-        <% spark = stryke.sparks.find_by(user: current_user) %>
-        <% if spark %>
-          <li><%= image_tag "spark-icon-yellow.png", class:"spark-icon yellow", id:"#{stryke.id} #{stryke.user.id} #{spark.id}" %></li>
-        <% else %>
-          <li><%= image_tag "spark-icon-white.png", class:"spark-icon white", id:"#{stryke.id} #{stryke.user.id}" %></li>
-        <% end %>
-      <% end %>
-      <li><strong><%= "#{stryke.spark_count}" %></strong></li>
-      <li>sparks</li>
-    </ul>
+    <%= render partial: 'sparks/spark', locals: {
+      sparkable: stryke,
+      active_img: 'spark-icon-yellow.png',
+      inactive_img: 'spark-icon-white.png',
+    } %>
   </div>
 
   <div class="comments">

@@ -1,0 +1,9 @@
+<ul class="spark-list" data-spark-url="<%= polymorphic_path([sparkable, :spark]) %>">
+  <% if current_user and (spark = sparkable.sparks.find_by(user: current_user)) %>
+    <li><%= image_tag active_img, class:"spark-icon yellow" %></li>
+  <% else %>
+    <li><%= image_tag inactive_img, class:"spark-icon white" %></li>
+  <% end %>
+  <li><strong><%= sparkable.spark_count %></strong></li>
+  <li><%= 'spark'.pluralize sparkable.spark_count %></li>
+</ul>

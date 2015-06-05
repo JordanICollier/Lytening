@@ -8,20 +8,11 @@
       <%= comment.body_html %>
     </p>
     <div class="comment-sparks">
-      <ul class="spark-list">
-        <% unless current_user %>
-          <li><%= image_tag "spark-icon-teal.png", class:"spark-icon white", id:"#{comment.id} #{comment.user.id}" %></li>
-        <% else %>
-          <% spark = comment.sparks.find_by(user: current_user) %>
-          <% if spark %>
-            <li><%= image_tag "spark-icon-teal.png", class:"spark-icon yellow", id:"#{comment.id} #{comment.user.id} #{spark.id}" %></li>
-          <% else %>
-            <li><%= image_tag "spark-icon-teal.png", class:"spark-icon white", id:"#{comment.id} #{comment.user.id}" %></li>
-          <% end %>
-        <% end %>
-        <li><strong><%= comment.spark_count %></strong></li>
-        <li>sparks</li>
-      </ul>
+      <%= render partial: 'sparks/spark', locals: {
+        sparkable: comment,
+        active_img: 'spark-icon-teal.png',
+        inactive_img: 'spark-icon-teal.png',
+      } %>
     </div>
   </div>
 </div>

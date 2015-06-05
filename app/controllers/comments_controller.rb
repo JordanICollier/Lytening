@@ -1,4 +1,14 @@
 class CommentsController < ApplicationController
+  include SparkableController
+
+  def spark
+    comment = Comment.find(params[:comment_id])
+    toggle_spark!(
+      sparkable: comment,
+      active_img: 'spark-icon-teal.png',
+      inactive_img: 'spark-icon-teal.png',
+    )
+  end
 
   def new
     @comment = Comment.new

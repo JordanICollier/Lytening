@@ -1,4 +1,14 @@
 class StrykesController < ApplicationController
+  include SparkableController
+
+  def spark
+    stryke = Stryke.find(params[:stryke_id])
+    toggle_spark!(
+      sparkable: stryke,
+      active_img: 'spark-icon-yellow.png',
+      inactive_img: 'spark-icon-white.png',
+    )
+  end
 
   def index
     # create a new comment for the partials
