@@ -18,9 +18,9 @@
         <% end %>
         <% unless current_user == @user %>
           <% unless current_user.followers.include? @user %>
-            <%= button_to "FOLLOW", followings_path(:follower_id => @user.id), :method => :post, class:"follow-btn" %>
+            <%= button_to "FOLLOW", followings_path(:follower_id => @user.id), :method => :post, class:"follow-btn", "data-follower-id":"#{@user.id}" %>
           <% else %>
-            <%= button_to "UNFOLLOW", following_path(current_user.followings.find_by(follower_id: @user.id)), :method => :delete, class:"follow-btn" %>
+            <%= button_to "UNFOLLOW", following_path(current_user.followings.find_by(follower_id: @user.id)), :method => :delete, class:"follow-btn", "data-follower-id":"#{@user.id}" %>
           <% end %>
         <% end %>
       </div>
