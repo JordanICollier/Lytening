@@ -31,7 +31,6 @@ $(function() {
       endOfData = data.done
       // increase the offset for next time
       offset += data.size;
-      console.log(data);
       // add new data to the page
       $('.status-container .top').append(data.top);
       $('.status-container .new').append(data.new);
