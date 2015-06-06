@@ -15,4 +15,10 @@ class FollowingsController < ApplicationController
     render nothing: true
   end
 
+  def show
+    @user = User.find(params[:id])
+    @followers = @user.followers
+    @followings = @user.inverse_followers
+  end
+
 end
