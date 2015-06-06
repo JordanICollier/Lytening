@@ -12,6 +12,12 @@
         <div class="user-spark-count"><%= @user.spark_count %></div>
         <div class="user-spark-header">Total Sparks</div>
 
+        <div class="user-followers-count"><%= link_to @user.followers.count, following_path(@user) %></div>
+        <div class="user-followers-header">Followers</div>
+
+        <div class="user-followers-count"><%= link_to @user.inverse_followers.count, following_path(@user) %></div>
+        <div class="user-followers-header">Following</div>
+
         <!-- These are the Follow / Unfollow links -->
         <% if current_user == @user %>
           <%= button_to "Edit Profile Picture", edit_user_path(current_user), :method => :get, class: "edit-profile-pic-btn" %>
