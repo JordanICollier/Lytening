@@ -17,8 +17,8 @@ class FollowingsController < ApplicationController
 
   def show
     @user = User.find(params[:id])
-    @followers = @user.followers
-    @followings = @user.inverse_followers
+    @followings = @user.followers
+    @followers = @user.inverse_followers
   end
 
 end
