@@ -52,16 +52,20 @@
             <%= button_to "FOLLOW", followings_path(:follower_id => following.id), :method => :post, class:"follow-btn", "data-follower-id":"#{following.id}" %>
           <% end %>
         <% else %>
-          <% if current_user.followers.include? follower %>
-            <%= button_to "UNFOLLOW", following_path(current_user.followings.find_by(follower_id: follower.id)), :method => :delete, class:"follow-btn", "data-follower-id":"#{follower.id}" %>
+          <% if current_user.followers.include? following %>
+            <%= button_to "UNFOLLOW", following_path(current_user.followings.find_by(follower_id: following.id)), :method => :delete, class:"follow-btn", "data-follower-id":"#{following.id}" %>
           <% else %>
-            <%= button_to "FOLLOW", followings_path(:follower_id => follower.id), :method => :post, class:"follow-btn", "data-follower-id":"#{follower.id}" %>
+            <%= button_to "FOLLOW", followings_path(:follower_id => following.id), :method => :post, class:"follow-btn", "data-follower-id":"#{following.id}" %>
           <% end %>
         <% end %>
       </div>
     </div>
     <% end %>
   </div>
+</div>
+
+<div class="f-right">
+  <img src="/assets/up-arrow.png" class='back-to-top'>
 </div>
 
 </div>
