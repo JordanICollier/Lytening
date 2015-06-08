@@ -4,6 +4,15 @@
   padding: 10% 10% 5% 10%;
   background-color: $green2;
   background-image: url(logo-bg.png);
+  // position:fixed;
+}
+
+.edit-user-container{
+  height: 100%;
+  width: 100%;
+  padding: 10% 10% 25% 10%;
+  background-color: $green2;
+  background-image: url(logo-bg.png);
 }
 
 .sign-box{
@@ -119,15 +128,19 @@ btn.login-submit{
 }
 
 input.cancel{
-  width:100%;
-  height: 50px;
-  color: $teal1;
-  background-color: $blue2;
-  border-color: $blue2;
+  // width:100%;
+  // height: 50px;
+  color: $yellow;
+  background-color: rgba(0,0,0,0);
+  border: 0px outset buttonface;
   font-size: 15px;
   // border-top-right-radius: 20px;
   // border-bottom-right-radius: 20px;
   cursor: pointer;
+}
+
+input.cancel:hover{
+  color: $red;
 }
 
 input.update{
