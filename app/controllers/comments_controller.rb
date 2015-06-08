@@ -38,6 +38,12 @@ class CommentsController < ApplicationController
     render nothing: true
   end
 
+  def destroy
+    @comment = Comment.find(params[:id])
+    @comment.destroy
+    render nothing: true
+  end
+
   private
 
   def comment_params
