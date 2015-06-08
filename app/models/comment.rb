@@ -10,19 +10,19 @@ class Comment < ActiveRecord::Base
   auto_html_for :body do
     html_escape
     image
-    youtube(:width => 275, :height => 175, :autoplay => false)
-    soundcloud(:width => 275, :height => 175, :autoplay => false)
-    dailymotion(:width => 275, :height => 175, :autoplay => false)
-    google_video(:width => 275, :height => 175, :autoplay => false)
-    vimeo(:width => 275, :height => 175, :autoplay => false)
-    metacafe
+    youtube(:autoplay => false)
+    soundcloud(:autoplay => false)
+    dailymotion(:autoplay => false)
+    google_video(:autoplay => false)
+    vimeo(:autoplay => false)
+    metacafe(:autoplay => false)
     google_map
     twitter
     flickr
     # instagram currently buggy
-    liveleak(:width => 275, :height => 175, :autoplay => false)
+    liveleak(:autoplay => false)
     ted
-    worldstar(:width => 275, :height => 175, :autoplay => false)
+    worldstar(:autoplay => false)
     hashtag
     link :target => "_blank", :rel => "nofollow"
     simple_format
