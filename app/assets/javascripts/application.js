@@ -107,6 +107,19 @@ $(function() {
     // 500 character countdown
     var text_max = 500;
     $('[data-area-countdown]').html(text_max);
+    $('.stryke-con .edit_user .header-post').on('keyup', function(e) {
+      var text_length = $(this).val().length;
+      var text_remaining = text_max - text_length;
+      var countDown = $(e.target).parent().parent().find('[data-area-countdown]');
+      countDown.html(text_remaining);
+
+      if(text_remaining < 0) {
+        countDown.css("color","red");
+      }
+      else {
+        countDown.css("color","black");
+      }
+    });
     $('.comments .form').on('input', 'input[name="comment[body]"]', function(e) {
       var text_length = $(this).val().length;
       var text_remaining = text_max - text_length;
