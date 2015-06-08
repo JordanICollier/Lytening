@@ -1,6 +1,9 @@
 $(function() {
   // don't do anything if we are not on the feed page
   if (window.location.pathname !== '/feed') { return; }
+  // add the loading icon to the footer
+  var img = $('<img src="/assets/loading-icon.svg" class="loading-icon" >')
+    .appendTo('.foot')
   // select the window and document once
   var jqDoc = $(document);
   var jqWin = $(window);
@@ -29,6 +32,8 @@ $(function() {
       // update flags
       loading = false;
       endOfData = data.done
+      // remove the loading icon
+      if (endOfData) { img.remove(); }
       // increase the offset for next time
       offset += data.size;
       // add new data to the page

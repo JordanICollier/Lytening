@@ -1,4 +1,6 @@
 source 'https://rubygems.org'
+ruby '2.2.0'
+
 gem 'auto_html'
 gem 'carrierwave'
 gem 'coffee-rails', '~> 4.1.0'
