@@ -56,11 +56,10 @@
             <% if current_user%>
               <li class="col-10-12"><%= link_to(image_tag("lytening-logo-black.svg", class:"header-logo"), root_path) %></li>
               <li class="col-1-12"><a href="#" class="toggle-top-new">TOP</a></li>
-              <li class="col-1-12"><%= image_tag "spark_icon.png", class:"spark-anywhere" %></li>
-              <li class="col-1-12"><label for="toggle-menu"><%= image_tag "menu-icon.png", class:"menu" %></label></li>
+              <li class="col-1-12"><%= image_tag "spark_icon.svg", class:"spark-anywhere" %></li>
+              <li class="col-1-12"><label for="toggle-menu"><%= image_tag "menu-icon.svg", class:"menu" %></label></li>
             <% else %>
               <li class="col-6-12"><%= link_to(image_tag("lytening-logo-black.svg", class:"header-logo"), root_path) %></li>
-              <li class="col-6-12"><label for="toggle-menu"><%= image_tag "menu-icon.png", class:"menu" %></label></li>
             <% end %>
 
           </ul>

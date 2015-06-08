@@ -66,8 +66,10 @@ nav {
 
 .menu {
   float:right;
-  padding: 16px 0 0 0;
+  padding: 11px 0 0 0;
   cursor: pointer;
+  width: 40px;
+  height: auto;
 }
 
 .mobile {
@@ -203,11 +205,11 @@ input.search-btn{
   background-color: $yellow;
   @include box-shadow(0 0 .4em 0 rgba(0, 0, 0, 0.5));
   opacity: .95;
-  -webkit-transition: .5s ease-in-out;
-  -moz-transition: .5s ease-in-out;
-  -o-transition: .5s ease-in-out;
-  -ms-transition: .5s ease-in-out;
-  transition: .5s ease-in-out;
+  -webkit-transition: .4s ease-in-out;
+  -moz-transition: .4s ease-in-out;
+  -o-transition: .4s ease-in-out;
+  -ms-transition: .4s ease-in-out;
+  transition: .4s ease-in-out;
 
 }
 
@@ -223,8 +225,10 @@ input.search-btn{
 }
 
 .spark-anywhere{
-  padding: 13px 0 0 50%;
+  padding: 10px 0 0 50%;
   cursor: pointer;
+  width: 90px;
+  height: auto;
   // float:right;
 }
 
