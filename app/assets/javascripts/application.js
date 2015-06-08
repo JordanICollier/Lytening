@@ -57,8 +57,17 @@ $(function() {
           }
         })
       }).done(function(data){
+        // find all strykes with the same user id on the page
+        var sameUser = $('[data-user-id=' + user_id + ']');
+        // remove the old stryke from new column
+        sameUser.parent('.new').find('[data-user-id=' + user_id + ']').remove();
+        // remove the old stryke from hot column
+        sameUser.parent('.top').find('[data-user-id=' + user_id + ']').remove();
         // Append stryke to new column
         $(".new").prepend(data);
+        // Resize images to fit div by adding image responsive class
+        $(".new img").addClass("img-responsive");
+        $(".top img").addClass("img-responsive");
         // Slide stryke panel back up
         $(".upSlide").removeClass("upSlide");
         // clear the input
@@ -197,6 +206,9 @@ $(function() {
           sameStrykes
             .find('.comment-list')
             .append(data);
+          // Resize images to fit div by adding image responsive class
+          $(".new img").addClass("img-responsive");
+          $(".top img").addClass("img-responsive");
           // clear the input
           commentInput.val('');
           // reset counter to 500
