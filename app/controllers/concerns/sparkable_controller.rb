@@ -13,7 +13,11 @@ module SparkableController
     end
     sparkable.reload
     # render the new partial
-    render partial: 'sparks/spark', locals: locals
+    template = render_to_string partial: 'sparks/spark', locals: locals
+    render json: {
+      template: template,
+      spark: !spark,
+    }
   end
 
 end
