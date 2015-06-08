@@ -5,7 +5,7 @@ class CommentsController < ApplicationController
     comment = Comment.find(params[:comment_id])
     toggle_spark!(
       sparkable: comment,
-      active_img: 'spark-icon-teal.png',
+      active_img: 'spark-icon-yellow.png',
       inactive_img: 'spark-icon-teal.png',
     )
   end
