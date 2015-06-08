@@ -2,7 +2,7 @@
 <div class="col-12-12">
   <div class="sign-container">
     <div class="sign-box">
-      <%= link_to(image_tag("lytening-logo-white.png", class:"sign-logo"), "#") %>
+      <%= link_to(image_tag("lytening-logo-white.svg", class:"sign-logo"), "#") %>
       <div class="sign-log">
 
         <div class="sign-header">LOG IN</div>
@@ -12,23 +12,27 @@
             <%= f.input :email, label: false, required: false, autofocus: true, placeholder: "Email"  %>
             <%= f.input :password, label: false, required: false, placeholder: "Password"  %>
               <div class="btn-container">
-                <div class="col-6-12 form-actions">
+                <div class="col-12-12 form-actions">
                   <%= f.button :submit, "LOG IN", class:"update" %>
                 </div>
-                  <%= link_to new_user_registration_path do %>
-                <div class="col-6-12 login-signup-btn">
-                  SIGN UP
-                </div>
-            <% end %>
               </div>
-            <%= f.input :remember_me, as: :boolean if devise_mapping.rememberable? %>
+
+              <div class="col-4-12">
+                <%= link_to new_user_registration_path do %>
+                Sign up
+                <% end %>
+              </div>
+              <div class="col-4-12 forgot-password">
+                <%= link_to "Forgot password", new_user_password_path %>
+              </div>
+              <div class="col-4-12">
+                <%= f.input :remember_me, as: :boolean if devise_mapping.rememberable? %>
+              </div>
+            <% end %>
+
+
           </div>
 
-          <% end %>
-
-          <div class="forgot-password">
-            <%= link_to "Forgot password", new_user_password_path %>
-          </div>
       </div>
 
     </div>
