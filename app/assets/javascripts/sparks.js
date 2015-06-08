@@ -7,17 +7,15 @@ $(function() {
     $.ajax({
       url: url,
     }).success(function(data) {
-      // find the stryke_id from the current container
-      var strykeId = elem.closest('[data-stryke-id]').data('stryke-id');
-      // find the spark lists to replace
-      var strykes = $('[data-stryke-id="' + strykeId + '"]');
-      var sparkLists = strykes.find('.sparks .spark-list');
-      // update the DOM
-      sparkLists.replaceWith($(data));
-      // re-find spark lists after replacement
-      sparkLists = strykes.find('.sparks .spark-list');
-      // animate
-      sparkLists.find('.spark-icon').effect("pulsate", "slow");
+      // find the spark url
+      var sparkUrl = elem.data('spark-url');
+      // we use this to regrab the spark list after the replacement
+      function sparkLists() {
+        return $('[data-spark-url="' + sparkUrl + '"]');
+      }
+      // replace and animate
+      sparkLists().replaceWith(data);
+      sparkLists().find('.spark-icon').effect("pulsate", "slow");
     });
   });
 });
