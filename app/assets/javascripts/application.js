@@ -65,6 +65,9 @@ $(function() {
         sameUser.parent('.top').find('[data-user-id=' + user_id + ']').remove();
         // Append stryke to new column
         $(".new").prepend(data);
+        // Resize images to fit div by adding image responsive class
+        $(".new img").addClass("img-responsive");
+        $(".top img").addClass("img-responsive");
         // Slide stryke panel back up
         $(".upSlide").removeClass("upSlide");
         // clear the input
@@ -183,6 +186,9 @@ $(function() {
           sameStrykes
             .find('.comment-list')
             .append(data);
+          // Resize images to fit div by adding image responsive class
+          $(".new img").addClass("img-responsive");
+          $(".top img").addClass("img-responsive");
           // clear the input
           commentInput.val('');
           // reset counter to 500
