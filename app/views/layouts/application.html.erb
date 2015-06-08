@@ -48,14 +48,16 @@
 
       </div>
     </div>
+
     <% end %>
 
       <nav>
+
         <div class="header">
           <ul>
             <% if current_user%>
               <li class="col-10-12"><%= link_to(image_tag("lytening-logo-black.svg", class:"header-logo"), root_path) %></li>
-              <li class="col-1-12"><a href="#" class="toggle-top-new">TOP</a></li>
+              <!-- <li class="col-1-12"><a href="#" class="toggle-top-new">TOP</a></li> -->
               <li class="col-1-12"><%= image_tag "spark_icon.svg", class:"spark-anywhere" %></li>
               <li class="col-1-12"><label for="toggle-menu"><%= image_tag "menu-icon.svg", class:"menu" %></label></li>
             <% else %>
@@ -65,6 +67,7 @@
           </ul>
         </div>
       </nav>
+
       <section>
         <!-- Below the doce displays devise error messages -->
       <% flash.each do |name, msg| %>

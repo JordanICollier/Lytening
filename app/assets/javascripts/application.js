@@ -90,19 +90,39 @@ $(function() {
     });
 
     // Mobile toggle between to and new strykes
-    var toggle = 0;
-    $('.toggle-top-new').on('click', function(){
-        event.preventDefault();
-        $('.new').toggleClass('hide');
-        $('.top').toggleClass('hide');
-        if (toggle === 0){
-          $('.toggle-top-new').text('NEW');
-          toggle = 1;
-        } else if (toggle === 1){
-          $('.toggle-top-new').text('TOP');
-          toggle = 0;
-        }
+    $('.stryke-sign-top-mobile').on('click', function(){
+      event.preventDefault();
+      $(this).addClass('selected');
+      $(this).text('Looking at Top Strykes');
+      $('.stryke-sign-new-mobile').removeClass('selected');
+      $('.stryke-sign-new-mobile').text('Click for New Strykes');
+      $('.new').toggleClass('hide');
+      $('.top').toggleClass('hide');
     });
+
+    $('.stryke-sign-new-mobile').on('click', function(){
+      event.preventDefault();
+      $(this).addClass('selected');
+      $(this).text('Looking at New Strykes');
+      $('.stryke-sign-top-mobile').removeClass('selected');
+      $('.stryke-sign-top-mobile').text('Click for Top Strykes');
+      $('.new').toggleClass('hide');
+      $('.top').toggleClass('hide');
+    });
+
+    // var toggle = 0;
+    // $('.toggle-top-new').on('click', function(){
+    //     event.preventDefault();
+    //     $('.new').toggleClass('hide');
+    //     $('.top').toggleClass('hide');
+    //     if (toggle === 0){
+    //       $('.toggle-top-new').text('NEW');
+    //       toggle = 1;
+    //     } else if (toggle === 1){
+    //       $('.toggle-top-new').text('TOP');
+    //       toggle = 0;
+    //     }
+    // });
 
     // 500 character countdown
     var text_max = 500;

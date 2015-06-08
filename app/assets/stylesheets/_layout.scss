@@ -173,6 +173,73 @@ $endNum: 20;
   opacity:.95;
 }
 
+.stryke-sign-top-mobile{
+  z-index:8;
+  height: 110px;
+  width: 200px;
+  background-color: $blue2;
+  text-align: center;
+  color: $white;
+  border-style: solid;
+  padding: 75px 0 0 0;
+  border-width: 5px;
+  border-color: $yellow;
+  border-bottom-left-radius: 1em;
+  opacity:.95;
+  display: none;
+  float:right;
+  cursor: pointer;
+
+}
+
+.stryke-sign-new-mobile{
+  z-index:8;
+  height: 110px;
+  width: 200px;
+  background-color: $blue2;
+  text-align: center;
+  color: $white;
+  border-style: solid;
+  padding: 75px 0 0 0;
+  border-width: 5px;
+  border-color: $yellow;
+  border-bottom-right-radius: 1em;
+  opacity:.95;
+  display: none;
+  float:left;
+  cursor: pointer;
+}
+
+.stryke-sign-new-mobile:hover, .stryke-sign-top-mobile:hover{
+  background-color: $yellow;
+  color: $teal2;
+}
+
+.selected{
+  background-color: $purple2;
+  color: $yellow;
+}
+
+.mobile-sign{
+  position: fixed;
+  height:100px;
+  z-index: 8;
+}
+
+.left-sign{
+  position:relative;
+  height: 100px;
+  width:50%;
+  float: left;
+}
+
+.right-sign{
+  position:relative;
+  height: 100px;
+  width:50%;
+  float: left;
+}
+
 .stryke-sign-follow{
   position: absolute;
   z-index:8;
@@ -294,12 +361,20 @@ $num: 1;
       padding: 5% 10% 10% 10%;
     }
     .stryke-sign{
+      display:none;
       margin: 0 40%;
+    }
+    .stryke-sign-new-mobile{
+      display: block;
+    }
+    .stryke-sign-top-mobile{
+      display: block;
     }
 }
 
 @media screen and (max-width: 600px) {
   .stryke-sign{
+    display:none;
     margin: 0 25%;
   }
   .top{
