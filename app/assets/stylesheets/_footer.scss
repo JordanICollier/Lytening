@@ -20,11 +20,31 @@ footer {
   padding: 6px 2% 0 2%;
   background-color: $yellow;
   @include box-shadow(1px 0px 5px 0px  rgba(0, 0, 0, 0.5));
+  text-align: center;
 
 }
 
 .foot ul li {
   display: inline;
   background-color: red;
+}
 
+.loading-icon {
+  max-height: 100%;
+  animation: spin 2s infinite linear;
+  -moz-animation: spin 2s infinite linear;
+  -webkit-animation: spin 2s infinite linear;
+}
+
+@-moz-keyframes spin {
+    from { -moz-transform: rotate(0deg); }
+    to { -moz-transform: rotate(360deg); }
+}
+@-webkit-keyframes spin {
+    from { -webkit-transform: rotate(0deg); }
+    to { -webkit-transform: rotate(360deg); }
+}
+@keyframes spin {
+    from {transform:rotate(0deg);}
+    to {transform:rotate(360deg);}
 }
