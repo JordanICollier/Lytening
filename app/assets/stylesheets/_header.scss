@@ -124,6 +124,8 @@ nav {
 
 .sidenav-logo {
   position:relative;
+  width:60%;
+  height: auto;
   padding: 25px 0 20px 0;
 }
 
@@ -237,6 +239,10 @@ input.search-btn{
   font-weight: 600;
 }
 
+.header-logo{
+  width:107px;
+  height: auto;
+}
 @media screen and (max-width: 968px) {
     .spark-anywhere{
       padding: 13px 0 0 20px;
