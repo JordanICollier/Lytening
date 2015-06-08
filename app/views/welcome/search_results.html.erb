@@ -9,7 +9,7 @@
             <div class="col-1-12">
               <%= image_tag friend.avatar, class: "search-avatar" %>
             </div>
-            <div class="col-3-12 search-txt">
+            <div class="col-2-12 search-txt">
               <%= link_to friend.full_name, user_path(friend) %>
             </div>
             <div class="col-3-12 search-txt">
@@ -18,7 +18,7 @@
             <div class="col-2-12 search-txt">
               <%= friend.username %>
             </div>
-            <div class="col-2-12 search-txt">
+            <div class="col-3-12 search-txt">
               <% unless current_user == @user %>
                 <% unless current_user.followers.include? friend %>
                   <%= button_to "FOLLOW", followings_path(:follower_id => friend.id), :method => :post, class:"follow-btn", "data-follower-id":"#{friend.id}" %>
