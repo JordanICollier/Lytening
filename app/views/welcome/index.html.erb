@@ -2,9 +2,13 @@
 
   <div class="col-6-12 left-sign">
     <div class="stryke-sign-top-mobile">Click for Top Strykes</div>
+    <div class="stryke-sign">Top Strykes</div>
+
   </div>
   <div class="col-6-12 right-sign">
     <div class="stryke-sign-new-mobile selected">Looking at New Strykes</div>
+    <div class="stryke-sign">New Strykes</div>
+
   </div>
 
 </div>
@@ -15,7 +19,6 @@
     <div class="status-container">
     <!-- Hot Strykes -->
       <div class="col-6-12">
-        <div class="stryke-sign">Top Strykes</div>
 
         <div class="top hide" id="top">
           <%= render partial: @strykes_hot, locals: {top_class: 'top-status'} %>
@@ -25,7 +28,6 @@
     <!-- New Strykes -->
 
       <div class="col-6-12">
-        <div class="stryke-sign">New Strykes</div>
         <div class="new">
           <%= render partial: @strykes_new, locals: {top_class: 'new-status'} %>
         </div>
