@@ -22,6 +22,9 @@ Rails.application.routes.draw do
 
   get 'feed' => 'welcome#index'
 
+  # report a bug routes
+  get '/bugs' => 'bugs#new'
+  post '/bugs' => 'bugs#create'
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 
