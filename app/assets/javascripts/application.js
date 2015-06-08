@@ -57,6 +57,12 @@ $(function() {
           }
         })
       }).done(function(data){
+        // find all strykes with the same user id on the page
+        var sameUser = $('[data-user-id=' + user_id + ']');
+        // remove the old stryke from new column
+        sameUser.parent('.new').find('[data-user-id=' + user_id + ']').remove();
+        // remove the old stryke from hot column
+        sameUser.parent('.top').find('[data-user-id=' + user_id + ']').remove();
         // Append stryke to new column
         $(".new").prepend(data);
         // Slide stryke panel back up
