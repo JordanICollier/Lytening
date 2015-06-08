@@ -1,0 +1,7 @@
+<div class="user-container">
+<%= simple_form_for @bug do |f|  %>
+<%= f.input :title, label_html: { class: 'labels'} %>
+<%= f.input :description, as: :text, label_html: { class: 'labels'}  %>
+<%= f.button :submit, "Report" %>
+<% end %>
+</div>
