@@ -156,6 +156,29 @@ input#user_avatar{
   margin: 0 0 10px 0;
 }
 
+.user-follow-header{
+  color: $blue1;
+  height: 100px;
+  padding: 40px 0 0 10px;
+  font-size: 2em;
+}
+
+.follow-pad{
+  padding: 5% 10% 5% 10%;
+}
+
+.user-name-follow{
+  margin: 5% 0;
+  font-size: 1.5em;
+}
+
+.user-follow-username{
+  color: $blue1;
+  // height: 100px;
+  padding: 40px 0 0 0;
+  font-size: 2em;
+}
+
 @media screen and (max-width: 968px) {
   .user-comments{
     width: 100%;

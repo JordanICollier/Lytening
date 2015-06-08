@@ -1,22 +1,22 @@
 <div class="col-12-12 main-con">
 
 <div class="user-container">
-  <div class="col-12-12 user-quick-glance">
-    <div class="user-header"><%= @user.username %> (<%= @user.full_name.upcase %>)</div>
+  <div class="col-12-12">
+    <div class="user-follow-header"><%= @user.username %> (<%= @user.full_name.upcase %>)</div>
   </div>
 </div>
 
 <div class="user-container">
   <div class="col-6-12 user-stats">
-    <div class="stryke-sign">Followers</div>
+    <div class="stryke-sign-follow">Followers</div>
     <% @followers.each do |follower| %>
-    <div class="col-12-12 user-quick-glance">
+    <div class="col-12-12 top-status follow-pad">
       <div class="col-5-12 user-avatar">
         <%= image_tag follower.avatar_url(:profile1) %>
       </div>
       <div class="col-7-12">
-        <div class="user-header"><%= link_to follower.username, user_path(follower) %></div>
-        <div class="user-header"><%= follower.full_name %></div>
+        <div class="user-follow-username"><%= link_to follower.username, user_path(follower) %></div>
+        <div class="user-name-follow"><%= follower.full_name %></div>
         <% if current_user == @user %>
           <% if current_user.followers.include? follower %>
             <%= button_to "UNFOLLOW", following_path(current_user.followings.find_by(follower_id: follower.id)), :method => :delete, class:"follow-btn", "data-follower-id":"#{follower.id}" %>
@@ -36,15 +36,15 @@
   </div>
 
   <div class="col-6-12 user-stats">
-    <div class="stryke-sign">Following</div>
+    <div class="stryke-sign-follow">Following</div>
     <% @followings.each do |following| %>
-    <div class="col-12-12 user-quick-glance">
+    <div class="col-12-12 new-status follow-pad">
       <div class="col-5-12 user-avatar">
         <%= image_tag following.avatar_url(:profile1) %>
       </div>
       <div class="col-7-12">
-        <div class="user-header"><%= link_to following.username, user_path(following) %></div>
-        <div class="user-header"><%= following.full_name %></div>
+        <div class="user-follow-username"><%= link_to following.username, user_path(following) %></div>
+        <div class="user-name-follow"><%= following.full_name %></div>
         <% if current_user == @user %>
           <% if current_user.followers.include? following %>
             <%= button_to "UNFOLLOW", following_path(current_user.followings.find_by(follower_id: following.id)), :method => :delete, class:"follow-btn", "data-follower-id":"#{following.id}" %>
