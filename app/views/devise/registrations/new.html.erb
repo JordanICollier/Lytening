@@ -15,13 +15,13 @@
             <%= f.input :password_confirmation, label: false, required: true, placeholder: "Password Confirmation" %>
           </div>
 
-          <div class="col-6-12 form-actions">
+          <div class="col-12-12 form-actions">
             <%= f.button :submit, "SIGN UP", class:"update" %>
           </div>
         <% end %>
 
         <div class="col-6-12">
-          <%= button_to "LOG IN", user_session_path, class: "login" %>
+          <%= button_to "LOG IN", user_session_path, class: "login-signup-page" %>
         </div>
       </div>
     </div>
