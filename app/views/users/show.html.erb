@@ -5,18 +5,16 @@
 
     <div class="col-12-12 user-quick-glance">
       <div class="col-5-12 user-avatar">
-        <%= image_tag @user.avatar_url(:profile1) %>
+        <%= image_tag @user.avatar_url(:userShow) %>
       </div>
       <div class="col-7-12">
         <div class="user-header"><%= @user.username %></div>
         <div class="user-spark-count"><%= @user.spark_count %></div>
         <div class="user-spark-header">Total Sparks</div>
 
-        <div class="user-followers-count"><%= link_to @user.followers.count, following_path(@user) %></div>
-        <div class="user-followers-header">Following</div>
+        <div class="user-followers-count"><%= link_to @user.followers.count, following_path(@user) %> Following</div>
 
-        <div class="user-followers-count"><%= link_to @user.inverse_followers.count, following_path(@user) %></div>
-        <div class="user-followers-header">Followers</div>
+        <div class="user-followers-count"><%= link_to @user.inverse_followers.count, following_path(@user) %> Followers</div>
 
         <!-- These are the Follow / Unfollow links -->
         <% if current_user == @user %>

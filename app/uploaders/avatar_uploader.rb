@@ -20,7 +20,12 @@ class AvatarUploader < CarrierWave::Uploader::Base
     process :crop
     process resize_to_fill: [200,200]
   end
-  
+
+  version :userShow do
+    process :crop
+    process resize_to_fill: [250,250]
+  end
+
   version :profile1 do
     process :crop
     process resize_to_fill: [300,300]
