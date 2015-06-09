@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150608225101) do
+ActiveRecord::Schema.define(version: 20150609170330) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -62,7 +62,7 @@ ActiveRecord::Schema.define(version: 20150608225101) do
     t.string   "work"
     t.string   "school"
     t.datetime "birthday"
-    t.string   "sex"
+    t.string   "gender"
     t.string   "interest"
     t.text     "about"
     t.integer  "spark_count"

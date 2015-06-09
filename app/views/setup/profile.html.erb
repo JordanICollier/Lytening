@@ -18,8 +18,8 @@
       <%#= f.label :birthday %>
       <%= f.date_field :birthday, placeholder: "Birthday" %>
 
-      <%= f.label :sex %>
-      <%# f.collection_select  %>
+      <%= f.label :gender %>
+      <%= select_tag "Gender", "<option>Male</option><option>Female</option><option>Do not specify</option>".html_safe %>
 
       <%#= f.label :location %>
       <%= f.text_field :location, placeholder: "Location E.g. Denver, CO" %>
