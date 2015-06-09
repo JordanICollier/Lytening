@@ -35,6 +35,9 @@
         <li class= "one-line"><%= link_to "Sign up", new_user_registration_path %></li><hr>
       <% end %>
       <%= link_to(image_tag("bug-icon.svg", class:"sidenav-bug"), bugs_path) %>
+      <%= link_to(bugs_path) do %>
+        <div class="bug-txt">report a bug</div>
+      <% end %>
 
     </ul>
     <% if current_user%>

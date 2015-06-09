@@ -123,6 +123,11 @@ input.bug_btn{
     color: $yellow;
     float: right;
 }
+
+.bug-txt{
+  color:white;
+}
+
 @media screen and (max-width: 968px) {
   .toggle-top-new{
     display: block;
