@@ -20,8 +20,7 @@ class ApplicationController < ActionController::Base
       # or on the right page
       (params[:controller] == 'setup' &&
        params[:id] == current_user.setup_step.to_s) or
-      (request.path == '/followings' &&
-       request.method == 'POST')
+      SetupController.can_visit(params)
     # go to the right place
     redirect_to setup_path(current_user.setup_step)
   end

@@ -9,6 +9,18 @@ class SetupController < ApplicationController
     'friends',
   ]
 
+  # whitelist of endpoints that are ok to hit
+  WHITELIST = [
+  ]
+
+  def self.can_visit(params)
+    WHITELIST.any? do |white_params|
+      white_params.all? do |key, value|
+        params[key] == value
+      end
+    end
+  end
+
   def show
     send "show_#{SETUP_STEPS[@step]}"
   end
