@@ -7,17 +7,13 @@ class Spark < ActiveRecord::Base
   private
 
   def increment_spark_count
-    user.spark_count += 1
-    user.save!
-    sparkable.spark_count += 1
-    sparkable.save!
+    sparkable.user.increment!(:spark_count, 1)
+    sparkable.increment!(:spark_count, 1)
   end
 
   def decrement_spark_count
-    user.spark_count += 1
-    user.save!
-    sparkable.spark_count -= 1
-    sparkable.save!
+    sparkable.user.decrement!(:spark_count, 1)
+    sparkable.decrement!(:spark_count, 1)
   end
 
 end
