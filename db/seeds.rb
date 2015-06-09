@@ -23,7 +23,7 @@ users_count.times.map do
     work: Faker::Name.title,
     school: "#{rand('A'.ord..'Z'.ord).chr}SU",
     birthday: Faker::Date.between(21.years.ago, 40.years.ago),
-    sex: rand(2) == 1 ? 'Male' : 'Female',
+    gender: rand(2) == 1 ? 'Male' : 'Female',
     interest: Faker::Company.catch_phrase,
     about: "My mission is to #{Faker::Company.bs}.",
     email: Faker::Internet.safe_email(full_name),
