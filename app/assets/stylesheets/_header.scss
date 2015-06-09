@@ -131,6 +131,13 @@ nav {
   padding: 25px 0 20px 0;
 }
 
+.sidenav-bug {
+  position:relative;
+  width:10%;
+  height: auto;
+  padding: 25px 0 0 0;
+}
+
 #toggle-menu:checked ~ section {
   -webkit-transform: translateX(-25%);
   -moz-transform: translateX(-25%);
