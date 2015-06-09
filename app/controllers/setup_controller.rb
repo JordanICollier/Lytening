@@ -6,7 +6,7 @@ class SetupController < ApplicationController
     'intro',
     #'avatar',
     'profile',
-    #'friends',
+    'friends',
   ]
 
   def show
@@ -68,14 +68,19 @@ class SetupController < ApplicationController
 
   ########## FRIENDS ##########
   def show_friends
+    @user = current_user
+    @friends = []
+    @interests = @user.interest.split(",")
+    @interests.each do |interest|
+      @friends += User.where("interest LIKE :query", query: "%#{interest}%")
+    end
+    @friends.uniq
+    @friends.delete(@user)
+    render 'friends'
   end
 
   def save_friends
-    @friends = []
-    @interests = params[:interest].split(",")
-    @interests.each do |interest|
-      @friends << User.where("interest LIKE :query", query: "%#{interest}%")
-    end
+    next_step
   end
 
   ########## HELPERS ##########
