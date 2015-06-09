@@ -1,7 +1,16 @@
-<div class="user-container">
-<%= simple_form_for @bug do |f|  %>
-<%= f.input :title, label_html: { class: 'labels'} %>
-<%= f.input :description, as: :text, label_html: { class: 'labels'}  %>
-<%= f.button :submit, "Report" %>
-<% end %>
+<div class="col-12-12">
+  <div class="tutorial-container">
+    <div class="tutorial-box">
+      <div class="col-12-12">
+        <div class="sign-header">REPORT A BUG</div>
+
+        <%= simple_form_for @bug do |f|  %>
+        <%= f.input :title, label: false, placeholder: "Title" %>
+        <%= f.input :description, label: false, placeholder: "Description" %>
+        <%= f.button :submit, "Report", class: "bug_btn" %>
+        <% end %>
+
+      </div>
+    </div>
+  </div>
 </div>

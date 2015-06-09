@@ -18,7 +18,8 @@
   <div class="mobile">
     <input type="checkbox" id="toggle-menu" />
     <ul class="sidenav">
-      <%= link_to(image_tag("lytening-logo-white.svg", class:"sidenav-logo"), feed_path) %><hr>
+      <%= link_to(image_tag("lytening-logo-white.svg", class:"sidenav-logo"), feed_path) %>
+      <hr>
       <li class="search-space">
         <form class="navbar-form navbar-left" role="search" action="/search_results">
           <input type="text" id="search-bar" placeholder="Find Your Friends" name="search">
@@ -26,13 +27,15 @@
         </form>
       </li><hr>
       <% if user_signed_in? %>
-        <li class="two-lines">Logged in as <br><strong><%= link_to current_user.email, user_path(current_user) %></strong></li><hr>
-        <li class= "one-line"><%= link_to 'Edit profile', edit_user_registration_path%></li><hr>
+        <li class="one-line"><strong><%= link_to "View #{current_user.username}'s profile", user_path(current_user) %></strong></li><hr>
+        <li class= "one-line"><%= link_to "Edit #{current_user.username}'s profile", edit_user_registration_path%></li><hr>
         <li class= "one-line"><%= link_to "Logout", destroy_user_session_path, method: :delete %></li><hr>
         <% else %>
         <li class= "one-line"><%= link_to "Login", new_user_session_path %></li><hr>
         <li class= "one-line"><%= link_to "Sign up", new_user_registration_path %></li><hr>
       <% end %>
+      <%= link_to(image_tag("bug-icon.svg", class:"sidenav-bug"), bugs_path) %>
+
     </ul>
     <% if current_user%>
     <div class="col-12-12 header-stryke">

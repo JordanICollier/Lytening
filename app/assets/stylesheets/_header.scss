@@ -131,6 +131,13 @@ nav {
   padding: 25px 0 20px 0;
 }
 
+.sidenav-bug {
+  position:relative;
+  width:10%;
+  height: auto;
+  padding: 25px 0 0 0;
+}
+
 #toggle-menu:checked ~ section {
   -webkit-transform: translateX(-25%);
   -moz-transform: translateX(-25%);
@@ -273,7 +280,8 @@ input.search-btn{
 
 @media screen and (max-width: 600px) {
     .spark-anywhere{
-      padding: 13px 0 0 10px;
+      padding:8px 0 0 10px;
+      width: 44px;
     }
     .header .col-10-12{
       width:50%;
