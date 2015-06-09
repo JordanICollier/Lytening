@@ -218,6 +218,9 @@ $endNum: 20;
 .selected{
   background-color: $purple2;
   color: $yellow;
+  -webkit-box-shadow: inset 4px -5px 26px -8px rgba(0,0,0,0.75);
+  -moz-box-shadow: inset 4px -5px 26px -8px rgba(0,0,0,0.75);
+  box-shadow: inset 4px -5px 26px -8px rgba(0,0,0,0.75);
 }
 
 .mobile-sign{

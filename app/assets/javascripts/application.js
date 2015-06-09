@@ -73,7 +73,6 @@ $(function() {
         $(".upSlide").removeClass("upSlide");
         // clear the input
         strykeInput.val('');
-        debugger;
         countDown.html(500);
         timeCircle();
       });
