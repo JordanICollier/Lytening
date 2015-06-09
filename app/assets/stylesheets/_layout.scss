@@ -386,6 +386,12 @@ $num: 1;
   .new{
     padding-top: 15px;
   }
+  .stryke-sign-new-mobile, .stryke-sign-top-mobile{
+    width: 100%;
+    border-bottom-right-radius: 0em;
+    border-bottom-left-radius: 0em;
+
+  }
 }
 
 .img-responsive {
