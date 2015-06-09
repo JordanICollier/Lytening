@@ -73,7 +73,6 @@ $(function() {
         $(".upSlide").removeClass("upSlide");
         // clear the input
         strykeInput.val('');
-        debugger;
         countDown.html(500);
         timeCircle();
       });
@@ -99,14 +98,15 @@ $(function() {
     });
 
     // Mobile toggle between to and new strykes
+    // var toggleStryke = 0;
     $('.stryke-sign-top-mobile').on('click', function(){
       event.preventDefault();
       $(this).addClass('selected');
       $(this).text('Looking at Top Strykes');
       $('.stryke-sign-new-mobile').removeClass('selected');
       $('.stryke-sign-new-mobile').text('Click for New Strykes');
-      $('.new').toggleClass('hide');
-      $('.top').toggleClass('hide');
+      $('.new').addClass('hide');
+      $('.top').removeClass('hide');
     });
 
     $('.stryke-sign-new-mobile').on('click', function(){
@@ -115,8 +115,8 @@ $(function() {
       $(this).text('Looking at New Strykes');
       $('.stryke-sign-top-mobile').removeClass('selected');
       $('.stryke-sign-top-mobile').text('Click for Top Strykes');
-      $('.new').toggleClass('hide');
-      $('.top').toggleClass('hide');
+      $('.new').removeClass('hide');
+      $('.top').addClass('hide');
     });
 
     // var toggle = 0;

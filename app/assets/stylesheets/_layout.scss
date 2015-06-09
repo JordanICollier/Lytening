@@ -218,6 +218,9 @@ $endNum: 20;
 .selected{
   background-color: $purple2;
   color: $yellow;
+  -webkit-box-shadow: inset 4px -5px 26px -8px rgba(0,0,0,0.75);
+  -moz-box-shadow: inset 4px -5px 26px -8px rgba(0,0,0,0.75);
+  box-shadow: inset 4px -5px 26px -8px rgba(0,0,0,0.75);
 }
 
 .mobile-sign{
@@ -378,10 +381,16 @@ $num: 1;
     margin: 0 25%;
   }
   .top{
-    margin-top: 80px;
+    padding-top: 15px;
   }
   .new{
-    margin-top: 80px;
+    padding-top: 15px;
+  }
+  .stryke-sign-new-mobile, .stryke-sign-top-mobile{
+    width: 100%;
+    border-bottom-right-radius: 0em;
+    border-bottom-left-radius: 0em;
+
   }
 }
 
