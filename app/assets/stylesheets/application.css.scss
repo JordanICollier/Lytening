@@ -122,10 +122,15 @@ input.bug_btn{
 .error{
     color: $yellow;
     float: right;
+    display: none;
 }
 
 .bug-txt{
   color:white;
+}
+
+#error_explanation{
+  color: $red;
 }
 
 @media screen and (max-width: 968px) {

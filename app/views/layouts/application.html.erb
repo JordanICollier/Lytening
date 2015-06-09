@@ -76,9 +76,9 @@
 
       <section>
         <!-- Below the doce displays devise error messages -->
-      <% flash.each do |name, msg| %>
-          <%= content_tag :div, msg, :id => "flash_#{name}" if msg.is_a?(String) %>
-        <% end %>
+      <!-- <%# flash.each do |name, msg| %>
+          <%#= content_tag :div, msg, :id => "flash_#{name}" if msg.is_a?(String) %>
+        <%# end %> -->
 <%= yield %>
     <footer class="col-12-12">
       <div class="foot">
