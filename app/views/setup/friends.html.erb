@@ -1,57 +1,52 @@
 <div class="col-12-12">
-  <div class="search-container">
-    <div class="search-box">
-      <div class="search-header">Based on your interests...</div>
+ <div class="search-container">
+   <div class="search-box">
+     <div class="search-header">Based on your interests...</div>
 
-      <div class="col-12-12 next-tut-box">
-        <%= link_to "CONTINUE", setup_path(current_user.setup_step), method: 'POST', class: "next-tut" %>
-      </div>
+     <div class="col-12-12 next-tut-box">
+       <%= link_to "Don't see who you're looking for? Click to continue", setup_path(current_user.setup_step), method: 'POST', class: "next-tut" %>
+     </div>
 
-      <p>Don't see who you're looking for?</p>
-      <form class="navbar-form navbar-left" role="search" action="/search_results">
-        <input type="text" id="search-bar" placeholder="Find Your Friends" name="search">
-        <input type="submit" value="SEARCH" class="search-btn"></input>
-      </form>
+       <form class="navbar-form navbar-left interest-search" role="search" action="/search_results">
+         <input type="text" id="search-bar" placeholder="Find Your Friends" name="search">
+         <input type="submit" value="SEARCH" class="search-btn"></input>
+       </form>
 
-      <div class="result-container">
-        <% @friends.each do |friend| %>
-          <div class="result-individual">
-            <div class="col-1-12">
-              <%= image_tag friend.avatar, class: "search-avatar" %>
-            </div>
-            <div class="col-2-12 search-txt">
-              <%= link_to friend.full_name, user_path(friend) %>
-            </div>
-            <div class="col-2-12 search-txt">
-              <%= friend.email %>
-            </div>
-            <div class="col-2-12 search-txt">
-              <%= friend.username %>
-            </div>
-            <div class="col-2-12 search-txt">
-              <%= friend.interest %>
-            </div>
-            <div class="col-3-12 search-txt">
-              <% unless current_user.followers.include? friend %>
-                <%= button_to "FOLLOW", followings_path(:follower_id => friend.id), :method => :post, class:"follow-btn", "data-follower-id":"#{friend.id}" %>
-              <% else %>
-                <%= button_to "UNFOLLOW", following_path(current_user.followings.find_by(follower_id: friend.id)), :method => :delete, class:"follow-btn", "data-follower-id":"#{friend.id}" %>
-              <% end %>
-            </div>
-          </div>
-        <% end %>
-      </div>
+     <div class="result-container">
+       <% @friends.each do |friend| %>
+         <div class="result-individual">
+           <div class="col-1-12">
+             <%= image_tag friend.avatar, class: "search-avatar" %>
+           </div>
+           <div class="col-2-12 search-txt">
+             <%= link_to friend.full_name, user_path(friend) %>
+           </div>
+           <div class="col-2-12 search-txt">
+             <%= friend.email %>
+           </div>
+           <div class="col-2-12 search-txt">
+             <%= friend.username %>
+           </div>
+           <div class="col-2-12 search-txt">
+             <%= friend.interest %>
+           </div>
+           <div class="col-3-12 search-txt">
+             <% unless current_user.followers.include? friend %>
+               <%= button_to "FOLLOW", followings_path(:follower_id => friend.id), :method => :post, class:"follow-btn", "data-follower-id":"#{friend.id}" %>
+             <% else %>
+               <%= button_to "UNFOLLOW", following_path(current_user.followings.find_by(follower_id: friend.id)), :method => :delete, class:"follow-btn", "data-follower-id":"#{friend.id}" %>
+             <% end %>
+           </div>
+         </div>
+       <% end %>
+     </div>
 
-      <div class="col-12-12 next-tut-box">
-        <%= link_to "CONTINUE", setup_path(current_user.setup_step), method: 'POST', class: "next-tut" %>
+     <div class="col-12-12 next-tut-box">
+       <%= link_to "CONTINUE", setup_path(current_user.setup_step), method: 'POST', class: "next-tut" %>
 
-      </div>
+     </div>
 
-      <p>Don't see who you're looking for?</p>
-      <form class="navbar-form navbar-left" role="search" action="/search_results">
-        <input type="text" id="search-bar" placeholder="Find Your Friends" name="search">
-        <input type="submit" value="SEARCH" class="search-btn"></input>
-      </form>
-    </div>
-  </div>
+
+   </div>
+ </div>
 </div>

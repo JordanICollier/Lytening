@@ -15,9 +15,18 @@
 }
 
 .next-tut-box{
-  margin: 0 auto;
+  margin: 20px auto;
 }
 
+.interest-search{
+  width: 50%;
+  text-align:center;
+  margin: 0 0 50px 20%;
+}
+
+.interest-search .search-btn{
+  width: 10%;
+}
 input.next-tut{
   width:50%;
   height: 50px;
