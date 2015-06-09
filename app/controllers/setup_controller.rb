@@ -14,9 +14,11 @@ class SetupController < ApplicationController
     {controller: 'followings', action: 'create'},
     {controller: 'followings', action: 'destroy'},
     {controller: 'welcome', action: 'search_results'},
+    {controller: 'devise/sessions', action: 'destroy'},
   ]
 
   def self.can_visit(params)
+    binding.pry
     WHITELIST.any? do |white_params|
       white_params.all? do |key, value|
         params[key] == value
