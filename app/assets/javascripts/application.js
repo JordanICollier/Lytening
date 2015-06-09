@@ -73,19 +73,18 @@ $(function() {
         $(".upSlide").removeClass("upSlide");
         // clear the input
         strykeInput.val('');
+        debugger;
         countDown.html(500);
         timeCircle();
       });
     }
   });
 
-    $(".header").click(function () {
-
-        $header = $(this);
-        $content = $header.next();
-        $content.slideToggle(250, function () {
-        });
-
+    $('.status-container').on('click', '.header', function() {
+      var header = $(this);
+      var content = header.next();
+      console.log(content);
+      content.slideToggle(250);
     });
 
     //Scroll to top
