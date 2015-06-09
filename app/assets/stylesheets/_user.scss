@@ -197,15 +197,17 @@ input#user_avatar{
   }
 }
 
-.edit:not(.editing):hover:after,
-.edit_date:not(.editing):hover:after,
-.edit_sex:not(.editing):hover:after,
-.edit_area:not(.editing):hover:after {
+.edit:hover:before,
+.edit_date:hover:before,
+.edit_sex:hover:before,
+.edit_area:hover:before {
   content: "";
   background-image: url("/assets/pencil-icon.svg");
   background-size: cover;
+  position: absolute;
   display: inline-block;
   width: 20px;
   height: 20px;
-  margin-left: 6px;
+  margin-left: -25px;
+  margin-top: 5px;
 }
