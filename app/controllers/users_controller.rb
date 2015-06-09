@@ -29,7 +29,7 @@ class UsersController < ApplicationController
         elsif user_params.values.first == "C"
           render text: "Do not specify"
         else
-          redirect_to user_path(current_user)
+          render text: user_params.values[0]
         end
       end
 
