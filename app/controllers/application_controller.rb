@@ -19,7 +19,9 @@ class ApplicationController < ActionController::Base
       current_user.setup_step.nil? or
       # or on the right page
       (params[:controller] == 'setup' &&
-       params[:id] == current_user.setup_step.to_s)
+       params[:id] == current_user.setup_step.to_s) or
+      (request.path == '/followings' &&
+       request.method == 'POST')
     # go to the right place
     redirect_to setup_path(current_user.setup_step)
   end
