@@ -18,7 +18,6 @@ class SetupController < ApplicationController
   ]
 
   def self.can_visit(params)
-    binding.pry
     WHITELIST.any? do |white_params|
       white_params.all? do |key, value|
         params[key] == value
