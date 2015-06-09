@@ -11,6 +11,9 @@ class SetupController < ApplicationController
 
   # whitelist of endpoints that are ok to hit
   WHITELIST = [
+    {controller: 'followings', action: 'create'},
+    {controller: 'followings', action: 'destroy'},
+    {controller: 'welcome', action: 'search_results'},
   ]
 
   def self.can_visit(params)
