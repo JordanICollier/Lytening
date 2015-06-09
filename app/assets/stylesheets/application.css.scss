@@ -119,6 +119,10 @@ input.bug_btn{
   float: right;
 }
 
+.error{
+    color: $yellow;
+    float: right;
+}
 @media screen and (max-width: 968px) {
   .toggle-top-new{
     display: block;
