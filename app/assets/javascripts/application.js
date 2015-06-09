@@ -30,6 +30,7 @@ $(function() {
     var strykeInput = $(this).find('textarea[name="stryke[body]"]');
     var stryke = strykeInput.val();
     var user_id = e.target[4].id;
+    var countDown = $(this).parent().find('[data-area-countdown]');
     // Check if stryke body is empty
     if (stryke === null || stryke === "") {
       strykeInput.css("background-color", "#EEB4B4");
