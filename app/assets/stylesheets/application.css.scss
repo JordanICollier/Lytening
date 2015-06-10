@@ -81,6 +81,8 @@ a.back-to-top:visited{
 
 .toggle-top-new{
   color:$black;
+  font-weight: 400;
+  font-size: 14px;
   display: none;
 }
 
@@ -149,5 +151,12 @@ input.bug_btn{
   input{
     -webkit-appearance: none;
     border-radius: 0;
+  }
+}
+
+@media screen and (max-width: 600px) {
+  .toggle-top-new{
+    padding-top: 5px;
+    font-size: 12px
   }
 }
