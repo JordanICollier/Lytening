@@ -110,13 +110,21 @@
 
     <!-- •HEY ANDREW- THIS BELOW ALLOWS A USER TO SEE ALL OF HIS/HER POSTS ONLY IF
           THEY ARE THE CURRENT USER CAN THEY SEE THE HISTORY OF THEIR OWN POSTS -->
-    <div class="user-stryke-header">STRYKES</div>
+
     <% if current_user == @user %>
+    <div class="new-status user-stryke-header">STRYKES</div>
+    <div class="new-status">
+
       <% @user.strykes.order(created_at: :desc).each do |stryke| %>
-        <%= stryke.body %><br><hr>
+        <%= stryke.body %>
       <% end %>
+    </div>
     <% else %>
+    <div class="new-status user-stryke-header">SPARKED</div>
+
       <% @sparked_items.each do |sparked_item| %>
+      <div class="new-status">
+
         <div class="col-1-12">
           <%= image_tag "#{sparked_item.user.avatar_url(:thumb)}", class: 'thumb' %>
         </div>
@@ -130,24 +138,9 @@
         <p>
           <%= sparked_item.body_html %>
         </p>
-        <div class="sparks">
-          <%= render partial: 'sparks/spark', locals: {
-            sparkable: sparked_item,
-            active_img: 'spark-icon-yellow.png',
-            inactive_img: 'spark-icon-white.png',
-          } %>
+
         </div>
-        <div class="comments">
-          <div class="header"><%= "#{sparked_item.comments.count}" %> comments</div>
-          <div class='content'>
-            <div class="comment-list">
-              <% sparked_item.comments.each do |comment| %>
-                <%= render partial: "welcome/comment", locals: {comment: comment} %>
-              <% end %>
-            </div>
-          </div>
-          </div>
-        <br><hr>
+
       <% end %>
     <% end %>
     <%# @user.strykes.order(created_at: :desc).first.body %>
