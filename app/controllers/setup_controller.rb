@@ -119,7 +119,7 @@ class SetupController < ApplicationController
     else
       # go to the home page
       current_user.update(setup_step: nil)
-      redirect_to root_path
+      redirect_to all_path
     end
   end
 
