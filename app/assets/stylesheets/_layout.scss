@@ -350,6 +350,17 @@ $num: 1;
   background-color: $yellow;
 }
 
+.new-status .spark-header{
+  opacity: .8;
+}
+.new-status p, .top-status p{
+  font-size: 17px;
+}
+
+.top-status .spark-header, .sparks, .header{
+  opacity: .8;
+}
+
 @media screen and (max-width: 968px) {
     .hide {
       display: none;
