@@ -4,6 +4,11 @@ class User < ActiveRecord::Base
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :trackable, :validatable
 
+  # validates :first_name, :last_name, :username, :interest, :about, :birthday, :gender, presence: true
+  # validates :username, uniqueness: true
+  # 
+  # # Checks that first and last name are only A-Z and a-z (no spaces, numbers, newlines, etc...)
+  # validates_format_of :first_name, :last_name, :with => /\A[-a-z]+\Z/
 
   mount_uploader :avatar, AvatarUploader
   attr_accessor :crop_x, :crop_y, :crop_w, :crop_h
