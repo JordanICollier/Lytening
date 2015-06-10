@@ -32,15 +32,15 @@ class UsersController < ApplicationController
       elsif params[:user][:crop_x]
         redirect_to user_path(current_user)
       else
-        if user_params.values.first == "A"
-          render text: "Male"
-        elsif user_params.values.first == "B"
-          render text: "Female"
-        elsif user_params.values.first == "C"
-          render text: "Do not specify"
-        else
+        # if user_params.values.first == "A"
+        #   render text: "Male"
+        # elsif user_params.values.first == "B"
+        #   render text: "Female"
+        # elsif user_params.values.first == "C"
+        #   render text: "Do not specify"
+        # else
           render text: user_params.values[0]
-        end
+        # end
       end
 
     else
@@ -53,7 +53,7 @@ private
 
   def user_params
       params.require(:user).permit(:avatar, :crop_x, :crop_y, :crop_w, :crop_h,
-      :spark_count, :location, :work, :school, :birthday, :sex, :interest,
+      :spark_count, :location, :work, :school, :birthday, :interest,
       :about, :first_name, :last_name)
   end
 

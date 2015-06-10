@@ -6,7 +6,7 @@ class SetupController < ApplicationController
     'intro',
     #'avatar',
     'profile',
-    'friends',
+    # 'friends',
   ]
 
   # whitelist of endpoints that are ok to hit
