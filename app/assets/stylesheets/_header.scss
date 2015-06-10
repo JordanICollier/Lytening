@@ -112,7 +112,7 @@ nav {
   color: $white;
 }
 
-.sidenav a {
+.sidenav li a {
   color: $white;
   text-decoration: none;
   transition: all 0.25s ease-in-out;
@@ -121,7 +121,17 @@ nav {
   -o-transform: translateX(15%);
   -ms-transform: translateX(15%);
   transform: translateX(15%);
+}
 
+.sidenav li a:hover {
+  color: $green1;
+  text-decoration: none;
+  transition: all 0.25s ease-in-out;
+  -webkit-transform: translateX(15%);
+  -moz-transform: translateX(15%);
+  -o-transform: translateX(15%);
+  -ms-transform: translateX(15%);
+  transform: translateX(15%);
 }
 
 .sidenav-logo {
