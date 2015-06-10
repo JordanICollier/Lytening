@@ -42,9 +42,9 @@
     </div>
     <div class="col-12-12">
 
-    <%= link_to(all_path) do %>
+    <%= link_to(@other_feed_path) do %>
       <div class="view-public">
-        Click to see the public feed
+        <%= @footer_message %>
       </div>
     <% end %>
     </div>
