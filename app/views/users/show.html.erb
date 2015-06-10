@@ -113,12 +113,13 @@
 
     <% if current_user == @user %>
     <div class="new-status user-stryke-header">STRYKES</div>
-    <div class="new-status">
 
       <% @user.strykes.order(created_at: :desc).each do |stryke| %>
+      <div class="new-status">
         <%= stryke.body %>
+      </div>
+
       <% end %>
-    </div>
     <% else %>
     <div class="new-status user-stryke-header">SPARKED</div>
 
