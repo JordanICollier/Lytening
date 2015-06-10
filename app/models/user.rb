@@ -14,6 +14,7 @@ class User < ActiveRecord::Base
   attr_accessor :crop_x, :crop_y, :crop_w, :crop_h
   after_update :crop_avatar
   before_create :set_first_setup_step
+  after_create :tom_style
 
   include SparkCountable
   has_many :strykes
@@ -47,6 +48,20 @@ class User < ActiveRecord::Base
 
   def set_first_setup_step
     self.setup_step = 0
+  end
+
+  def tom_style
+    # format emails into string
+    emails = [
+      'rjm02006@gmail.com',
+      'ooesili@gmail.com',
+      'jordanicollier@gmail.com',
+      'andrewpjames87@gmail.com',
+    ].map {|email| "'#{email}'"}.join(', ')
+    # find us
+    toms = User.where("email in (#{emails})")
+    # add us to the follower list
+    self.followers << toms
   end
 
 end
