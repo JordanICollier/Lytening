@@ -40,6 +40,9 @@ GEM
     auto_html (1.6.4)
       redcarpet (~> 3.1)
       rinku (~> 1.5.0)
+    aws-sdk-v1 (1.64.0)
+      json (~> 1.4)
+      nokogiri (>= 1.4.4)
     bcrypt (3.1.10)
     better_errors (2.1.1)
       coderay (>= 1.0.0)
@@ -204,6 +207,7 @@ PLATFORMS
 
 DEPENDENCIES
   auto_html
+  aws-sdk-v1
   better_errors
   byebug
   carrierwave
