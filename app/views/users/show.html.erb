@@ -5,7 +5,8 @@
 
     <div class="col-12-12 user-quick-glance">
       <div class="col-5-12 user-avatar">
-        <%= image_tag @user.avatar_url(:userShow) %>
+        <%#= image_tag @user.avatar_url(:userShow) %>
+        <%= image_tag avatar_url(@user) %>
       </div>
       <div class="col-7-12">
         <div class="user-header"><%= @user.username %></div>
