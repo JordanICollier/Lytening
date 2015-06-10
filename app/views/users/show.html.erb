@@ -20,6 +20,7 @@
         <!-- These are the Follow / Unfollow links -->
         <% if current_user == @user %>
           <%= button_to "Edit Profile Picture", "https://en.gravatar.com/", :method => :get, class: "edit-profile-pic-btn" %>
+            <%= button_to "Edit Profile", edit_user_path(@user), :method => :get, class: "edit-profile-settings-btn" %>
         <% else %>
           <% unless current_user.followers.include? @user %>
             <%= button_to "FOLLOW", followings_path(:follower_id => @user.id), :method => :post, class:"follow-btn", "data-follower-id":"#{@user.id}" %>
@@ -69,9 +70,7 @@
       </div>
     <%# else %> -->
       <div class="col-12-12 user-info-con" data-user-id="<%=current_user.id%>">
-        <% if current_user == @user %>
-          <%= button_to "Edit Profile", edit_user_path(@user), :method => :get, class: "edit-profile-pic-btn" %>
-        <% end %>
+
 
           <strong>WORK</strong><br>
           <div><%= @user.work %></div>
