@@ -69,6 +69,10 @@
       </div>
     <%# else %> -->
       <div class="col-12-12 user-info-con" data-user-id="<%=current_user.id%>">
+        <% if current_user == @user %>
+          <%= button_to "Edit Profile", edit_user_path(@user), :method => :get, class: "edit-profile-pic-btn" %>
+        <% end %>
+
           <strong>WORK</strong><br>
           <div><%= @user.work %></div>
 
