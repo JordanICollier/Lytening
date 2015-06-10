@@ -27,10 +27,10 @@ $(function() {
 
   if (currentUrl === "/feed"){
     $('.toggle-top-new').html("");
-    $('.toggle-top-new').html("FOLLOWING");
+    $('.toggle-top-new').html("YOUR FEED");
   } else if (currentUrl === "/all"){
     $('.toggle-top-new').html("");
-    $('.toggle-top-new').html("PUBLIC");
+    $('.toggle-top-new').html("PUBLIC FEED");
   }
   // Stryke validations and submittal
   $(".stryke-con form").on("submit", function (e) {
