@@ -27,6 +27,7 @@ end
 group :development, :test do
   gem 'better_errors'
   gem 'byebug'
+  gem 'dotenv-rails'
   # gem 'faker'
   gem 'pry-byebug'
   gem 'pry-rails'
