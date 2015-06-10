@@ -30,23 +30,42 @@ class Stryke < ActiveRecord::Base
     simple_format
   end
 
+  def self.column_query(order, offset, limit)
+    return <<EOF
+SELECT * FROM (
+  SELECT
+    strykes.*,
+    row_number() OVER newest_by_user as new_rank
+  FROM users
+
+  INNER JOIN followings
+  ON followings.user_id = ? AND followings.follower_id = users.id
+
+  INNER JOIN strykes
+  ON strykes.user_id = users.id
+
+  WINDOW newest_by_user AS (
+    PARTITION BY strykes.user_id
+    ORDER BY strykes.created_at DESC
+  )
+) as strykes
+
+WHERE new_rank = 1
+ORDER BY #{order} DESC
+OFFSET #{offset}
+LIMIT #{limit}
+EOF
+  end
+
   def self.get_columns(user, limit, offset = 0)
-    # find ever user's, including our, active stryke
-    strykes = user.followers.map {|follower| follower.active_stryke}
-    strykes << user.active_stryke
-    # remove nil values
-    strykes.compact!
-    # calculate columns
-    new_strykes = strykes
-      .sort_by(&:created_at)
-      .drop(offset)
-      .first(limit)
-    top_strykes = strykes
-      .sort_by(&:spark_count)
-      .reverse
-      .drop(offset)
-      .first(limit)
-    # see if were done
+    new_strykes = Stryke.find_by_sql([
+        column_query('created_at', offset, limit),
+        user.id,
+    ])
+    top_strykes = Stryke.find_by_sql([
+      column_query('spark_count', offset, limit),
+      user.id,
+    ])
     done = new_strykes.size < limit or top_strykes.size < limit
     # return information about what we found
     {
@@ -55,33 +74,6 @@ class Stryke < ActiveRecord::Base
       size: limit,
       done: done,
     }
-
-    # TODO: optimize using this code
-    ## join query
-    #join_query = <<EOF
-#INNER JOIN users
-#ON strykes.user_id = users.id OR users.id = 1531
-#INNER JOIN followings
-#ON followings.user_id = users.id
-#EOF
-    ## new strykes
-    #new_strykes = Stryke
-      #.joins(join_query)
-      #.where('followings.follower_id = ?', user.id)
-      #.where('created_at > ?', 24.hours.ago)
-      #.order('created_at')
-      #.offset(offset)
-      #.limit(limit)
-    #top_strykes = Stryke
-      #.joins(join_query)
-      #.where('followings.follower_id = ?', user.id)
-      #.where('created_at > ?', 24.hours.ago)
-      #.offset(offset)
-      #.limit(limit)
-    #{
-      #new: new_strykes,
-      #top: top_strykes,
-    #}
   end
 
   # Old hotness algorithm
