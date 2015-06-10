@@ -103,3 +103,8 @@ input:focus{
     width:75%;
   }
 }
+
+[data-stryke-id] p {
+  overflow-x: scroll;
+  width: 100%;
+}

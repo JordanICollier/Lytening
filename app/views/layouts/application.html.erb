@@ -27,7 +27,6 @@
         </form>
       </li><hr>
       <% if user_signed_in? %>
-        <li class= "two-lines"><%= link_to "Public Feed", all_path %> <br><%= link_to "Personal Feed", feed_path %></li><hr>
         <li class="one-line"><%= link_to "View / Edit your profile", user_path(current_user) %></li><hr>
         <li class= "one-line"><%= link_to "Logout", destroy_user_session_path, method: :delete %></li><hr>
         <% else %>
@@ -62,8 +61,9 @@
         <div class="header">
           <ul>
             <% if current_user%>
-              <li class="col-9-12"><%= link_to(image_tag("lytening-logo-black.svg", class:"header-logo"), root_path) %></li>
-              <li class="col-1-12 toggle-top-new"><%= content_for :toggle_top_new %></li>
+              <li class="col-8-12"><%= link_to(image_tag("lytening-logo-black.svg", class:"header-logo"), root_path) %></li>
+              <li class="col-1-12 toggle-top-new selected-header"><%= link_to "PUBLIC FEED", all_path %></li>
+              <li class="col-1-12 toggle-top-new your-feed selected-header"><%= link_to "YOUR FEED", feed_path %></li>
               <li class="col-1-12"><%= image_tag "spark_icon.svg", class:"spark-anywhere" %></li>
               <li class="col-1-12"><label for="toggle-menu"><%= image_tag "menu-icon.svg", class:"menu" %></label></li>
             <% else %>

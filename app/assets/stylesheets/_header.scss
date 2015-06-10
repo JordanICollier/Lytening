@@ -244,7 +244,7 @@ input.search-btn{
 .spark-anywhere{
   padding: 10px 0 0 50%;
   cursor: pointer;
-  width: 90px;
+  width: 95px;
   height: auto;
   // float:right;
 }
@@ -269,11 +269,14 @@ input.search-btn{
     display: none;
   }
     .spark-anywhere{
-      width:55px;
-      padding: 10px 0 0 20px;
+      width:75px;
+      padding: 10px 0 0 40px;
     }
-    .header .col-10-12{
-      width:75%;
+    .header .col-8-12{
+      width:56%;
+    }
+    .header .col-1-12{
+      width:11%;
     }
     .sidenav{
       width:50%;
@@ -304,18 +307,20 @@ input.search-btn{
     .one-line{
       padding: 13px 0 0 0;
     }
+
 }
 
 @media screen and (max-width: 600px) {
     .spark-anywhere{
       padding:8px 0 0 10px;
       width: 44px;
+      float: right;
     }
-    .header .col-9-12{
-      width:50%;
+    .header .col-8-12{
+      width:28%;
     }
     .header .col-1-12{
-      width:15%;
+      width:18%;
     }
     .sidenav{
       width:75%;
