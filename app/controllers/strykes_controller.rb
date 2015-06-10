@@ -12,7 +12,7 @@ class StrykesController < ApplicationController
 
   def index
     # is this a public feed
-    user = params[:public_feed] ? nil : current_user
+    user = params[:public_feed] == 'true' ? nil : current_user
     # create a new comment for the partials
     @comment = Comment.new
     # grab columns from the database
