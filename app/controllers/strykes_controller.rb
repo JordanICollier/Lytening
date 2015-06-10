@@ -11,10 +11,12 @@ class StrykesController < ApplicationController
   end
 
   def index
+    # is this a public feed
+    user = params[:public_feed] ? nil : current_user
     # create a new comment for the partials
     @comment = Comment.new
     # grab columns from the database
-    columns = Stryke.get_columns(current_user, 10, params[:offset].to_i)
+    columns = Stryke.get_columns(10, params[:offset].to_i, user)
     # render each columns html in place
     [:new, :top].each do |key|
       columns[key] = render_strykes key, columns[key]
