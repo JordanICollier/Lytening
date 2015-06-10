@@ -27,7 +27,6 @@
         </form>
       </li><hr>
       <% if user_signed_in? %>
-        <li class= "two-lines"><%= link_to "Public Feed", all_path %> <br><%= link_to "Personal Feed", feed_path %></li><hr>
         <li class="one-line"><%= link_to "View / Edit your profile", user_path(current_user) %></li><hr>
         <li class= "one-line"><%= link_to "Logout", destroy_user_session_path, method: :delete %></li><hr>
         <% else %>
