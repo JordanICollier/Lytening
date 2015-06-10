@@ -1,7 +1,7 @@
 class Stryke < ActiveRecord::Base
 
   belongs_to :user
-  has_many :comments
+  has_many :comments, dependent: :destroy
   include Sparkable
 
   accepts_nested_attributes_for :comments
