@@ -22,16 +22,6 @@
 //= require_tree .
 
 $(function() {
-
-  var currentUrl = window.location.pathname;
-
-  if (currentUrl === "/feed"){
-    $('.toggle-top-new').html("");
-    $('.toggle-top-new').html("FOLLOWING");
-  } else if (currentUrl === "/all"){
-    $('.toggle-top-new').html("");
-    $('.toggle-top-new').html("PUBLIC");
-  }
   // Stryke validations and submittal
   $(".stryke-con form").on("submit", function (e) {
     e.preventDefault();

@@ -1,6 +1,8 @@
 class WelcomeController < ApplicationController
 
   def public
+    @navbar_title = 'Public Feed'
+    @navbar_url = feed_path
     columns = Stryke.get_columns(25, 0)
     @strykes_hot = columns[:top]
     @strykes_new = columns[:new]
@@ -10,6 +12,8 @@ class WelcomeController < ApplicationController
   end
 
   def index
+    @navbar_title = 'Your Feed'
+    @navbar_url = all_path
     columns = Stryke.get_columns(25, 0, current_user)
     @strykes_hot = columns[:top]
     @strykes_new = columns[:new]
