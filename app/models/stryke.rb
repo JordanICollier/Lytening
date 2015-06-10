@@ -34,7 +34,8 @@ class Stryke < ActiveRecord::Base
     # create the optional follower join query
     follower_join = <<FOLLOW
   INNER JOIN followings
-  ON followings.user_id = ? AND followings.follower_id = users.id
+  ON (followings.user_id = ? AND followings.follower_id = users.id)
+     OR users.id = #{user_id}
 FOLLOW
     # create the main query
     main_query = <<QUERY
