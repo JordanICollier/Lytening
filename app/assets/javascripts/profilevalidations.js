@@ -78,15 +78,15 @@ $(function() {
     }
 
     if (school === null || school === "") {
-      schoolInput.val("N/A");
+      schoolInput.val("Enter School");
     }
 
     if (work === null || work === "") {
-      workInput.val("N/A");
+      workInput.val("Enter Work");
     }
 
     if (about === null || about === "") {
-      aboutInput.val("N/A");
+      aboutInput.val("Enter About");
     }
   });
 
