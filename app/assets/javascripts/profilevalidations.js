@@ -26,20 +26,20 @@ $(function() {
     if (first_name === null || first_name === "") {
       e.preventDefault();
       first_nameInput.css("background-color", "#EEB4B4");
-      first_nameInput.val("First name cannot be blank");
+      first_nameInput.attr("placeholder", "First name cannot be blank");
       first_nameInput.on("click", function (e) {
         first_nameInput.css("background-color", "#4586A3");
-        first_nameInput.val("");
+        first_nameInput.attr("placeholder", "First Name");
       });
     }
 
     if (last_name === null || last_name === "") {
       e.preventDefault();
       last_nameInput.css("background-color", "#EEB4B4");
-      last_nameInput.val("Last name cannot be blank");
+      last_nameInput.attr("placeholder", "Last name cannot be blank");
       last_nameInput.on("click", function (e) {
         last_nameInput.css("background-color", "#4586A3");
-        last_nameInput.val("");
+        last_nameInput.attr("placeholder", "Last Name");
       });
     }
 
@@ -50,30 +50,30 @@ $(function() {
     if (username === null || username === "") {
       e.preventDefault();
       usernameInput.css("background-color", "#EEB4B4");
-      usernameInput.val("Username cannot be blank");
+      usernameInput.attr("placeholder", "Username cannot be blank");
       usernameInput.on("click", function (e) {
         usernameInput.css("background-color", "#4586A3");
-        usernameInput.val("");
+        usernameInput.attr("placeholder", "Username");
       });
     }
 
     if (location === null || location === "") {
       e.preventDefault();
       locationInput.css("background-color", "#EEB4B4");
-      locationInput.val("Location cannot be blank");
+      locationInput.attr("placeholder", "Location cannot be blank");
       locationInput.on("click", function (e) {
         locationInput.css("background-color", "#4586A3");
-        locationInput.val("");
+        locationInput.attr("placeholder", "Location");
       });
     }
 
     if (interest === null || interest === "") {
       e.preventDefault();
       interestInput.css("background-color", "#EEB4B4");
-      interestInput.val("Interests cannot be blank");
+      interestInput.attr("placeholder", "Interests cannot be blank");
       interestInput.on("click", function (e) {
         interestInput.css("background-color", "#4586A3");
-        interestInput.val("");
+        interestInput.attr("placeholder", "Interests");
       });
     }
 
