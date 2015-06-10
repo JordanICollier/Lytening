@@ -22,8 +22,8 @@ class WelcomeController < ApplicationController
   end
 
   def search_results
-    @search = params[:search]
-    @friends = User.where("email LIKE :query OR username LIKE :query OR concat(first_name, ' ', last_name) LIKE :query", query: "%#{@search}%")
+    @search = params[:search].downcase
+    @friends = User.where("LOWER(email) LIKE :query OR LOWER(username) LIKE :query OR LOWER(concat(first_name, ' ', last_name)) LIKE :query", query: "%#{@search}%")
   end
 
 end
