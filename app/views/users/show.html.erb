@@ -30,45 +30,49 @@
       </div>
     </div>
 
-    <% if current_user == @user %>
-      <div class="col-12-12 user-info-con" data-user-id="<%=current_user.id%>">
+    <!-- <%# if current_user == @user %>
+      <div class="col-12-12 user-info-con" data-user-id="<%#=current_user.id%>">
           <strong>WORK</strong><br>
-          <div class="edit fake" data-field-name="work"><%= @user.work %></div>
+          <div class="edit fake" data-field-name="work"><%#= @user.work %></div>
 
           <strong>FIRST NAME</strong><br>
-          <div class="edit fake" data-field-name="first_name"><%= @user.first_name %></div>
+          <div class="edit fake" data-field-name="first_name"><%#= @user.first_name %></div>
 
           <strong>LAST NAME</strong><br>
-          <div class="edit fake" data-field-name="last_name"><%= @user.last_name %></div>
+          <div class="edit fake" data-field-name="last_name"><%#= @user.last_name %></div>
 
-          <!-- <strong>GENDER</strong><br>
-          <div class="edit_sex fake" data-field-name="gender"><%#= @user.gender %></div> -->
+          <strong>GENDER</strong><br>
+          <div class="edit_sex fake" data-field-name="gender"><%#= @user.gender %></div>
 
           <strong>LOCATION</strong><br>
-          <div class="edit fake" data-field-name="location"><%= @user.location %></div>
+          <div class="edit fake" data-field-name="location"><%#= @user.location %></div>
 
           <strong>BIRTHDAY</strong><br>
           <div class="edit_date fake" data-field-name="birthday">
-            <% if @user.birthday %>
-              <%= @user.birthday.strftime('%B %d, %Y') %>
-            <% end %>
+            <%# if @user.birthday %>
+              <%#= @user.birthday.strftime('%B %d, %Y') %>
+            <%# end %>
           </div>
 
           <strong>SCHOOL</strong><br>
-          <div class="edit fake" data-field-name="school"><%= @user.school %></div>
+          <div class="edit fake" data-field-name="school"><%#= @user.school %></div>
 
       </div>
       <div class="col-12-12 user-about-con">
         <strong>ABOUT</strong><br>
-        <div class="edit_area fake" data-field-name="about"><%= @user.about %></div>
+        <div class="edit_area fake" data-field-name="about"><%#= @user.about %></div>
       </div>
 
       <div class="col-12-12 user-interests-con">
         <strong>INTERESTS</strong><br>
-        <div class="edit fake" data-field-name="interest"><%= @user.interest %></div>
+        <div class="edit fake" data-field-name="interest"><%#= @user.interest %></div>
       </div>
-    <% else %>
+    <%# else %> -->
       <div class="col-12-12 user-info-con" data-user-id="<%=current_user.id%>">
+        <% if current_user == @user %>
+          <%= button_to "Edit Profile", edit_user_path(@user), :method => :get, class: "edit-profile-pic-btn" %>
+        <% end %>
+
           <strong>WORK</strong><br>
           <div><%= @user.work %></div>
 
@@ -104,13 +108,10 @@
         <strong>INTERESTS</strong><br>
         <div><%= @user.interest %></div>
       </div>
-    <% end %>
+    <!-- <%# end %> -->
   </div>
 
   <div class="col-6-12 user-comments">
-
-    <!-- •HEY ANDREW- THIS BELOW ALLOWS A USER TO SEE ALL OF HIS/HER POSTS ONLY IF
-          THEY ARE THE CURRENT USER CAN THEY SEE THE HISTORY OF THEIR OWN POSTS -->
 
     <% if current_user == @user %>
     <div class="new-status user-stryke-header">STRYKES</div>

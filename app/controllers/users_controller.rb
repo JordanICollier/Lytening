@@ -27,24 +27,24 @@ class UsersController < ApplicationController
   def update
     if current_user.update(user_params)
 
-      if params[:user][:avatar].present?
-        render :crop
-      elsif params[:user][:crop_x]
-        redirect_to user_path(current_user)
-      else
-        # if user_params.values.first == "A"
-        #   render text: "Male"
-        # elsif user_params.values.first == "B"
-        #   render text: "Female"
-        # elsif user_params.values.first == "C"
-        #   render text: "Do not specify"
-        # else
-          render text: user_params.values[0]
-        # end
-      end
-
+      # if params[:user][:avatar].present?
+      #   render :crop
+      # elsif params[:user][:crop_x]
+      #   redirect_to user_path(current_user)
+      # else
+      #   # if user_params.values.first == "A"
+      #   #   render text: "Male"
+      #   # elsif user_params.values.first == "B"
+      #   #   render text: "Female"
+      #   # elsif user_params.values.first == "C"
+      #   #   render text: "Do not specify"
+      #   # else
+      #     render text: user_params.values[0]
+      #   # end
+      # end
+      redirect_to user_path(current_user)
     else
-      render :crop
+      render :edit
     end
     # respond_with @user
   end
@@ -53,7 +53,7 @@ private
 
   def user_params
       params.require(:user).permit(:avatar, :crop_x, :crop_y, :crop_w, :crop_h,
-      :spark_count, :location, :work, :school, :birthday, :interest,
+      :spark_count, :location, :work, :school, :username, :birthday, :interest,
       :about, :first_name, :last_name)
   end
 
