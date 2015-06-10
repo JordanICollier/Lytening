@@ -21,6 +21,7 @@ gem 'faker'
 
 group :production do
   gem "rails_12factor"
+  gem "thin"
 end
 
 group :development, :test do
