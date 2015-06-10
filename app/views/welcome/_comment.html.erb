@@ -8,7 +8,7 @@
       <%= comment.body_html %>
     </p>
     <% if current_user == comment.user %>
-      <p><%= link_to "Delete", comment_path(comment), method: :delete, class:"comment-header" %></p>
+      <p><%= link_to "Delete", comment_path(comment), method: :delete, class:"comment-delete" %></p>
     <% end %>
     <div class="comment-sparks">
       <%= render partial: 'sparks/spark', locals: {
