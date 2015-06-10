@@ -181,6 +181,10 @@ input#user_avatar{
   font-size: 2em;
 }
 
+.user-follow-username a {
+  text-decoration:none;
+}
+
 @media screen and (max-width: 968px) {
   .user-comments{
     width: 100%;
