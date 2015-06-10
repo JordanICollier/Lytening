@@ -1,4 +1,4 @@
-<div class="col-12-12 comment">
+<div class="col-12-12 comment" data-comment-url="<%= comment_path(comment) %>">
   <div class="col-12-12 comment-box">
     <p>
       <div class="comment-thumb">
@@ -8,7 +8,7 @@
       <%= comment.body_html %>
     </p>
     <% if current_user == comment.user %>
-      <p><%= link_to "Delete", comment_path(comment), method: :delete, class:"comment-header" %></p>
+      <p><%= link_to "Delete", '#', class:"comment-delete" %></p>
     <% end %>
     <div class="comment-sparks">
       <%= render partial: 'sparks/spark', locals: {

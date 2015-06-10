@@ -89,6 +89,12 @@ input:focus{
   margin: 0 10px 0 0;
 }
 
+.comment-delete{
+  float:right;
+  text-decoration: none;
+  color: $blue2;
+}
+
 @media screen and (max-width: 600px) {
   .comments .content {
     padding: 15px 20px 15px 20px;
