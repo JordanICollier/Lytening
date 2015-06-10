@@ -115,6 +115,40 @@
       <% @user.strykes.order(created_at: :desc).each do |stryke| %>
         <%= stryke.body %><br><hr>
       <% end %>
+    <% else %>
+      <% @sparked_items.each do |sparked_item| %>
+        <div class="col-1-12">
+          <%= image_tag "#{sparked_item.user.avatar_url(:thumb)}", class: 'thumb' %>
+        </div>
+        <div class="col-10-12 spark-header-box">
+          <%= link_to "#{sparked_item.user.full_name.upcase}", user_path(sparked_item.user), class:"spark-header" %>
+          <div class="col-12-12 spark-header">
+            Total Sparks: <span data-spark-count><%= sparked_item.user.spark_count %></span>
+          </div>
+        </div>
+        <div class="col-1-12 countdown" data-date="<%= (sparked_item.created_at + 24.hours).strftime('%Y-%m-%d %H:%M:%S %Z') %>"></div>
+        <p>
+          <%= sparked_item.body_html %>
+        </p>
+        <div class="sparks">
+          <%= render partial: 'sparks/spark', locals: {
+            sparkable: sparked_item,
+            active_img: 'spark-icon-yellow.png',
+            inactive_img: 'spark-icon-white.png',
+          } %>
+        </div>
+        <div class="comments">
+          <div class="header"><%= "#{sparked_item.comments.count}" %> comments</div>
+          <div class='content'>
+            <div class="comment-list">
+              <% sparked_item.comments.each do |comment| %>
+                <%= render partial: "welcome/comment", locals: {comment: comment} %>
+              <% end %>
+            </div>
+          </div>
+          </div>
+        <br><hr>
+      <% end %>
     <% end %>
     <%# @user.strykes.order(created_at: :desc).first.body %>
   </div>

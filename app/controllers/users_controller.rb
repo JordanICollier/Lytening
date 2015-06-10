@@ -7,6 +7,14 @@ class UsersController < ApplicationController
 
   def show
     @stryke = Stryke.new
+    @user = User.find(params[:id])
+    @sparked_items = []
+    @expire_time = Time.now.utc - 24.hours
+    @user.sparks.each do |spark|
+      if spark.sparkable_type == "Stryke"
+        @sparked_items += Stryke.where(id: spark.sparkable_id).where('created_at > :query', query: "%#{@expire_time}%")
+      end
+    end
   end
 
   def edit
