@@ -29,6 +29,8 @@ class UsersController < ApplicationController
 
       if params[:user][:avatar].present?
         render :crop
+      elsif params[:user][:crop_x]
+        redirect_to user_path(current_user)
       else
         if user_params.values.first == "A"
           render text: "Male"
