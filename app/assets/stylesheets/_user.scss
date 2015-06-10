@@ -90,7 +90,7 @@
 }
 
 .edit-profile-pic-btn{
-  width: 100%;
+  width: 50%;
   height: 40px;
   bottom:0;
   background-color: $purple1;
@@ -100,10 +100,30 @@
   font-size: 1em;
   border-color: $purple2;
   cursor: pointer;
+  float:left;
 }
 
 .edit-profile-pic-btn:hover{
   background-color: $teal1;
+  text-decoration: none;
+}
+
+.edit-profile-settings-btn{
+  width: 50%;
+  height: 40px;
+  bottom:0;
+  background-color: $teal1;
+  text-align: center;
+  padding-top: 5px;
+  color: $white;
+  font-size: 1em;
+  border-color: $purple2;
+  cursor: pointer;
+  float:left;
+}
+
+.edit-profile-settings-btn:hover{
+  background-color: $purple1;
   text-decoration: none;
 }
 
