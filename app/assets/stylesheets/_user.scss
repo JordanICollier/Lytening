@@ -139,17 +139,19 @@
 }
 
 .photo-edit-container{
-  height: 1000px;
+  height: 1100px;
   width: 100%;
   padding: 10% 10% 25% 10%;
   background-color: $green2;
   background-image: url(logo-bg.png);
+  text-size: 40px;
 }
 
 .photo-edit-box{
   width: 45%;
   margin: 0 auto;
   text-align: center;
+  line-height: 3em;
 }
 
 input#user_avatar{

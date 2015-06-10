@@ -1,20 +1,18 @@
 <div class="col-12-12">
-  <div class="photo-edit-container">
-    <div class="photo-edit-box">
-      <%= link_to(image_tag("lytening-logo-white.svg", class:"sign-logo"), "#") %>
-      <div class="sign-log">
+  <div class="crop-container">
+    <div class="crop-box">
+      <div class="col-12-12">
+        <%= link_to(image_tag("lytening-logo-white.svg", class:"sign-logo"), "#") %>
+        <div class="sign-header">CROP AVATAR</div>
 
-    <div class="sign-header">CHANGE PHOTO</div>
-
-
-          <div class="col-6-12 form-actions">
-            <%= simple_form_for(@user) do |f| %>
-              <%= f.file_field :avatar %>
-              <div class="col-6-12">
-                <%= f.button :submit, "Crop Photo", class: "login" %>
-              </div>
-            <% end %>
-          </div>
+    <div class="col-6-12 form-actions">
+      <%= simple_form_for(@user) do |f| %>
+        <%= f.file_field :avatar %>
+        <div class="col-6-12">
+          <%= f.button :submit, "Crop Photo", class: "login" %>
+        </div>
+      <% end %>
+    </div>
 
       </div>
     </div>

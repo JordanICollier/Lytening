@@ -51,6 +51,27 @@ input.next-tut:hover{
   color: $white;
   margin: 0 0 20px 0;
 }
+.crop-container{
+  height: 1100px;
+  width: 100%;
+  padding: 10% 10% 25% 10%;
+  background-color: $green2;
+  background-image: url(logo-bg.png);
+  text-size: 40px;
+}
+.crop-box {
+  height: 50px;
+  font-size: 15px;
+  color: $white;
+  width: 45%;
+  margin: 0 auto;
+  text-align: center;
+  line-height: 3em;
+}
+
+input#user_avatar{
+
+}
 
 select{
   width:100%;
@@ -86,5 +107,8 @@ select:focus{
   }
   .new{
     margin-top: 80px;
+  }
+  .crop-container{
+    padding: 30% 10% 5% 0%;
   }
 }
