@@ -133,6 +133,15 @@ input.bug_btn{
   color: $red;
 }
 
+.jcrop-tracker{
+  width: 100px;
+}
+
+#cropbox{
+  z-index: 1;
+  position: relative;
+}
+
 @media screen and (max-width: 968px) {
   .toggle-top-new{
     display: block;
