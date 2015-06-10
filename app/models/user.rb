@@ -17,11 +17,11 @@ class User < ActiveRecord::Base
   after_create :tom_style
 
   include SparkCountable
-  has_many :strykes
-  has_many :comments
+  has_many :strykes, dependent: :destroy
+  has_many :comments, dependent: :destroy
   has_many :sparks, dependent: :destroy
 
-  has_many :followings
+  has_many :followings, dependent: :destroy
   has_many :followers, :through => :followings
 
   has_many :inverse_followings, :class_name => "Following", :foreign_key => "follower_id"
