@@ -27,7 +27,7 @@ $(function() {
       e.preventDefault();
       first_nameInput.css("background-color", "#EEB4B4");
       first_nameInput.attr("placeholder", "First name cannot be blank");
-      first_nameInput.on("click", function (e) {
+      first_nameInput.on("focus", function (e) {
         first_nameInput.css("background-color", "#4586A3");
         first_nameInput.attr("placeholder", "First Name");
       });
@@ -37,7 +37,7 @@ $(function() {
       e.preventDefault();
       last_nameInput.css("background-color", "#EEB4B4");
       last_nameInput.attr("placeholder", "Last name cannot be blank");
-      last_nameInput.on("click", function (e) {
+      last_nameInput.on("focus", function (e) {
         last_nameInput.css("background-color", "#4586A3");
         last_nameInput.attr("placeholder", "Last Name");
       });
@@ -51,7 +51,7 @@ $(function() {
       e.preventDefault();
       usernameInput.css("background-color", "#EEB4B4");
       usernameInput.attr("placeholder", "Username cannot be blank");
-      usernameInput.on("click", function (e) {
+      usernameInput.on("focus", function (e) {
         usernameInput.css("background-color", "#4586A3");
         usernameInput.attr("placeholder", "Username");
       });
@@ -61,7 +61,7 @@ $(function() {
       e.preventDefault();
       locationInput.css("background-color", "#EEB4B4");
       locationInput.attr("placeholder", "Location cannot be blank");
-      locationInput.on("click", function (e) {
+      locationInput.on("focus", function (e) {
         locationInput.css("background-color", "#4586A3");
         locationInput.attr("placeholder", "Location");
       });
@@ -71,7 +71,7 @@ $(function() {
       e.preventDefault();
       interestInput.css("background-color", "#EEB4B4");
       interestInput.attr("placeholder", "Interests cannot be blank");
-      interestInput.on("click", function (e) {
+      interestInput.on("focus", function (e) {
         interestInput.css("background-color", "#4586A3");
         interestInput.attr("placeholder", "Interests");
       });
