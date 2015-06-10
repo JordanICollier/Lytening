@@ -40,9 +40,6 @@ GEM
     auto_html (1.6.4)
       redcarpet (~> 3.1)
       rinku (~> 1.5.0)
-    aws-sdk-v1 (1.64.0)
-      json (~> 1.4)
-      nokogiri (>= 1.4.4)
     bcrypt (3.1.10)
     better_errors (2.1.1)
       coderay (>= 1.0.0)
@@ -76,9 +73,6 @@ GEM
       responders
       thread_safe (~> 0.1)
       warden (~> 1.2.3)
-    dotenv (2.0.0)
-    dotenv-rails (2.0.0)
-      dotenv (= 2.0.0)
     erubis (2.7.0)
     eventmachine (1.0.7)
     execjs (2.5.2)
@@ -86,9 +80,6 @@ GEM
       i18n (~> 0.5)
     globalid (0.3.5)
       activesupport (>= 4.1.0)
-    gravatar-ultimate (2.0.0)
-      activesupport (>= 2.3.14)
-      rack
     haml (4.0.6)
       tilt
     i18n (0.7.0)
@@ -213,15 +204,12 @@ PLATFORMS
 
 DEPENDENCIES
   auto_html
-  aws-sdk-v1
   better_errors
   byebug
   carrierwave
   coffee-rails (~> 4.1.0)
   devise
-  dotenv-rails
   faker
-  gravatar-ultimate
   haml
   jbuilder (~> 2.0)
   jquery-rails
