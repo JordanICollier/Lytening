@@ -106,7 +106,7 @@ class SetupController < ApplicationController
   end
 
   def see_if_done!
-    redirect_to root_path if @step.nil?
+    redirect_to all_path if @step.nil?
   end
 
   def next_step
