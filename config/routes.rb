@@ -21,6 +21,7 @@ Rails.application.routes.draw do
   patch 'setup/:id' => 'setup#save'
 
   get 'feed' => 'welcome#index'
+  get 'all' => 'welcome#public'
 
   # report a bug routes
   get '/bugs' => 'bugs#new'

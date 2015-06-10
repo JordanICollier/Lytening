@@ -1,7 +1,16 @@
 class WelcomeController < ApplicationController
 
+  def public
+    columns = Stryke.get_columns(25, 0)
+    @strykes_hot = columns[:top]
+    @strykes_new = columns[:new]
+
+    @comment = Comment.new
+    render 'welcome/index'
+  end
+
   def index
-    columns = Stryke.get_columns(current_user, 25)
+    columns = Stryke.get_columns(25, 0, current_user)
     @strykes_hot = columns[:top]
     @strykes_new = columns[:new]
 

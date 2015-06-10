@@ -30,16 +30,21 @@ class Stryke < ActiveRecord::Base
     simple_format
   end
 
-  def self.column_query(order, offset, limit)
-    return <<EOF
+  def self.column_query(order, offset, limit, user_id = nil)
+    # create the optional follower join query
+    follower_join = <<FOLLOW
+  INNER JOIN followings
+  ON followings.user_id = ? AND followings.follower_id = users.id
+FOLLOW
+    # create the main query
+    main_query = <<QUERY
 SELECT * FROM (
   SELECT
     strykes.*,
     row_number() OVER newest_by_user as new_rank
   FROM users
 
-  INNER JOIN followings
-  ON followings.user_id = ? AND followings.follower_id = users.id
+#{user_id ? follower_join : ''}
 
   INNER JOIN strykes
   ON strykes.user_id = users.id
@@ -54,18 +59,20 @@ WHERE new_rank = 1
 ORDER BY #{order} DESC
 OFFSET #{offset}
 LIMIT #{limit}
-EOF
+QUERY
+    # add the user_id if it was given
+    result = [main_query]
+    result << user_id if user_id
+    return result
   end
 
-  def self.get_columns(user, limit, offset = 0)
-    new_strykes = Stryke.find_by_sql([
-        column_query('created_at', offset, limit),
-        user.id,
-    ])
-    top_strykes = Stryke.find_by_sql([
-      column_query('spark_count', offset, limit),
-      user.id,
-    ])
+  def self.get_columns(limit, offset = 0, user = nil)
+    new_strykes = Stryke.find_by_sql(
+      column_query('created_at', offset, limit, (user ? user.id : nil))
+    )
+    top_strykes = Stryke.find_by_sql(
+      column_query('spark_count', offset, limit, (user ? user.id : nil))
+    )
     done = new_strykes.size < limit or top_strykes.size < limit
     # return information about what we found
     {

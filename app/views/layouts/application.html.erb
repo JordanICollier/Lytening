@@ -30,7 +30,7 @@
         <li class="one-line"><strong><%= link_to "View #{current_user.username}'s profile", user_path(current_user) %></strong></li><hr>
         <li class= "one-line"><%= link_to "Edit #{current_user.username}'s profile", edit_user_registration_path%></li><hr>
         <li class= "one-line"><%= link_to "Logout", destroy_user_session_path, method: :delete %></li><hr>
-        <li class= "two-lines"><%= link_to "Public Feed", "#", method: :delete %> <br><%= link_to "Following Feed", "#", method: :delete %></li><hr>
+        <li class= "two-lines"><%= link_to "Public Feed", all_path %> <br><%= link_to "Following Feed", feed_path %></li><hr>
         <% else %>
         <li class= "one-line"><%= link_to "Login", new_user_session_path %></li><hr>
         <li class= "one-line"><%= link_to "Sign up", new_user_registration_path %></li><hr>
