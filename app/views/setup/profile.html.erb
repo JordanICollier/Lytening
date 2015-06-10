@@ -16,10 +16,10 @@
       <%= f.text_field :username, placeholder: "User Name" %>
 
       <%#= f.label :birthday %>
-      <%= f.date_field :birthday, placeholder: "Birthday" %>
+      <%= f.date_field :birthday, :value => Date.today %>
 
       <%#= f.label :gender %>
-      <%= select_tag "Gender", "<option>Male</option><option>Female</option><option>Do not specify</option>".html_safe %>
+      <%= select_tag "Gender", "<option selected=\"selected\">Male</option><option>Female</option><option>Do not specify</option>".html_safe %>
 
       <%#= f.label :location %>
       <%= f.text_field :location, placeholder: "Location E.g. Denver, CO" %>
