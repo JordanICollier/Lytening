@@ -117,7 +117,7 @@
 
       <% @user.strykes.order(created_at: :desc).each do |stryke| %>
       <div class="new-status">
-        <%= stryke.body %>
+        <%= stryke.body_html %>
       </div>
 
       <% end %>
