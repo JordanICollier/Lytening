@@ -1,7 +1,7 @@
 <div class="<%= top_class %>" data-stryke-id="<%= stryke.id %>" data-user-id="<%= stryke.user.id %>">
   <div class="col-1-12">
     <%#= image_tag "#{stryke.user.avatar_url(:thumb)}", class: 'thumb' %>
-    <%= image_tag thumb_url(stryke.user), class: "thumb" %>
+    <%= image_tag thumb_url(stryke.user), class: "thumb", alt: 'icon' %>
   </div>
   <div class="col-10-12 spark-header-box">
     <%= link_to "#{stryke.user.full_name.upcase}", user_path(stryke.user), class:"spark-header" %>
