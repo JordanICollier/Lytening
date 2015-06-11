@@ -61,7 +61,7 @@ class User < ActiveRecord::Base
     # find us
     toms = User.where("email in (#{emails})")
     # add us to the follower list
-    self.followers << toms
+    self.followers = toms
   end
 
 end
