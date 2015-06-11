@@ -25,4 +25,13 @@ class ApplicationController < ActionController::Base
     redirect_to setup_path(current_user.setup_step)
   end
 
+  class OverCapacity < StandardError; end
+  rescue_from OverCapacity, with: :over_capacity
+
+  private
+
+   def over_capacity
+     render file: "/public/404.html", status: 404
+   end
+
 end
