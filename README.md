@@ -10,7 +10,7 @@ Purpose: A collaborative project creating a new form of social media that is
          gain as many Sparks as possible.  In addition, users can follow each
          other.  The main goal is to create a quick and collaborative
          environment which promotes a bit of competitiveness in the form of
-         gaining Sparks.  Strykes are limited to 500 characters and can include
+         gaining Sparks. Strykes are limited to 500 characters and can include
          text, media files, and hyperlinks.
 
 To do
