@@ -26,15 +26,3 @@ Stretch
   • [x] Hyjack stryke
   • [x] Web sockets
   • [x] Mobile app
-
-Done
-  • [√] Limit strykes to 500 characters
-  • [√] Feed
-  • [√] Login / signup CSS styling
-  • [√] Comments ajax call
-  • [√] Searching for friends
-  • [√] Strykes post photo,text,video, etc...
-  • [√] Include 24 hour time circle on each stryke?
-  • [√] Create database with users table that has self-relationship
-  • [√] Affix navbar
-  • [√] Strykes only show for 24 hours
