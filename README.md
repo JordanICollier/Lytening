@@ -18,7 +18,6 @@ To do
   • [x] Validate and check for empty comment/stryke
   • [x] Load 25 at a time
   • [x] Spark buttons and iterate spark count with ajax (user can unspark strykes they've sparked)
-  • [x] Back to top button
   • [x] User CSS styling / styling in general
   • [x] Mobile formatting
 
