@@ -16,7 +16,6 @@ Purpose: A collaborative project creating a new form of social media that is
 To do
   • [x] Profile tutorial
   • [x] Validate and check for empty comment/stryke
-  • [x] Load 25 at a time
   • [x] Spark buttons and iterate spark count with ajax (user can unspark strykes they've sparked)
   • [x] User CSS styling / styling in general
   • [x] Mobile formatting
