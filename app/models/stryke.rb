@@ -56,7 +56,7 @@ SELECT * FROM (
   )
 ) as strykes
 
-WHERE new_rank = 1
+WHERE new_rank = 1 AND created_at > '#{24.hours.ago}'
 ORDER BY #{order} DESC
 OFFSET #{offset}
 LIMIT #{limit}
